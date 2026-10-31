@@ -1,0 +1,64 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Test and browser output
+playwright-report/
+test-results/
+playwright-artifacts/
+
+# Logs and caches
+*.log
+.cache/
+
+# Generated media (keep outside Git)
+outputs/
+generated/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local plans and reference evidence
+/docs/plans/
+
+# Private machine/account configuration and deployment evidence
+/.local/
+/AGENTS.local.md
+# Publish only the reviewed project skill; ignore all other local agent files.
+/.agents/*
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/imagedials/
+/.agents/skills/imagedials/*
+!/.agents/skills/imagedials/SKILL.md
+/.codex/
+/.aws/
+*.local
+/deploy/generated/
+compose.override.yaml
+compose.override.yml
+docker-compose.override.yaml
+docker-compose.override.yml
