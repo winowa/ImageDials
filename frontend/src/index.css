@@ -1,7 +1,21 @@
 :root {
-  color-scheme: light dark;
-  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+  --background: oklch(0.18 0.008 55);
+  --foreground: oklch(0.94 0.008 55);
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
   line-height: 1.4;
+}
+
+:root[data-theme='light'] {
+  color-scheme: only light;
+  --background: oklch(0.97 0.008 55);
+  --foreground: oklch(0.24 0.008 55);
 }
 
 body {
@@ -11,9 +25,40 @@ body {
 .app-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.25rem 0.75rem;
   padding: 1rem 1.5rem;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: auto;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: oklch(0.65 0.1 50 / 0.16);
+}
+:focus-visible {
+  outline: 3px solid oklch(0.72 0.16 50);
+  outline-offset: 4px;
+}
+
+@media (max-width: 440px) {
+  .app-header {
+    padding: 1rem;
+  }
+  .app-subtitle {
+    order: 3;
+    flex-basis: 100%;
+  }
 }
 
 .app-header h1 {
@@ -29,6 +74,9 @@ body {
 
 .app-subtitle a {
   color: inherit;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .app-main {

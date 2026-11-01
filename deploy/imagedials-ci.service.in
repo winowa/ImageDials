@@ -1,0 +1,16 @@
+[Unit]
+Description=ImageDials local CI
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=@PROJECT_ROOT@
+EnvironmentFile=@ENV_FILE@
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=@PYTHON@ @CI_SCRIPT@
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=@WORK_ROOT@
+UMask=0077

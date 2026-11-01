@@ -3,7 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <script>
+      (() => {
+        let theme = 'dark';
+        try {
+          if (localStorage.getItem('imagedials-theme') === 'light')
+            theme = 'light';
+        } catch {}
+        document.documentElement.dataset.theme = theme;
+        const scheme = theme === 'light' ? 'only light' : 'dark';
+        document.documentElement.style.colorScheme = scheme;
+        document.querySelector('meta[name="color-scheme"]').content = scheme;
+      })();
+    </script>
     <title>ImageDials</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <div id="root"></div>

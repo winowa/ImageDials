@@ -1,0 +1,11 @@
+[Unit]
+Description=Check ImageDials source for local CI
+
+[Timer]
+OnStartupSec=20
+OnUnitInactiveSec=60
+AccuracySec=5
+Unit=imagedials-ci.service
+
+[Install]
+WantedBy=timers.target

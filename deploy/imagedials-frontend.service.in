@@ -1,0 +1,16 @@
+[Unit]
+Description=ImageDials frontend
+After=network.target imagedials-api.service
+Wants=imagedials-api.service
+
+[Service]
+Type=simple
+WorkingDirectory=@PROJECT_ROOT@
+ExecStart=@NODE_BIN@ @LAUNCHER@ frontend
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

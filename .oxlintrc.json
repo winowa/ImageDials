@@ -1,0 +1,14 @@
+{
+  "plugins": ["react", "react-hooks", "typescript", "unicorn", "oxc"],
+  "categories": { "correctness": "error" },
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    ".local/**",
+    ".agents/**",
+    ".codex/**",
+    ".aws/**",
+    ".playwright-cli/**",
+    "docs/plans/**"
+  ]
+}
