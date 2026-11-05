@@ -1,0 +1,282 @@
+{
+  "fixture_kind": "Fictional eight-kind initial-control responses for backend parsing and ordering tests. Not real model output.",
+  "kinds": [
+    "range",
+    "single",
+    "multi",
+    "select",
+    "radio",
+    "checkbox",
+    "text",
+    "binary"
+  ],
+  "templates": {
+    "range": {
+      "id": "wing-span",
+      "label": "Wing span",
+      "type": "range",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "value": 6,
+      "min_label": "Folded",
+      "max_label": "Fully spread"
+    },
+    "single": {
+      "id": "perch",
+      "label": "Perch",
+      "type": "single",
+      "value": "branch",
+      "options": [
+        {
+          "id": "branch",
+          "label": "Branch"
+        },
+        {
+          "id": "post",
+          "label": "Fence post"
+        },
+        {
+          "id": "rock",
+          "label": "Rock"
+        }
+      ]
+    },
+    "multi": {
+      "id": "plumage",
+      "label": "Plumage",
+      "type": "multi",
+      "value": ["barred"],
+      "options": [
+        {
+          "id": "barred",
+          "label": "Barred"
+        },
+        {
+          "id": "speckled",
+          "label": "Speckled"
+        },
+        {
+          "id": "glossy",
+          "label": "Glossy"
+        }
+      ]
+    },
+    "select": {
+      "id": "eye-color",
+      "label": "Eye color",
+      "type": "select",
+      "value": "amber",
+      "options": [
+        {
+          "id": "amber",
+          "label": "Amber"
+        },
+        {
+          "id": "black",
+          "label": "Black"
+        },
+        {
+          "id": "gold",
+          "label": "Gold"
+        }
+      ]
+    },
+    "radio": {
+      "id": "posture",
+      "label": "Posture",
+      "type": "radio",
+      "value": "alert",
+      "options": [
+        {
+          "id": "alert",
+          "label": "Alert"
+        },
+        {
+          "id": "resting",
+          "label": "Resting"
+        },
+        {
+          "id": "preening",
+          "label": "Preening"
+        }
+      ]
+    },
+    "checkbox": {
+      "id": "accessories",
+      "label": "Accessories",
+      "type": "checkbox",
+      "value": [],
+      "options": [
+        {
+          "id": "band",
+          "label": "Leg band"
+        },
+        {
+          "id": "bell",
+          "label": "Small bell"
+        },
+        {
+          "id": "ribbon",
+          "label": "Ribbon"
+        }
+      ]
+    },
+    "text": {
+      "id": "banner",
+      "label": "Banner lettering",
+      "type": "text",
+      "value": "",
+      "placeholder": "Optional lettering"
+    },
+    "binary": {
+      "id": "mid-flight",
+      "label": "Mid flight",
+      "type": "binary",
+      "value": false,
+      "true_label": "Wings raised",
+      "false_label": "Wings folded"
+    }
+  },
+  "valid_orders": [
+    [
+      "range",
+      "single",
+      "multi",
+      "select",
+      "radio",
+      "checkbox",
+      "text",
+      "binary"
+    ],
+    [
+      "binary",
+      "text",
+      "checkbox",
+      "radio",
+      "select",
+      "multi",
+      "single",
+      "range"
+    ],
+    [
+      "binary",
+      "single",
+      "text",
+      "range",
+      "radio",
+      "multi",
+      "checkbox",
+      "select"
+    ],
+    [
+      "multi",
+      "checkbox",
+      "range",
+      "text",
+      "single",
+      "binary",
+      "select",
+      "radio"
+    ]
+  ],
+  "invalid_sets": {
+    "missing-binary": [
+      "range",
+      "single",
+      "multi",
+      "select",
+      "radio",
+      "checkbox",
+      "text"
+    ],
+    "duplicate-range-replaces-binary": [
+      "range",
+      "single",
+      "multi",
+      "select",
+      "radio",
+      "checkbox",
+      "text",
+      "range"
+    ],
+    "nine-with-extra-range": [
+      "range",
+      "single",
+      "multi",
+      "select",
+      "radio",
+      "checkbox",
+      "text",
+      "binary",
+      "range"
+    ],
+    "single-category": ["range"],
+    "empty": []
+  },
+  "duplicate_ids": {
+    "between_generated": ["perch", "perch"],
+    "with_fixed": ["style"]
+  },
+  "range_labels": [
+    {
+      "name": "both",
+      "category": {
+        "min_label": "Folded",
+        "max_label": "Fully spread"
+      },
+      "wire": {
+        "minLabel": "Folded",
+        "maxLabel": "Fully spread"
+      }
+    },
+    {
+      "name": "only-min",
+      "category": {
+        "min_label": "Folded"
+      },
+      "wire": {
+        "minLabel": "Folded"
+      }
+    },
+    {
+      "name": "only-max",
+      "category": {
+        "max_label": "Fully spread"
+      },
+      "wire": {
+        "maxLabel": "Fully spread"
+      }
+    },
+    {
+      "name": "neither",
+      "category": {},
+      "wire": {}
+    },
+    {
+      "name": "blank-is-absent",
+      "category": {
+        "min_label": "  ",
+        "max_label": ""
+      },
+      "wire": {}
+    },
+    {
+      "name": "zero-bounds-and-value-are-values",
+      "category": {
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "value": 0,
+        "min_label": "None"
+      },
+      "wire": {
+        "minLabel": "None",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "value": 0
+      }
+    }
+  ]
+}

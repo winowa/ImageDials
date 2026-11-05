@@ -1,0 +1,562 @@
+{
+  "fixture_kind": "Independent capabilities examples from the implemented backend; client budgets are nonsecret configuration.",
+  "shared": {
+    "environment": "local",
+    "experience_profile": "public",
+    "history_source": "shared-library",
+    "gallery_source": "shared-library",
+    "control_generation": {
+      "max_controls": 30,
+      "additional_controls": {
+        "enabled": true,
+        "default_count": 3,
+        "max_count": 5
+      }
+    },
+    "shared_library": {
+      "enabled": true,
+      "polling_enabled": true,
+      "cloud_storage_enabled": false,
+      "store": "local",
+      "paging": {
+        "enabled": true,
+        "default_limit": 48,
+        "max_limit": 96,
+        "orders": ["newest", "oldest"],
+        "backward_navigation_enabled": true,
+        "revision_tolerant_cursors": true,
+        "around_navigation_enabled": true,
+        "last_page_enabled": true,
+        "watermark_status_url": "/api/images/library/watermarks/status",
+        "indexed_search_enabled": true,
+        "event_facets": {
+          "enabled": true,
+          "url": "/api/images/library/event-facets",
+          "default_limit": 100,
+          "max_limit": 200
+        }
+      },
+      "shuffle_sessions": {
+        "enabled": true,
+        "max_count": 4,
+        "max_records": 250000,
+        "ttl_seconds": 1800,
+        "max_limit": 96,
+        "first_image_enabled": true,
+        "renewal_enabled": true
+      }
+    },
+    "events": {
+      "active_event_name": null,
+      "active_event_id": null,
+      "gallery_event_names": [],
+      "gallery_event_ids": []
+    },
+    "exports": {
+      "download_enabled": true,
+      "browser_print_enabled": true,
+      "share_enabled": false,
+      "email_enabled": false,
+      "server_handoff_enabled": false
+    },
+    "retention": {
+      "public_private_retention_enabled": false
+    },
+    "watermark": {
+      "transient_analysis_enabled": true,
+      "backfill": {
+        "async_preparation_enabled": true,
+        "max_candidate_records": 250000
+      }
+    },
+    "client_policy": {
+      "cache": {
+        "shared_record_limit": 3000,
+        "shared_variant_limit": 3000,
+        "shared_variant_max_bytes": 524288000,
+        "private_record_limit": 40,
+        "private_max_bytes": 524288000,
+        "private_volatile_record_limit": 8,
+        "private_volatile_max_bytes": 268435456,
+        "shared_detail_record_limit": 64,
+        "shared_detail_max_bytes": 16777216,
+        "shared_page_manifest_limit": 64,
+        "shared_page_max_bytes": 8388608,
+        "reference_record_limit": 32,
+        "reference_max_bytes": 268435456
+      },
+      "controls": {
+        "debounce_ms": 900,
+        "reset_debounce_ms": 250,
+        "similarity_minimum_ratio": 0.5,
+        "max_attempts": 2,
+        "reveal_hold_ms": 2000
+      },
+      "transport": {
+        "job_poll_interval_ms": 1000,
+        "job_poll_max_failures": 5,
+        "library_reconnect_initial_ms": 1000,
+        "library_reconnect_max_ms": 30000,
+        "library_change_debounce_ms": 150,
+        "gallery_poll_interval_ms": 5000,
+        "library_poll_interval_ms": 10000,
+        "library_pointer_idle_ms": 2500
+      },
+      "gallery": {
+        "new_image_hold_ms": 20000,
+        "filmstrip_initial_count": 36,
+        "filmstrip_batch_count": 24
+      }
+    },
+    "uploads": {
+      "image_grounded_controls": true,
+      "import_max_bytes": 33554432,
+      "max_decoded_pixels": 32000000,
+      "watermark_analysis_max_bytes": 33554432,
+      "print_ready_max_bytes": 67108864,
+      "image_mime_types": ["image/png", "image/jpeg", "image/webp"],
+      "max_source_pixels": 120000000
+    },
+    "image_editing": {
+      "enabled": true,
+      "transport": "multipart-generation-v1",
+      "model": "Qwen-Image-2.1",
+      "max_references": 10,
+      "model_max_references": 10,
+      "limit_source": "model",
+      "max_image_bytes": 33554432,
+      "max_total_bytes": 67108864,
+      "geometry": "first-reference",
+      "analysis_url": "/api/images/reference-analysis",
+      "prompting": {
+        "strategy": "qwen-image-2.1",
+        "model": "Qwen-Image-2.1",
+        "max_references": 10,
+        "labels": {
+          "1": ["the image"],
+          "2": ["<image1>", "<image2>"],
+          "3": ["<image1>", "<image2>", "<image3>"],
+          "4": ["<image1>", "<image2>", "<image3>", "<image4>"],
+          "5": ["<image1>", "<image2>", "<image3>", "<image4>", "<image5>"],
+          "6": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>"
+          ],
+          "7": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>"
+          ],
+          "8": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>",
+            "<image8>"
+          ],
+          "9": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>",
+            "<image8>",
+            "<image9>"
+          ],
+          "10": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>",
+            "<image8>",
+            "<image9>",
+            "<image10>"
+          ]
+        },
+        "guidance": [
+          "Lead with the change; name the subject or region to edit.",
+          "With multiple images, use the displayed tags and say what each supplies.",
+          "Specify what must stay unchanged; match the base image's lighting and perspective.",
+          "With one image, use natural wording without tags."
+        ],
+        "guidance_url": "https://github.com/QwenLM/Qwen-Image-2.1/blob/main/prompt_rewrite/prompts/system_prompt_edit.txt",
+        "example_single": "Recolor the jacket in {1} deep green. Keep the face, pose and background.",
+        "example_multiple": "Place the lamp from {2} on the table in {1}. Match the room's light on the lamp. Keep everything else in {1}."
+      }
+    },
+    "variations": {
+      "enabled": true,
+      "default_count": 1,
+      "max_count": 4,
+      "execution": "serial",
+      "status_url": "/api/generation-groups/{group_id}",
+      "retry": "failed-only"
+    },
+    "control_application": {
+      "enabled": true,
+      "text_flag": "apply_to_generation",
+      "edit_flag": "apply_to_edit",
+      "preserves_values": true
+    },
+    "region_editing": {
+      "enabled": true,
+      "protocol": "region-selection-v1",
+      "method": "generated-image-composite",
+      "native_mask": false,
+      "tools": ["rectangle", "brush"],
+      "coordinates": "oriented-base-pixels",
+      "output_geometry": "oriented-base",
+      "provider_fit": "cover-center",
+      "outside_selection": "exact-rgba8",
+      "max_shapes": 64,
+      "max_points": 4096,
+      "max_radius": 2048,
+      "max_feather": 32,
+      "max_edge": 32768,
+      "max_pixels": 32000000
+    }
+  },
+  "browser_private": {
+    "environment": "local",
+    "experience_profile": "public",
+    "history_source": "browser-private",
+    "gallery_source": "browser-private",
+    "control_generation": {
+      "max_controls": 30,
+      "additional_controls": {
+        "enabled": true,
+        "default_count": 3,
+        "max_count": 5
+      }
+    },
+    "shared_library": {
+      "enabled": false,
+      "polling_enabled": false,
+      "cloud_storage_enabled": false,
+      "store": "local",
+      "paging": {
+        "enabled": true,
+        "default_limit": 48,
+        "max_limit": 96,
+        "orders": ["newest", "oldest"],
+        "backward_navigation_enabled": true,
+        "revision_tolerant_cursors": true,
+        "around_navigation_enabled": true,
+        "last_page_enabled": true,
+        "watermark_status_url": "/api/images/library/watermarks/status",
+        "indexed_search_enabled": true,
+        "event_facets": {
+          "enabled": false,
+          "url": "/api/images/library/event-facets",
+          "default_limit": 100,
+          "max_limit": 200
+        }
+      },
+      "shuffle_sessions": {
+        "enabled": false,
+        "max_count": 4,
+        "max_records": 250000,
+        "ttl_seconds": 1800,
+        "max_limit": 96,
+        "first_image_enabled": true,
+        "renewal_enabled": true
+      }
+    },
+    "events": {
+      "active_event_name": null,
+      "active_event_id": null,
+      "gallery_event_names": [],
+      "gallery_event_ids": []
+    },
+    "exports": {
+      "download_enabled": true,
+      "browser_print_enabled": true,
+      "share_enabled": false,
+      "email_enabled": false,
+      "server_handoff_enabled": false
+    },
+    "retention": {
+      "public_private_retention_enabled": false
+    },
+    "watermark": {
+      "transient_analysis_enabled": true,
+      "backfill": {
+        "async_preparation_enabled": false,
+        "max_candidate_records": 250000
+      }
+    },
+    "client_policy": {
+      "cache": {
+        "shared_record_limit": 3000,
+        "shared_variant_limit": 3000,
+        "shared_variant_max_bytes": 524288000,
+        "private_record_limit": 40,
+        "private_max_bytes": 524288000,
+        "private_volatile_record_limit": 8,
+        "private_volatile_max_bytes": 268435456,
+        "shared_detail_record_limit": 64,
+        "shared_detail_max_bytes": 16777216,
+        "shared_page_manifest_limit": 64,
+        "shared_page_max_bytes": 8388608,
+        "reference_record_limit": 32,
+        "reference_max_bytes": 268435456
+      },
+      "controls": {
+        "debounce_ms": 900,
+        "reset_debounce_ms": 250,
+        "similarity_minimum_ratio": 0.5,
+        "max_attempts": 2,
+        "reveal_hold_ms": 2000
+      },
+      "transport": {
+        "job_poll_interval_ms": 1000,
+        "job_poll_max_failures": 5,
+        "library_reconnect_initial_ms": 1000,
+        "library_reconnect_max_ms": 30000,
+        "library_change_debounce_ms": 150,
+        "gallery_poll_interval_ms": 5000,
+        "library_poll_interval_ms": 10000,
+        "library_pointer_idle_ms": 2500
+      },
+      "gallery": {
+        "new_image_hold_ms": 20000,
+        "filmstrip_initial_count": 36,
+        "filmstrip_batch_count": 24
+      }
+    },
+    "uploads": {
+      "image_grounded_controls": true,
+      "import_max_bytes": 33554432,
+      "max_decoded_pixels": 32000000,
+      "watermark_analysis_max_bytes": 33554432,
+      "print_ready_max_bytes": 67108864,
+      "image_mime_types": ["image/png", "image/jpeg", "image/webp"],
+      "max_source_pixels": 120000000
+    },
+    "image_editing": {
+      "enabled": true,
+      "transport": "multipart-generation-v1",
+      "model": "Qwen-Image-2.1",
+      "max_references": 10,
+      "model_max_references": 10,
+      "limit_source": "model",
+      "max_image_bytes": 33554432,
+      "max_total_bytes": 67108864,
+      "geometry": "first-reference",
+      "analysis_url": "/api/images/reference-analysis",
+      "prompting": {
+        "strategy": "qwen-image-2.1",
+        "model": "Qwen-Image-2.1",
+        "max_references": 10,
+        "labels": {
+          "1": ["the image"],
+          "2": ["<image1>", "<image2>"],
+          "3": ["<image1>", "<image2>", "<image3>"],
+          "4": ["<image1>", "<image2>", "<image3>", "<image4>"],
+          "5": ["<image1>", "<image2>", "<image3>", "<image4>", "<image5>"],
+          "6": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>"
+          ],
+          "7": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>"
+          ],
+          "8": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>",
+            "<image8>"
+          ],
+          "9": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>",
+            "<image8>",
+            "<image9>"
+          ],
+          "10": [
+            "<image1>",
+            "<image2>",
+            "<image3>",
+            "<image4>",
+            "<image5>",
+            "<image6>",
+            "<image7>",
+            "<image8>",
+            "<image9>",
+            "<image10>"
+          ]
+        },
+        "guidance": [
+          "Lead with the change; name the subject or region to edit.",
+          "With multiple images, use the displayed tags and say what each supplies.",
+          "Specify what must stay unchanged; match the base image's lighting and perspective.",
+          "With one image, use natural wording without tags."
+        ],
+        "guidance_url": "https://github.com/QwenLM/Qwen-Image-2.1/blob/main/prompt_rewrite/prompts/system_prompt_edit.txt",
+        "example_single": "Recolor the jacket in {1} deep green. Keep the face, pose and background.",
+        "example_multiple": "Place the lamp from {2} on the table in {1}. Match the room's light on the lamp. Keep everything else in {1}."
+      }
+    },
+    "variations": {
+      "enabled": true,
+      "default_count": 1,
+      "max_count": 4,
+      "execution": "serial",
+      "status_url": "/api/generation-groups/{group_id}",
+      "retry": "failed-only"
+    },
+    "control_application": {
+      "enabled": true,
+      "text_flag": "apply_to_generation",
+      "edit_flag": "apply_to_edit",
+      "preserves_values": true
+    },
+    "region_editing": {
+      "enabled": true,
+      "protocol": "region-selection-v1",
+      "method": "generated-image-composite",
+      "native_mask": false,
+      "tools": ["rectangle", "brush"],
+      "coordinates": "oriented-base-pixels",
+      "output_geometry": "oriented-base",
+      "provider_fit": "cover-center",
+      "outside_selection": "exact-rgba8",
+      "max_shapes": 64,
+      "max_points": 4096,
+      "max_radius": 2048,
+      "max_feather": 32,
+      "max_edge": 32768,
+      "max_pixels": 32000000
+    }
+  },
+  "small_budgets": {
+    "environment": "local",
+    "experience_profile": "public",
+    "history_source": "shared-library",
+    "gallery_source": "shared-library",
+    "shared_library": {
+      "enabled": true,
+      "polling_enabled": true,
+      "cloud_storage_enabled": false,
+      "store": "local"
+    },
+    "events": {
+      "active_event_name": null,
+      "active_event_id": null,
+      "gallery_event_names": [],
+      "gallery_event_ids": []
+    },
+    "exports": {
+      "download_enabled": true,
+      "browser_print_enabled": true,
+      "share_enabled": false,
+      "email_enabled": false,
+      "server_handoff_enabled": false
+    },
+    "retention": {
+      "public_private_retention_enabled": false
+    },
+    "client_policy": {
+      "cache": {
+        "shared_record_limit": 3,
+        "shared_variant_limit": 4,
+        "shared_variant_max_bytes": 4096,
+        "private_record_limit": 2,
+        "private_max_bytes": 2048,
+        "reference_record_limit": 32,
+        "reference_max_bytes": 268435456
+      },
+      "controls": {
+        "debounce_ms": 20,
+        "reset_debounce_ms": 10,
+        "similarity_minimum_ratio": 0.7,
+        "max_attempts": 2,
+        "reveal_hold_ms": 2000
+      },
+      "transport": {
+        "job_poll_interval_ms": 1000,
+        "job_poll_max_failures": 5,
+        "library_reconnect_initial_ms": 1000,
+        "library_reconnect_max_ms": 30000,
+        "library_change_debounce_ms": 150,
+        "gallery_poll_interval_ms": 5000,
+        "library_poll_interval_ms": 10000,
+        "library_pointer_idle_ms": 25
+      },
+      "gallery": {
+        "new_image_hold_ms": 20000,
+        "filmstrip_initial_count": 36,
+        "filmstrip_batch_count": 24
+      }
+    },
+    "uploads": {
+      "image_grounded_controls": true,
+      "import_max_bytes": 33554432,
+      "max_decoded_pixels": 32000000,
+      "image_mime_types": ["image/png", "image/jpeg", "image/webp"],
+      "watermark_analysis_max_bytes": 33554432,
+      "print_ready_max_bytes": 67108864
+    },
+    "watermark": {
+      "transient_analysis_enabled": true
+    },
+    "control_application": {
+      "enabled": true,
+      "text_flag": "apply_to_generation",
+      "edit_flag": "apply_to_edit",
+      "preserves_values": true
+    },
+    "region_editing": {
+      "enabled": false,
+      "protocol": "region-selection-v1",
+      "method": "generated-image-composite",
+      "native_mask": false,
+      "tools": ["rectangle", "brush"],
+      "coordinates": "oriented-base-pixels",
+      "output_geometry": "oriented-base",
+      "provider_fit": "cover-center",
+      "outside_selection": "exact-rgba8",
+      "max_shapes": 64,
+      "max_points": 4096,
+      "max_radius": 2048,
+      "max_feather": 32,
+      "max_edge": 32768,
+      "max_pixels": 32000000
+    }
+  }
+}

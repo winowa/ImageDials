@@ -1,0 +1,51 @@
+.prompt-split {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 100%;
+  touch-action: none;
+  cursor: col-resize;
+  outline: none;
+}
+
+.prompt-split::before {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 50%;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--border);
+  content: '';
+  transform: translateX(-50%);
+  transition: background-color 140ms ease;
+}
+
+.prompt-split::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 50%;
+  width: 44px;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.prompt-split:hover::before,
+.prompt-split:focus-visible::before {
+  background: var(--accent);
+}
+
+.prompt-split:focus-visible {
+  outline: none;
+}
+
+.prompt-split:focus-visible::before {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prompt-split::before {
+    transition: none;
+  }
+}

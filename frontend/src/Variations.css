@@ -1,0 +1,236 @@
+/* The count is part of the action's name: a change is shown, not swapped. */
+.generate-label {
+  display: inline-block;
+  animation: generate-label-in var(--duration-base) var(--ease) both;
+}
+
+@keyframes generate-label-in {
+  from {
+    opacity: 0;
+    transform: translateY(35%);
+  }
+}
+
+/* Results of one Generate that asked for several images. */
+.variations {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  animation: variations-in var(--duration-base) var(--ease) both;
+}
+
+.variations-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  min-height: 44px;
+}
+
+.variations-status {
+  margin: 0;
+  margin-inline-end: auto;
+  font: var(--type-label);
+  font-size: var(--text-sm);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.variations[data-status='partial'] .variations-status,
+.variations[data-status='failed'] .variations-status,
+.variations[data-status='lost'] .variations-status {
+  color: var(--foreground);
+}
+
+.variations-busy {
+  font: var(--type-caption);
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+
+.variations-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.variations-slots > li {
+  animation: variation-slot-in var(--duration-base) var(--ease) both;
+}
+
+.variations-slots > li:nth-child(2) {
+  animation-delay: 40ms;
+}
+.variations-slots > li:nth-child(3) {
+  animation-delay: 80ms;
+}
+.variations-slots > li:nth-child(4) {
+  animation-delay: 120ms;
+}
+
+.variation-slot {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-quick) var(--ease),
+    box-shadow var(--duration-quick) var(--ease),
+    transform var(--duration-quick) var(--ease);
+}
+
+.variation-slot:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.variation-slot:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.variation-slot:disabled {
+  cursor: default;
+}
+
+.variation-slot:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.variation-slot[aria-pressed='true'] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.variation-media,
+.variation-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.variation-media img {
+  object-fit: cover;
+  animation: variation-media-in var(--duration-reveal, 320ms) var(--ease) both;
+}
+
+.variation-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.variation-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.variation-slot[data-state='active'] {
+  border-color: var(--accent);
+}
+
+.variation-slot[data-state='active'] .variation-dot {
+  background: var(--accent);
+  opacity: 1;
+  animation: variation-pulse 1.1s var(--ease) infinite alternate;
+}
+
+.variation-slot[data-state='failed'] {
+  border-color: var(--danger);
+  color: var(--danger);
+  border-style: dashed;
+}
+
+.variation-slot[data-state='unknown'] {
+  border-style: dashed;
+  opacity: 0.6;
+}
+
+.variation-index {
+  position: absolute;
+  inset-block-end: 3px;
+  inset-inline-start: 3px;
+  min-width: 18px;
+  padding: 0 4px;
+  border-radius: 6px;
+  background: color-mix(in oklch, var(--surface) 85%, transparent);
+  color: var(--foreground);
+  font: var(--type-caption);
+  font-size: var(--text-xs);
+  line-height: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.variations-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  font-size: var(--text-sm);
+  animation: variations-in var(--duration-base) var(--ease) both;
+}
+
+.variations-note > span {
+  flex: 1 1 12rem;
+}
+
+@keyframes variations-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes variation-slot-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes variation-media-in {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes variation-pulse {
+  to {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .generate-label,
+  .variations,
+  .variations-slots > li,
+  .variation-media img,
+  .variations-note,
+  .variation-slot[data-state='active'] .variation-dot {
+    animation: none;
+  }
+  .variation-slot {
+    transition: none;
+  }
+}

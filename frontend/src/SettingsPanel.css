@@ -1,0 +1,111 @@
+.settings-dialog {
+  width: min(42rem, 100%);
+  height: min(43rem, 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.settings-dialog .settings-bar {
+  flex: 0 0 auto;
+}
+.settings-dialog .settings-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.settings-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding-block: 0.25rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.settings-tabs [role='tab'] {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 160ms var(--ease),
+    color 160ms var(--ease);
+}
+.settings-tabs [aria-selected='true'] {
+  color: var(--foreground);
+  background: var(--surface2);
+  border-color: var(--border);
+}
+.settings-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-block: 0.75rem;
+  scrollbar-gutter: stable;
+}
+.settings-content [role='tabpanel']:not([hidden]) {
+  animation: settings-enter 160ms var(--ease);
+}
+.settings-content [hidden] {
+  display: none;
+}
+.settings-route,
+.settings-browsing label {
+  display: grid;
+  gap: 0.5rem;
+  margin-block: 0.5rem 1rem;
+}
+.settings-dialog .settings-actions {
+  flex: 0 0 auto;
+  margin: 0;
+  padding-block: 0.75rem;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+.settings-dialog :is(button, input, select) {
+  min-height: 44px;
+}
+.settings-dialog button {
+  min-width: 44px;
+}
+@keyframes settings-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-height: 480px) {
+  .settings-dialog {
+    height: 100%;
+  }
+  .settings-tabs {
+    padding-block: 0;
+    gap: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .settings-content [role='tabpanel']:not([hidden]) {
+    animation: none;
+  }
+  .settings-tabs [role='tab'] {
+    transition: none;
+  }
+}
+.settings-browsing .settings-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+}
+.settings-checkbox input {
+  width: 1.25rem;
+}

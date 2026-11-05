@@ -1,0 +1,97 @@
+{
+  "fixture_kind": "Native mock expansion transport; actual model type diversity requires real-provider proof.",
+  "expansion": {
+    "request": {
+      "control": {
+        "id": "cloth",
+        "kind": "multi-select",
+        "label": "Cloth detail",
+        "description": "Details of the fabric.",
+        "value": ["woven"],
+        "options": {
+          "woven": {
+            "value": "Woven",
+            "description": "Interlaced fibers"
+          }
+        },
+        "origin": "generated",
+        "independent_extension": {
+          "zero": 0,
+          "false": false
+        }
+      },
+      "categories": [
+        {
+          "id": "color",
+          "kind": "multi-select",
+          "label": "Color",
+          "description": "Palette combinations."
+        },
+        {
+          "id": "cloth",
+          "kind": "multi-select",
+          "label": "Cloth detail",
+          "description": "Details of the fabric."
+        }
+      ]
+    },
+    "response": {
+      "id": "cloth",
+      "kind": "multi-select",
+      "label": "Cloth detail",
+      "description": "Details of the fabric.",
+      "value": ["woven"],
+      "options": {
+        "woven": {
+          "value": "Woven",
+          "description": "Interlaced fibers"
+        },
+        "mock-additional-choice": {
+          "value": "Additional variation",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-2": {
+          "value": "Additional variation 2",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-3": {
+          "value": "Additional variation 3",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-4": {
+          "value": "Additional variation 4",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-5": {
+          "value": "Additional variation 5",
+          "description": "Mock provider option"
+        }
+      },
+      "origin": "generated",
+      "independent_extension": {
+        "zero": 0,
+        "false": false
+      }
+    }
+  },
+  "dynamic_request": {
+    "prompt": "An etched glass teapot",
+    "generation_mode": "standard",
+    "controls": [],
+    "categories": [
+      {
+        "id": "color",
+        "kind": "multi-select",
+        "label": "Color",
+        "description": "Palette combinations."
+      },
+      {
+        "id": "cloth",
+        "kind": "multi-select",
+        "label": "Cloth detail",
+        "description": "Details of the fabric."
+      }
+    ],
+    "prompt_history": []
+  }
+}

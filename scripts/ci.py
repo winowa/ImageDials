@@ -81,10 +81,16 @@ def main():
         subprocess.run(command, cwd=root, check=True)
     # Build output is ignored by Git, so inspect its bytes separately.
     import check_privacy
+    from build_artifacts import is_reviewed_binary
 
     rules = check_privacy.load_rules(root / ".local/publication-denylist.json")
     for path in (root / "frontend/dist").rglob("*"):
-        if path.is_file() and check_privacy.content_findings(path.read_bytes(), rules):
+        if not path.is_file():
+            continue
+        content = path.read_bytes()
+        if not is_reviewed_binary(
+            root, path, content
+        ) and check_privacy.content_findings(content, rules):
             raise SystemExit("Generated frontend output contains blocked content.")
     print("\nAll CI gates passed.")
 

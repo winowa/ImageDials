@@ -1,0 +1,853 @@
+{
+  "fixture_kind": "Independent actual mock-provider browser-private generation; no real inference claim.",
+  "capabilities": {
+    "environment": "local",
+    "experience_profile": "public",
+    "history_source": "browser-private",
+    "gallery_source": "browser-private",
+    "shared_library": {
+      "enabled": false,
+      "polling_enabled": false,
+      "cloud_storage_enabled": false,
+      "store": "local"
+    },
+    "events": {
+      "active_event_name": null,
+      "active_event_id": null,
+      "gallery_event_names": [],
+      "gallery_event_ids": []
+    },
+    "exports": {
+      "download_enabled": true,
+      "browser_print_enabled": true,
+      "share_enabled": false,
+      "email_enabled": false,
+      "server_handoff_enabled": false
+    },
+    "retention": {
+      "public_private_retention_enabled": false
+    },
+    "watermark": {
+      "transient_analysis_enabled": true
+    },
+    "client_policy": {
+      "cache": {
+        "shared_record_limit": 3000,
+        "shared_variant_limit": 3000,
+        "shared_variant_max_bytes": 524288000,
+        "private_record_limit": 40,
+        "private_max_bytes": 524288000
+      },
+      "controls": {
+        "debounce_ms": 900,
+        "reset_debounce_ms": 250,
+        "similarity_minimum_ratio": 0.7,
+        "max_attempts": 2,
+        "reveal_hold_ms": 2000
+      },
+      "transport": {
+        "job_poll_interval_ms": 1000,
+        "job_poll_max_failures": 5,
+        "library_reconnect_initial_ms": 1000,
+        "library_reconnect_max_ms": 30000,
+        "library_change_debounce_ms": 150,
+        "gallery_poll_interval_ms": 5000,
+        "library_poll_interval_ms": 10000,
+        "library_pointer_idle_ms": 2500
+      },
+      "gallery": {
+        "new_image_hold_ms": 20000,
+        "filmstrip_initial_count": 36,
+        "filmstrip_batch_count": 24
+      }
+    },
+    "uploads": {
+      "import_max_bytes": 33554432,
+      "max_decoded_pixels": 32000000,
+      "watermark_analysis_max_bytes": 33554432,
+      "print_ready_max_bytes": 67108864,
+      "image_mime_types": ["image/png", "image/jpeg", "image/webp"]
+    }
+  },
+  "accepted": {
+    "generation_job_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+    "enrichment": {
+      "status": "pending",
+      "transport": "server-sent-events"
+    }
+  },
+  "complete_poll": {
+    "generation_job_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+    "events": [
+      {
+        "event": "progress",
+        "data": {
+          "message": "queued",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": null,
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "composing",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": null,
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "rendering",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "image-ready",
+        "data": {
+          "id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+          "title": "An origami finch on a stone plinth",
+          "alt_text": "",
+          "accessibility": {},
+          "prompt": "An origami finch on a stone plinth",
+          "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "mode": "image",
+          "aspect": "3:2",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": "2026-11-01T06:37:47.903540+00:00",
+          "image_url": "/api/generation-jobs/cd930852-a159-4585-a574-5f20b15a3fe9/preview",
+          "diagnostics": {
+            "seed": 173191859
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "prompt": "Independent fixture request",
+            "response": {
+              "extension": [false, 0]
+            },
+            "raw_response": "{}"
+          },
+          "requested_dimensions": {
+            "width": 300,
+            "height": 200
+          },
+          "must_have_terms": ["amber"],
+          "event_id": null,
+          "visibility": "private",
+          "width": 300,
+          "height": 200,
+          "original_prompt": "An origami finch on a stone plinth",
+          "prompt_creation_request": null,
+          "original_selected_controls": [
+            {
+              "id": "surface",
+              "kind": "single-select",
+              "label": "Surface",
+              "options": {
+                "smooth": {
+                  "value": "smooth glass",
+                  "description": "Even surface"
+                }
+              },
+              "value": "smooth",
+              "extension": {
+                "retained": true
+              }
+            },
+            {
+              "id": "angle",
+              "kind": "slider",
+              "label": "Head angle",
+              "min": 0,
+              "max": 90,
+              "step": 1,
+              "value": 0
+            },
+            {
+              "id": "pattern",
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "id": "notes",
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "id": "future",
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              },
+              "vendor": "independent-fixture"
+            }
+          ],
+          "dimensions": "300x200",
+          "actual_dimensions": {
+            "width": 300,
+            "height": 200
+          },
+          "generation_mode": "standard",
+          "image_data_url": null,
+          "generation_job_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+          "enrichment": {
+            "status": "running"
+          }
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "enriching",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "saving",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "complete",
+        "data": {
+          "id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+          "title": "An origami finch on a stone plinth",
+          "alt_text": "Mock image: An origami finch on a stone plinth",
+          "accessibility": {
+            "alt_text": "Mock image: An origami finch on a stone plinth",
+            "prompt_source": "final_prompt",
+            "accessibility_features": ["alt_text"],
+            "image_url": "/api/images/cd930852-a159-4585-a574-5f20b15a3fe9/content"
+          },
+          "prompt": "An origami finch on a stone plinth",
+          "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "mode": "image",
+          "aspect": "3:2",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": 1793515067.90354,
+          "image_url": "/api/images/cd930852-a159-4585-a574-5f20b15a3fe9/content",
+          "diagnostics": {
+            "seed": 173191859
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "prompt": "Independent fixture request",
+            "response": {
+              "extension": [false, 0]
+            },
+            "raw_response": "{}"
+          },
+          "requested_dimensions": {
+            "width": 300,
+            "height": 200
+          },
+          "must_have_terms": ["amber"],
+          "event_id": null,
+          "visibility": "private",
+          "enrichment_metadata": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "prompt_source": "final_prompt"
+          },
+          "width": 300,
+          "height": 200,
+          "sha256": "2153d7f4a7cfdd235c1b1dde25ead20a852519a5ed14f5b990a14e9f20664a9f",
+          "image_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+          "storage_id": "local-0",
+          "storage_type": "local",
+          "storage_label": "Image library",
+          "filename": "cd930852-a159-4585-a574-5f20b15a3fe9.png",
+          "original_prompt": "An origami finch on a stone plinth",
+          "prompt_creation_request": null,
+          "dimensions": "300x200",
+          "created_at_iso": 1793515067903539968,
+          "print_watermark": null,
+          "print_ready": null,
+          "print_watermark_key": null,
+          "print_ready_url": null,
+          "generation_mode": "standard",
+          "original_selected_controls": [
+            {
+              "id": "surface",
+              "kind": "single-select",
+              "label": "Surface",
+              "options": {
+                "smooth": {
+                  "value": "smooth glass",
+                  "description": "Even surface"
+                }
+              },
+              "value": "smooth",
+              "extension": {
+                "retained": true
+              }
+            },
+            {
+              "id": "angle",
+              "kind": "slider",
+              "label": "Head angle",
+              "min": 0,
+              "max": 90,
+              "step": 1,
+              "value": 0
+            },
+            {
+              "id": "pattern",
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "id": "notes",
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "id": "future",
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              },
+              "vendor": "independent-fixture"
+            }
+          ],
+          "actual_dimensions": {
+            "width": 300,
+            "height": 200
+          },
+          "generation_job_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+          "enrichment": {
+            "status": "complete"
+          }
+        }
+      }
+    ],
+    "latest_event": {
+      "event": "complete",
+      "data": {
+        "id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+        "title": "An origami finch on a stone plinth",
+        "alt_text": "Mock image: An origami finch on a stone plinth",
+        "accessibility": {
+          "alt_text": "Mock image: An origami finch on a stone plinth",
+          "prompt_source": "final_prompt",
+          "accessibility_features": ["alt_text"],
+          "image_url": "/api/images/cd930852-a159-4585-a574-5f20b15a3fe9/content"
+        },
+        "prompt": "An origami finch on a stone plinth",
+        "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+        "mode": "image",
+        "aspect": "3:2",
+        "categories": [],
+        "provider": "mock",
+        "model": "mock-geometric-v1",
+        "created_at": 1793515067.90354,
+        "image_url": "/api/images/cd930852-a159-4585-a574-5f20b15a3fe9/content",
+        "diagnostics": {
+          "seed": 173191859
+        },
+        "composition": {
+          "provider": "mock",
+          "model": "mock-composer-v1",
+          "keyword_extraction": {
+            "status": "not-required",
+            "keywords": []
+          }
+        },
+        "selected_controls": [
+          {
+            "kind": "single-select",
+            "label": "Surface",
+            "value": "smooth glass"
+          },
+          {
+            "kind": "slider",
+            "label": "Head angle",
+            "value": 0
+          },
+          {
+            "kind": "binary",
+            "label": "Etched pattern",
+            "value": false
+          },
+          {
+            "kind": "text-input",
+            "label": "Stand details",
+            "value": "Rounded edges"
+          },
+          {
+            "kind": "future-control",
+            "label": "Future detail",
+            "value": {
+              "nested": 0
+            }
+          }
+        ],
+        "resolved_controls": [
+          {
+            "kind": "single-select",
+            "label": "Surface",
+            "value": "smooth glass"
+          },
+          {
+            "kind": "slider",
+            "label": "Head angle",
+            "value": 0
+          },
+          {
+            "kind": "binary",
+            "label": "Etched pattern",
+            "value": false
+          },
+          {
+            "kind": "text-input",
+            "label": "Stand details",
+            "value": "Rounded edges"
+          },
+          {
+            "kind": "future-control",
+            "label": "Future detail",
+            "value": {
+              "nested": 0
+            }
+          }
+        ],
+        "dynamic_controls_metadata": {
+          "prompt": "Independent fixture request",
+          "response": {
+            "extension": [false, 0]
+          },
+          "raw_response": "{}"
+        },
+        "requested_dimensions": {
+          "width": 300,
+          "height": 200
+        },
+        "must_have_terms": ["amber"],
+        "event_id": null,
+        "visibility": "private",
+        "enrichment_metadata": {
+          "provider": "mock",
+          "model": "mock-composer-v1",
+          "prompt_source": "final_prompt"
+        },
+        "width": 300,
+        "height": 200,
+        "sha256": "2153d7f4a7cfdd235c1b1dde25ead20a852519a5ed14f5b990a14e9f20664a9f",
+        "image_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+        "storage_id": "local-0",
+        "storage_type": "local",
+        "storage_label": "Image library",
+        "filename": "cd930852-a159-4585-a574-5f20b15a3fe9.png",
+        "original_prompt": "An origami finch on a stone plinth",
+        "prompt_creation_request": null,
+        "dimensions": "300x200",
+        "created_at_iso": 1793515067903539968,
+        "print_watermark": null,
+        "print_ready": null,
+        "print_watermark_key": null,
+        "print_ready_url": null,
+        "generation_mode": "standard",
+        "original_selected_controls": [
+          {
+            "id": "surface",
+            "kind": "single-select",
+            "label": "Surface",
+            "options": {
+              "smooth": {
+                "value": "smooth glass",
+                "description": "Even surface"
+              }
+            },
+            "value": "smooth",
+            "extension": {
+              "retained": true
+            }
+          },
+          {
+            "id": "angle",
+            "kind": "slider",
+            "label": "Head angle",
+            "min": 0,
+            "max": 90,
+            "step": 1,
+            "value": 0
+          },
+          {
+            "id": "pattern",
+            "kind": "binary",
+            "label": "Etched pattern",
+            "value": false
+          },
+          {
+            "id": "notes",
+            "kind": "text-input",
+            "label": "Stand details",
+            "value": "Rounded edges"
+          },
+          {
+            "id": "future",
+            "kind": "future-control",
+            "label": "Future detail",
+            "value": {
+              "nested": 0
+            },
+            "vendor": "independent-fixture"
+          }
+        ],
+        "actual_dimensions": {
+          "width": 300,
+          "height": 200
+        },
+        "generation_job_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+        "enrichment": {
+          "status": "complete"
+        }
+      }
+    },
+    "status": "complete",
+    "result": {
+      "id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+      "title": "An origami finch on a stone plinth",
+      "alt_text": "Mock image: An origami finch on a stone plinth",
+      "accessibility": {
+        "alt_text": "Mock image: An origami finch on a stone plinth",
+        "prompt_source": "final_prompt",
+        "accessibility_features": ["alt_text"],
+        "image_url": "/api/images/cd930852-a159-4585-a574-5f20b15a3fe9/content"
+      },
+      "prompt": "An origami finch on a stone plinth",
+      "final_prompt": "An origami finch on a stone plinth. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+      "mode": "image",
+      "aspect": "3:2",
+      "categories": [],
+      "provider": "mock",
+      "model": "mock-geometric-v1",
+      "created_at": 1793515067.90354,
+      "image_url": "/api/images/cd930852-a159-4585-a574-5f20b15a3fe9/content",
+      "diagnostics": {
+        "seed": 173191859
+      },
+      "composition": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "keyword_extraction": {
+          "status": "not-required",
+          "keywords": []
+        }
+      },
+      "selected_controls": [
+        {
+          "kind": "single-select",
+          "label": "Surface",
+          "value": "smooth glass"
+        },
+        {
+          "kind": "slider",
+          "label": "Head angle",
+          "value": 0
+        },
+        {
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          }
+        }
+      ],
+      "resolved_controls": [
+        {
+          "kind": "single-select",
+          "label": "Surface",
+          "value": "smooth glass"
+        },
+        {
+          "kind": "slider",
+          "label": "Head angle",
+          "value": 0
+        },
+        {
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          }
+        }
+      ],
+      "dynamic_controls_metadata": {
+        "prompt": "Independent fixture request",
+        "response": {
+          "extension": [false, 0]
+        },
+        "raw_response": "{}"
+      },
+      "requested_dimensions": {
+        "width": 300,
+        "height": 200
+      },
+      "must_have_terms": ["amber"],
+      "event_id": null,
+      "visibility": "private",
+      "enrichment_metadata": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "prompt_source": "final_prompt"
+      },
+      "width": 300,
+      "height": 200,
+      "sha256": "2153d7f4a7cfdd235c1b1dde25ead20a852519a5ed14f5b990a14e9f20664a9f",
+      "image_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+      "storage_id": "local-0",
+      "storage_type": "local",
+      "storage_label": "Image library",
+      "filename": "cd930852-a159-4585-a574-5f20b15a3fe9.png",
+      "original_prompt": "An origami finch on a stone plinth",
+      "prompt_creation_request": null,
+      "dimensions": "300x200",
+      "created_at_iso": 1793515067903539968,
+      "print_watermark": null,
+      "print_ready": null,
+      "print_watermark_key": null,
+      "print_ready_url": null,
+      "generation_mode": "standard",
+      "original_selected_controls": [
+        {
+          "id": "surface",
+          "kind": "single-select",
+          "label": "Surface",
+          "options": {
+            "smooth": {
+              "value": "smooth glass",
+              "description": "Even surface"
+            }
+          },
+          "value": "smooth",
+          "extension": {
+            "retained": true
+          }
+        },
+        {
+          "id": "angle",
+          "kind": "slider",
+          "label": "Head angle",
+          "min": 0,
+          "max": 90,
+          "step": 1,
+          "value": 0
+        },
+        {
+          "id": "pattern",
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "id": "notes",
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "id": "future",
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          },
+          "vendor": "independent-fixture"
+        }
+      ],
+      "actual_dimensions": {
+        "width": 300,
+        "height": 200
+      },
+      "generation_job_id": "cd930852-a159-4585-a574-5f20b15a3fe9",
+      "enrichment": {
+        "status": "complete"
+      }
+    }
+  },
+  "shared_file_error": {
+    "status": 403,
+    "detail": "Shared library is disabled"
+  }
+}

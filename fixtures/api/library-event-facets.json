@@ -1,0 +1,250 @@
+{
+  "description": "Native event-facet API captures over synthetic metadata only. No model inference.",
+  "source_records": [
+    {
+      "id": "one",
+      "event_id": "Alpha",
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "two",
+      "event_id": "Alpha",
+      "width": 200,
+      "height": 300
+    },
+    {
+      "id": "three",
+      "event_id": "Beta",
+      "width": 200,
+      "height": 200
+    },
+    {
+      "id": "four",
+      "event_id": "Éclair"
+    },
+    {
+      "id": "five",
+      "event_id": "Éclair",
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "six",
+      "event_id": "100%_real",
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "seven",
+      "event_id": null,
+      "width": 200,
+      "height": 200
+    },
+    {
+      "id": "eight",
+      "event_id": " Alpha "
+    },
+    {
+      "id": "private",
+      "event_id": "Alpha",
+      "visibility": "private"
+    }
+  ],
+  "first": {
+    "request": {
+      "limit": 2
+    },
+    "response": {
+      "configured": false,
+      "count": 2,
+      "events": [
+        {
+          "count": 1,
+          "name": "100%_real",
+          "orientation_counts": {
+            "landscape": 1,
+            "portrait": 0,
+            "square": 0,
+            "unknown": 0
+          }
+        },
+        {
+          "count": 2,
+          "name": "Alpha",
+          "orientation_counts": {
+            "landscape": 1,
+            "portrait": 1,
+            "square": 0,
+            "unknown": 0
+          }
+        }
+      ],
+      "next_cursor": "eyJhZnRlciI6IkFscGhhIiwicXVlcnkiOiI4MjFiODE3MWFlMjgwMDgzZDZiMjlmMDg5ODExN2E1OWUyN2UzNmQzZDQzM2E4OWJkOWVhZWI5ZDdhNThiYTUzIiwidmVyc2lvbiI6MX0",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 1,
+        "square": 2,
+        "unknown": 2
+      },
+      "revision": 1,
+      "total_images": 8
+    },
+    "etag": "\"67106c198183ac68f6d388669d0c27e26897c7a4c84ec593a4b1045aac35be6c\""
+  },
+  "accent_search": {
+    "request": {
+      "q": "éCL",
+      "limit": 2
+    },
+    "response": {
+      "configured": false,
+      "count": 2,
+      "events": [
+        {
+          "count": 1,
+          "name": "Éclair",
+          "orientation_counts": {
+            "landscape": 1,
+            "portrait": 0,
+            "square": 0,
+            "unknown": 0
+          }
+        },
+        {
+          "count": 1,
+          "name": "Éclair",
+          "orientation_counts": {
+            "landscape": 0,
+            "portrait": 0,
+            "square": 0,
+            "unknown": 1
+          }
+        }
+      ],
+      "next_cursor": null,
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 1,
+        "square": 2,
+        "unknown": 2
+      },
+      "revision": 1,
+      "total_images": 8
+    },
+    "etag": "\"fda3f508aeccef8069f5df6eb497d5539a78e5ec68d849277851b24c545bbd5e\""
+  },
+  "literal_search": {
+    "request": {
+      "q": "%_",
+      "limit": 2
+    },
+    "response": {
+      "configured": false,
+      "count": 1,
+      "events": [
+        {
+          "count": 1,
+          "name": "100%_real",
+          "orientation_counts": {
+            "landscape": 1,
+            "portrait": 0,
+            "square": 0,
+            "unknown": 0
+          }
+        }
+      ],
+      "next_cursor": null,
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 1,
+        "square": 2,
+        "unknown": 2
+      },
+      "revision": 1,
+      "total_images": 8
+    },
+    "etag": "\"470a0f4736ce7ade0a5ea8fc54c2f9e88774ae80bfa104a13d58820433cc5ec3\""
+  },
+  "next": {
+    "request": {
+      "limit": 2,
+      "cursor": "eyJhZnRlciI6IkFscGhhIiwicXVlcnkiOiI4MjFiODE3MWFlMjgwMDgzZDZiMjlmMDg5ODExN2E1OWUyN2UzNmQzZDQzM2E4OWJkOWVhZWI5ZDdhNThiYTUzIiwidmVyc2lvbiI6MX0"
+    },
+    "response": {
+      "configured": false,
+      "count": 2,
+      "events": [
+        {
+          "count": 1,
+          "name": "Beta",
+          "orientation_counts": {
+            "landscape": 0,
+            "portrait": 0,
+            "square": 1,
+            "unknown": 0
+          }
+        },
+        {
+          "count": 1,
+          "name": "Éclair",
+          "orientation_counts": {
+            "landscape": 1,
+            "portrait": 0,
+            "square": 0,
+            "unknown": 0
+          }
+        }
+      ],
+      "next_cursor": "eyJhZnRlciI6IkXMgWNsYWlyIiwicXVlcnkiOiI4MjFiODE3MWFlMjgwMDgzZDZiMjlmMDg5ODExN2E1OWUyN2UzNmQzZDQzM2E4OWJkOWVhZWI5ZDdhNThiYTUzIiwidmVyc2lvbiI6MX0",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 1,
+        "square": 2,
+        "unknown": 2
+      },
+      "revision": 1,
+      "total_images": 8
+    },
+    "etag": "\"815a11828ca06857f49c4c2c90a5e6d2f7c83aa34e36fe2500c24ecb511a42de\""
+  },
+  "configured": {
+    "events": ["Alpha", "Absent"],
+    "response": {
+      "configured": true,
+      "count": 2,
+      "events": [
+        {
+          "count": 0,
+          "name": "Absent",
+          "orientation_counts": {
+            "landscape": 0,
+            "portrait": 0,
+            "square": 0,
+            "unknown": 0
+          }
+        },
+        {
+          "count": 2,
+          "name": "Alpha",
+          "orientation_counts": {
+            "landscape": 1,
+            "portrait": 1,
+            "square": 0,
+            "unknown": 0
+          }
+        }
+      ],
+      "next_cursor": null,
+      "orientation_counts": {
+        "landscape": 1,
+        "portrait": 1,
+        "square": 0,
+        "unknown": 0
+      },
+      "revision": 1,
+      "total_images": 2
+    },
+    "etag": "\"410f439a52d01a268a22d19c3252fd825fe049d6fe4f44a0c286dc654f1470ab\""
+  }
+}

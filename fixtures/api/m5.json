@@ -1,0 +1,1023 @@
+{
+  "fixture_kind": "Independent mock-provider event fixtures; real streaming evidence is separate.",
+  "complete_poll": {
+    "generation_job_id": "33333333-3333-4333-8333-333333333333",
+    "events": [
+      {
+        "event": "progress",
+        "data": {
+          "message": "queued",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": null,
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "composing",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": null,
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "rendering",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "image-ready",
+        "data": {
+          "id": "33333333-3333-4333-8333-333333333333",
+          "title": "An amber glass bird on a small wooden stand",
+          "alt_text": "",
+          "accessibility": {},
+          "prompt": "An amber glass bird on a small wooden stand",
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "mode": "image",
+          "aspect": "2:3",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": "2026-11-01T04:44:40.919077+00:00",
+          "image_url": "/api/generation-jobs/33333333-3333-4333-8333-333333333333/preview",
+          "diagnostics": {
+            "seed": 2397297259
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "prompt": "Independent fixture request",
+            "response": {
+              "extension": [false, 0]
+            },
+            "raw_response": "{}"
+          },
+          "requested_dimensions": {
+            "width": 768,
+            "height": 1152
+          },
+          "must_have_terms": ["amber"],
+          "event_id": null,
+          "width": 768,
+          "height": 1152,
+          "original_prompt": "An amber glass bird on a small wooden stand",
+          "prompt_creation_request": null,
+          "original_selected_controls": [
+            {
+              "id": "surface",
+              "kind": "single-select",
+              "label": "Surface",
+              "options": {
+                "smooth": {
+                  "value": "smooth glass",
+                  "description": "Even surface"
+                }
+              },
+              "value": "smooth",
+              "extension": {
+                "retained": true
+              }
+            },
+            {
+              "id": "angle",
+              "kind": "slider",
+              "label": "Head angle",
+              "min": 0,
+              "max": 90,
+              "step": 1,
+              "value": 0
+            },
+            {
+              "id": "pattern",
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "id": "notes",
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "id": "future",
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              },
+              "vendor": "independent-fixture"
+            }
+          ],
+          "dimensions": "768x1152",
+          "actual_dimensions": {
+            "width": 768,
+            "height": 1152
+          },
+          "generation_mode": "standard",
+          "image_data_url": null,
+          "generation_job_id": "33333333-3333-4333-8333-333333333333",
+          "enrichment": {
+            "status": "running"
+          }
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "enriching",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "saving",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "complete",
+        "data": {
+          "id": "33333333-3333-4333-8333-333333333333",
+          "title": "An amber glass bird on a small wooden stand",
+          "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+          "accessibility": {
+            "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+            "prompt_source": "final_prompt",
+            "accessibility_features": ["alt_text"],
+            "image_url": "/api/images/33333333-3333-4333-8333-333333333333/content"
+          },
+          "prompt": "An amber glass bird on a small wooden stand",
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "mode": "image",
+          "aspect": "2:3",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": 1793508280.919077,
+          "image_url": "/api/images/33333333-3333-4333-8333-333333333333/content",
+          "diagnostics": {
+            "seed": 2397297259
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "prompt": "Independent fixture request",
+            "response": {
+              "extension": [false, 0]
+            },
+            "raw_response": "{}"
+          },
+          "requested_dimensions": {
+            "width": 768,
+            "height": 1152
+          },
+          "must_have_terms": ["amber"],
+          "event_id": null,
+          "enrichment_metadata": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "prompt_source": "final_prompt"
+          },
+          "width": 768,
+          "height": 1152,
+          "sha256": "c43ae9efbba03d0089ced363cedf0dc01426714872543a70a9704dfe551640e5",
+          "image_id": "33333333-3333-4333-8333-333333333333",
+          "storage_id": "local-0",
+          "storage_type": "local",
+          "storage_label": "Image library",
+          "filename": "33333333-3333-4333-8333-333333333333.png",
+          "visibility": "shared",
+          "original_prompt": "An amber glass bird on a small wooden stand",
+          "prompt_creation_request": null,
+          "dimensions": "768x1152",
+          "created_at_iso": 1793508280919076864,
+          "print_watermark": null,
+          "print_ready": null,
+          "print_watermark_key": null,
+          "print_ready_url": null,
+          "generation_mode": "standard",
+          "original_selected_controls": [
+            {
+              "id": "surface",
+              "kind": "single-select",
+              "label": "Surface",
+              "options": {
+                "smooth": {
+                  "value": "smooth glass",
+                  "description": "Even surface"
+                }
+              },
+              "value": "smooth",
+              "extension": {
+                "retained": true
+              }
+            },
+            {
+              "id": "angle",
+              "kind": "slider",
+              "label": "Head angle",
+              "min": 0,
+              "max": 90,
+              "step": 1,
+              "value": 0
+            },
+            {
+              "id": "pattern",
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "id": "notes",
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "id": "future",
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              },
+              "vendor": "independent-fixture"
+            }
+          ],
+          "actual_dimensions": {
+            "width": 768,
+            "height": 1152
+          },
+          "generation_job_id": "33333333-3333-4333-8333-333333333333",
+          "enrichment": {
+            "status": "complete"
+          }
+        }
+      }
+    ],
+    "latest_event": {
+      "event": "complete",
+      "data": {
+        "id": "33333333-3333-4333-8333-333333333333",
+        "title": "An amber glass bird on a small wooden stand",
+        "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+        "accessibility": {
+          "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+          "prompt_source": "final_prompt",
+          "accessibility_features": ["alt_text"],
+          "image_url": "/api/images/33333333-3333-4333-8333-333333333333/content"
+        },
+        "prompt": "An amber glass bird on a small wooden stand",
+        "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+        "mode": "image",
+        "aspect": "2:3",
+        "categories": [],
+        "provider": "mock",
+        "model": "mock-geometric-v1",
+        "created_at": 1793508280.919077,
+        "image_url": "/api/images/33333333-3333-4333-8333-333333333333/content",
+        "diagnostics": {
+          "seed": 2397297259
+        },
+        "composition": {
+          "provider": "mock",
+          "model": "mock-composer-v1",
+          "keyword_extraction": {
+            "status": "not-required",
+            "keywords": []
+          }
+        },
+        "selected_controls": [
+          {
+            "kind": "single-select",
+            "label": "Surface",
+            "value": "smooth glass"
+          },
+          {
+            "kind": "slider",
+            "label": "Head angle",
+            "value": 0
+          },
+          {
+            "kind": "binary",
+            "label": "Etched pattern",
+            "value": false
+          },
+          {
+            "kind": "text-input",
+            "label": "Stand details",
+            "value": "Rounded edges"
+          },
+          {
+            "kind": "future-control",
+            "label": "Future detail",
+            "value": {
+              "nested": 0
+            }
+          }
+        ],
+        "resolved_controls": [
+          {
+            "kind": "single-select",
+            "label": "Surface",
+            "value": "smooth glass"
+          },
+          {
+            "kind": "slider",
+            "label": "Head angle",
+            "value": 0
+          },
+          {
+            "kind": "binary",
+            "label": "Etched pattern",
+            "value": false
+          },
+          {
+            "kind": "text-input",
+            "label": "Stand details",
+            "value": "Rounded edges"
+          },
+          {
+            "kind": "future-control",
+            "label": "Future detail",
+            "value": {
+              "nested": 0
+            }
+          }
+        ],
+        "dynamic_controls_metadata": {
+          "prompt": "Independent fixture request",
+          "response": {
+            "extension": [false, 0]
+          },
+          "raw_response": "{}"
+        },
+        "requested_dimensions": {
+          "width": 768,
+          "height": 1152
+        },
+        "must_have_terms": ["amber"],
+        "event_id": null,
+        "enrichment_metadata": {
+          "provider": "mock",
+          "model": "mock-composer-v1",
+          "prompt_source": "final_prompt"
+        },
+        "width": 768,
+        "height": 1152,
+        "sha256": "c43ae9efbba03d0089ced363cedf0dc01426714872543a70a9704dfe551640e5",
+        "image_id": "33333333-3333-4333-8333-333333333333",
+        "storage_id": "local-0",
+        "storage_type": "local",
+        "storage_label": "Image library",
+        "filename": "33333333-3333-4333-8333-333333333333.png",
+        "visibility": "shared",
+        "original_prompt": "An amber glass bird on a small wooden stand",
+        "prompt_creation_request": null,
+        "dimensions": "768x1152",
+        "created_at_iso": 1793508280919076864,
+        "print_watermark": null,
+        "print_ready": null,
+        "print_watermark_key": null,
+        "print_ready_url": null,
+        "generation_mode": "standard",
+        "original_selected_controls": [
+          {
+            "id": "surface",
+            "kind": "single-select",
+            "label": "Surface",
+            "options": {
+              "smooth": {
+                "value": "smooth glass",
+                "description": "Even surface"
+              }
+            },
+            "value": "smooth",
+            "extension": {
+              "retained": true
+            }
+          },
+          {
+            "id": "angle",
+            "kind": "slider",
+            "label": "Head angle",
+            "min": 0,
+            "max": 90,
+            "step": 1,
+            "value": 0
+          },
+          {
+            "id": "pattern",
+            "kind": "binary",
+            "label": "Etched pattern",
+            "value": false
+          },
+          {
+            "id": "notes",
+            "kind": "text-input",
+            "label": "Stand details",
+            "value": "Rounded edges"
+          },
+          {
+            "id": "future",
+            "kind": "future-control",
+            "label": "Future detail",
+            "value": {
+              "nested": 0
+            },
+            "vendor": "independent-fixture"
+          }
+        ],
+        "actual_dimensions": {
+          "width": 768,
+          "height": 1152
+        },
+        "generation_job_id": "33333333-3333-4333-8333-333333333333",
+        "enrichment": {
+          "status": "complete"
+        }
+      }
+    },
+    "status": "complete",
+    "result": {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "title": "An amber glass bird on a small wooden stand",
+      "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+      "accessibility": {
+        "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+        "prompt_source": "final_prompt",
+        "accessibility_features": ["alt_text"],
+        "image_url": "/api/images/33333333-3333-4333-8333-333333333333/content"
+      },
+      "prompt": "An amber glass bird on a small wooden stand",
+      "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+      "mode": "image",
+      "aspect": "2:3",
+      "categories": [],
+      "provider": "mock",
+      "model": "mock-geometric-v1",
+      "created_at": 1793508280.919077,
+      "image_url": "/api/images/33333333-3333-4333-8333-333333333333/content",
+      "diagnostics": {
+        "seed": 2397297259
+      },
+      "composition": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "keyword_extraction": {
+          "status": "not-required",
+          "keywords": []
+        }
+      },
+      "selected_controls": [
+        {
+          "kind": "single-select",
+          "label": "Surface",
+          "value": "smooth glass"
+        },
+        {
+          "kind": "slider",
+          "label": "Head angle",
+          "value": 0
+        },
+        {
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          }
+        }
+      ],
+      "resolved_controls": [
+        {
+          "kind": "single-select",
+          "label": "Surface",
+          "value": "smooth glass"
+        },
+        {
+          "kind": "slider",
+          "label": "Head angle",
+          "value": 0
+        },
+        {
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          }
+        }
+      ],
+      "dynamic_controls_metadata": {
+        "prompt": "Independent fixture request",
+        "response": {
+          "extension": [false, 0]
+        },
+        "raw_response": "{}"
+      },
+      "requested_dimensions": {
+        "width": 768,
+        "height": 1152
+      },
+      "must_have_terms": ["amber"],
+      "event_id": null,
+      "enrichment_metadata": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "prompt_source": "final_prompt"
+      },
+      "width": 768,
+      "height": 1152,
+      "sha256": "c43ae9efbba03d0089ced363cedf0dc01426714872543a70a9704dfe551640e5",
+      "image_id": "33333333-3333-4333-8333-333333333333",
+      "storage_id": "local-0",
+      "storage_type": "local",
+      "storage_label": "Image library",
+      "filename": "33333333-3333-4333-8333-333333333333.png",
+      "visibility": "shared",
+      "original_prompt": "An amber glass bird on a small wooden stand",
+      "prompt_creation_request": null,
+      "dimensions": "768x1152",
+      "created_at_iso": 1793508280919076864,
+      "print_watermark": null,
+      "print_ready": null,
+      "print_watermark_key": null,
+      "print_ready_url": null,
+      "generation_mode": "standard",
+      "original_selected_controls": [
+        {
+          "id": "surface",
+          "kind": "single-select",
+          "label": "Surface",
+          "options": {
+            "smooth": {
+              "value": "smooth glass",
+              "description": "Even surface"
+            }
+          },
+          "value": "smooth",
+          "extension": {
+            "retained": true
+          }
+        },
+        {
+          "id": "angle",
+          "kind": "slider",
+          "label": "Head angle",
+          "min": 0,
+          "max": 90,
+          "step": 1,
+          "value": 0
+        },
+        {
+          "id": "pattern",
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "id": "notes",
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "id": "future",
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          },
+          "vendor": "independent-fixture"
+        }
+      ],
+      "actual_dimensions": {
+        "width": 768,
+        "height": 1152
+      },
+      "generation_job_id": "33333333-3333-4333-8333-333333333333",
+      "enrichment": {
+        "status": "complete"
+      }
+    }
+  },
+  "late_failure_poll": {
+    "generation_job_id": "44444444-4444-4444-8444-444444444444",
+    "events": [
+      {
+        "event": "progress",
+        "data": {
+          "message": "queued",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": null,
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "composing",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": null,
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "rendering",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "image-ready",
+        "data": {
+          "id": "44444444-4444-4444-8444-444444444444",
+          "title": "An amber glass bird on a small wooden stand",
+          "alt_text": "",
+          "accessibility": {},
+          "prompt": "An amber glass bird on a small wooden stand",
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "mode": "image",
+          "aspect": "2:3",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": "2026-11-01T04:44:40.990709+00:00",
+          "image_url": "/api/generation-jobs/44444444-4444-4444-8444-444444444444/preview",
+          "diagnostics": {
+            "seed": 2573211336
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "single-select",
+              "label": "Surface",
+              "value": "smooth glass"
+            },
+            {
+              "kind": "slider",
+              "label": "Head angle",
+              "value": 0
+            },
+            {
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              }
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "prompt": "Independent fixture request",
+            "response": {
+              "extension": [false, 0]
+            },
+            "raw_response": "{}"
+          },
+          "requested_dimensions": {
+            "width": 768,
+            "height": 1152
+          },
+          "must_have_terms": ["amber"],
+          "event_id": null,
+          "width": 768,
+          "height": 1152,
+          "original_prompt": "An amber glass bird on a small wooden stand",
+          "prompt_creation_request": null,
+          "original_selected_controls": [
+            {
+              "id": "surface",
+              "kind": "single-select",
+              "label": "Surface",
+              "options": {
+                "smooth": {
+                  "value": "smooth glass",
+                  "description": "Even surface"
+                }
+              },
+              "value": "smooth",
+              "extension": {
+                "retained": true
+              }
+            },
+            {
+              "id": "angle",
+              "kind": "slider",
+              "label": "Head angle",
+              "min": 0,
+              "max": 90,
+              "step": 1,
+              "value": 0
+            },
+            {
+              "id": "pattern",
+              "kind": "binary",
+              "label": "Etched pattern",
+              "value": false
+            },
+            {
+              "id": "notes",
+              "kind": "text-input",
+              "label": "Stand details",
+              "value": "Rounded edges"
+            },
+            {
+              "id": "future",
+              "kind": "future-control",
+              "label": "Future detail",
+              "value": {
+                "nested": 0
+              },
+              "vendor": "independent-fixture"
+            }
+          ],
+          "dimensions": "768x1152",
+          "actual_dimensions": {
+            "width": 768,
+            "height": 1152
+          },
+          "generation_mode": "standard",
+          "image_data_url": null,
+          "generation_job_id": "44444444-4444-4444-8444-444444444444",
+          "enrichment": {
+            "status": "running"
+          }
+        }
+      },
+      {
+        "event": "progress",
+        "data": {
+          "message": "enriching",
+          "enrichment": {
+            "status": "running"
+          },
+          "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+          "prompt_creation_request": null
+        }
+      },
+      {
+        "event": "failed",
+        "data": {
+          "error": "Fixture enrichment unavailable",
+          "enrichment": {
+            "status": "failed"
+          },
+          "generation_job_id": "44444444-4444-4444-8444-444444444444"
+        }
+      }
+    ],
+    "latest_event": {
+      "event": "failed",
+      "data": {
+        "error": "Fixture enrichment unavailable",
+        "enrichment": {
+          "status": "failed"
+        },
+        "generation_job_id": "44444444-4444-4444-8444-444444444444"
+      }
+    },
+    "status": "failed",
+    "result": {
+      "error": "Fixture enrichment unavailable",
+      "enrichment": {
+        "status": "failed"
+      },
+      "generation_job_id": "44444444-4444-4444-8444-444444444444"
+    }
+  },
+  "unknown_job_stream": ": connected\n\nevent: failed\ndata: {\"error\":\"Generation job not found\",\"enrichment\":{\"status\":\"failed\"}}\n\n",
+  "library_changed_events": [
+    {
+      "event": "changed",
+      "data": {
+        "action": "saved",
+        "storage_id": "local-0",
+        "filename": "33333333-3333-4333-8333-333333333333.png",
+        "event_name": null
+      }
+    }
+  ]
+}

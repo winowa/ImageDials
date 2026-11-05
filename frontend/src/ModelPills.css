@@ -1,0 +1,165 @@
+/* The slot takes what the brand and controls leave; the pills inside either
+   fit on one line or give way to a single capsule (see useDisplayMode). */
+.model-pills-slot {
+  display: flex;
+  flex: 1 1 6rem;
+  justify-content: center;
+  min-width: 0;
+}
+
+.model-pills-slot > .model-pills {
+  max-width: 100%;
+}
+
+/* Measured at their natural width: no wrapping, no shrinking. */
+.model-pills[data-fit] {
+  flex-wrap: nowrap;
+  width: max-content;
+  max-width: none;
+}
+
+.model-pills[data-fit] .pill.model-pill,
+.model-pills[data-fit] .pill.model-pill-trigger {
+  max-width: 23rem;
+}
+
+[data-combined] .pill.model-pill-trigger {
+  max-width: 100%;
+}
+
+.model-pill-item {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.model-pill-anchor {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pill.model-pill,
+.pill.model-pill-trigger {
+  min-width: 0;
+  min-height: 44px;
+  max-width: min(100%, 23rem);
+  padding-inline: 0.75rem;
+  color: var(--foreground);
+}
+
+.model-pill-trigger {
+  cursor: pointer;
+  font: var(--type-label);
+  text-align: start;
+  transition:
+    border-color var(--duration-quick) var(--ease),
+    background var(--duration-quick) var(--ease),
+    color var(--duration-quick) var(--ease);
+}
+
+.model-pill-trigger:hover,
+.model-pill-trigger[data-pinned='true'],
+.model-pill-trigger[aria-expanded='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.model-pill-role {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+.model-pill-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.model-pill-count {
+  flex: 0 0 auto;
+  padding: 0.125rem 0.375rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+
+.model-pill-trigger > .icon {
+  flex: 0 0 auto;
+  color: var(--muted);
+  transition: transform var(--duration-quick) var(--ease);
+}
+
+.model-pill-trigger[aria-expanded='true'] > .icon {
+  transform: rotate(90deg);
+}
+
+.model-resource-popover {
+  width: min(25rem, calc(100vw - 16px));
+  padding: 0.875rem 1rem;
+}
+
+.model-resource-list {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.model-resource {
+  min-width: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.model-resource:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.model-resource h3 {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font: var(--type-label);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.model-resource p {
+  overflow-wrap: anywhere;
+}
+
+.popover .model-resource-name {
+  margin: 0.125rem 0;
+  font-weight: var(--weight-bold);
+}
+
+.popover .model-resource-role,
+.popover .model-resource-publisher {
+  margin: 0.125rem 0;
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+
+.popover .model-resource-detail {
+  margin: 0.5rem 0;
+}
+
+.model-resource a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 45px;
+  gap: 0.375rem;
+  color: var(--foreground);
+  font: var(--type-label);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .model-pill-trigger,
+  .model-pill-trigger > .icon {
+    transition: none;
+  }
+}

@@ -1,5 +1,17 @@
 // Shared frontend deployment configuration.
+/** Match the API's validated, optional deployment prefix. */
+export function appBasePath(env) {
+  const base = (env.APP_BASE_PATH ?? '').trim().replace(/\/+$/, '');
+  if (base && !/^(?:\/[A-Za-z0-9_-]+)+$/.test(base)) {
+    throw new Error(
+      'APP_BASE_PATH must contain only slash-separated path segments.',
+    );
+  }
+  return base;
+}
+
 export function runtimeConfig(env) {
+  const base = appBasePath(env);
   const port = (name) => {
     if (!/^[1-9]\d{0,4}$/.test(env[name] ?? '') || Number(env[name]) > 65535) {
       throw new Error(
@@ -56,6 +68,12 @@ export function runtimeConfig(env) {
     port: frontendPort,
     strictPort: true,
     allowedHosts,
-    proxy: { '/api': { target: upstream.origin, changeOrigin: true } },
+    // /healthz is root-only; image content is served under /api.
+    proxy: Object.fromEntries(
+      ['/api', '/healthz', ...(base ? [`${base}/api`] : [])].map((path) => [
+        path,
+        { target: upstream.origin, changeOrigin: true },
+      ]),
+    ),
   };
 }

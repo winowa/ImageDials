@@ -1,0 +1,474 @@
+{
+  "description": "Independent synthetic API examples; session identities, revisions, timestamps and ordering are illustrative, not fixed application values.",
+  "create": {
+    "request": {},
+    "status": 202,
+    "response": {
+      "expires_at": 1700001810.0,
+      "first_image_member": null,
+      "session_id": "11111111-1111-4111-8111-111111111111",
+      "state": "building"
+    }
+  },
+  "page": {
+    "request": {
+      "limit": 3
+    },
+    "status": 200,
+    "response": {
+      "count": 3,
+      "error": null,
+      "expires_at": 1700001810.0,
+      "first_image_member": false,
+      "images": [
+        {
+          "created_at": 1.0,
+          "detail_url": "/api/images/library/record/sample-000005",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "sample-000005.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000005",
+          "image_id": "sample-000005",
+          "image_url": "/api/images/sample-000005/content",
+          "orientation": "landscape",
+          "session_rank": 0,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000005.png?variant=thumbnail",
+          "title": "Ceramic vessel 5"
+        },
+        {
+          "created_at": 1.0,
+          "detail_url": "/api/images/library/record/sample-000004",
+          "dimensions": {
+            "height": 200,
+            "width": 200
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "workshop",
+          "filename": "sample-000004.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000004",
+          "image_id": "sample-000004",
+          "image_url": "/api/images/sample-000004/content",
+          "orientation": "square",
+          "session_rank": 1,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000004.png?variant=thumbnail",
+          "title": "Ceramic vessel 4"
+        },
+        {
+          "created_at": 0.0,
+          "detail_url": "/api/images/library/record/sample-000002",
+          "dimensions": {
+            "height": 200,
+            "width": 200
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "workshop",
+          "filename": "sample-000002.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000002",
+          "image_id": "sample-000002",
+          "image_url": "/api/images/sample-000002/content",
+          "orientation": "square",
+          "session_rank": 2,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000002.png?variant=thumbnail",
+          "title": "Ceramic vessel 2"
+        }
+      ],
+      "next_rank": 3,
+      "previous_rank": null,
+      "revision": 1,
+      "session_id": "11111111-1111-4111-8111-111111111111",
+      "snapshot_revision": 1,
+      "snapshot_total": 7,
+      "state": "ready"
+    }
+  },
+  "backward_page": {
+    "request": {
+      "rank": 6,
+      "direction": "backward",
+      "limit": 3
+    },
+    "status": 200,
+    "response": {
+      "count": 3,
+      "error": null,
+      "expires_at": 1700001810.0,
+      "first_image_member": false,
+      "images": [
+        {
+          "created_at": 1.0,
+          "detail_url": "/api/images/library/record/sample-000003",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "sample-000003.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000003",
+          "image_id": "sample-000003",
+          "image_url": "/api/images/sample-000003/content",
+          "orientation": "landscape",
+          "session_rank": 4,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000003.png?variant=thumbnail",
+          "title": "Ceramic vessel 3"
+        },
+        {
+          "created_at": 2.0,
+          "detail_url": "/api/images/library/record/sample-000006",
+          "dimensions": {
+            "height": 200,
+            "width": 200
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "workshop",
+          "filename": "sample-000006.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000006",
+          "image_id": "sample-000006",
+          "image_url": "/api/images/sample-000006/content",
+          "orientation": "square",
+          "session_rank": 5,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000006.png?variant=thumbnail",
+          "title": "Ceramic vessel 6"
+        },
+        {
+          "created_at": 0.0,
+          "detail_url": "/api/images/library/record/sample-000000",
+          "dimensions": {
+            "height": 200,
+            "width": 200
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "workshop",
+          "filename": "sample-000000.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000000",
+          "image_id": "sample-000000",
+          "image_url": "/api/images/sample-000000/content",
+          "orientation": "square",
+          "session_rank": 6,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000000.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        }
+      ],
+      "next_rank": null,
+      "previous_rank": 3,
+      "revision": 1,
+      "session_id": "11111111-1111-4111-8111-111111111111",
+      "snapshot_revision": 1,
+      "snapshot_total": 7,
+      "state": "ready"
+    }
+  },
+  "capacity": {
+    "status": 429,
+    "response": {
+      "detail": "Gallery session limit reached; release a session or wait for expiry"
+    }
+  },
+  "invalid_filters": {
+    "status": 400,
+    "request": {
+      "orientations": ["sideways"]
+    },
+    "response": {
+      "detail": "Provide an event scope and valid orientation list"
+    }
+  },
+  "release": {
+    "status": 204
+  },
+  "source_records": [
+    {
+      "id": "sample-000000",
+      "created_at": 0,
+      "title": "Ceramic vessel 0",
+      "prompt": "A blue paper circle",
+      "width": 200,
+      "height": 200,
+      "event_id": "workshop",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    },
+    {
+      "id": "sample-000001",
+      "created_at": 0,
+      "title": "Ceramic vessel 1",
+      "prompt": "A blue paper circle",
+      "width": 300,
+      "height": 200,
+      "event_id": "exhibit",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    },
+    {
+      "id": "sample-000002",
+      "created_at": 0,
+      "title": "Ceramic vessel 2",
+      "prompt": "A blue paper circle",
+      "width": 200,
+      "height": 200,
+      "event_id": "workshop",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    },
+    {
+      "id": "sample-000003",
+      "created_at": 1,
+      "title": "Ceramic vessel 3",
+      "prompt": "A blue paper circle",
+      "width": 300,
+      "height": 200,
+      "event_id": "exhibit",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    },
+    {
+      "id": "sample-000004",
+      "created_at": 1,
+      "title": "Ceramic vessel 4",
+      "prompt": "A blue paper circle",
+      "width": 200,
+      "height": 200,
+      "event_id": "workshop",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    },
+    {
+      "id": "sample-000005",
+      "created_at": 1,
+      "title": "Ceramic vessel 5",
+      "prompt": "A blue paper circle",
+      "width": 300,
+      "height": 200,
+      "event_id": "exhibit",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    },
+    {
+      "id": "sample-000006",
+      "created_at": 2,
+      "title": "Ceramic vessel 6",
+      "prompt": "A blue paper circle",
+      "width": 200,
+      "height": 200,
+      "event_id": "workshop",
+      "extensions": {
+        "enabled": false,
+        "number": 0,
+        "label": "\u00c9CLAIR"
+      }
+    }
+  ],
+  "create_anchored": {
+    "request": {
+      "first_image_id": "sample-000000"
+    },
+    "status": 202,
+    "response": {
+      "expires_at": 1700001810.0,
+      "first_image_member": null,
+      "session_id": "22222222-2222-4222-8222-222222222222",
+      "state": "building"
+    }
+  },
+  "anchored_page": {
+    "request": {
+      "limit": 3
+    },
+    "status": 200,
+    "response": {
+      "count": 3,
+      "error": null,
+      "expires_at": 1700001810.0,
+      "first_image_member": true,
+      "images": [
+        {
+          "created_at": 0.0,
+          "detail_url": "/api/images/library/record/sample-000000",
+          "dimensions": {
+            "height": 200,
+            "width": 200
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "workshop",
+          "filename": "sample-000000.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000000",
+          "image_id": "sample-000000",
+          "image_url": "/api/images/sample-000000/content",
+          "orientation": "square",
+          "session_rank": 0,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000000.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        },
+        {
+          "created_at": 1.0,
+          "detail_url": "/api/images/library/record/sample-000005",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "sample-000005.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000005",
+          "image_id": "sample-000005",
+          "image_url": "/api/images/sample-000005/content",
+          "orientation": "landscape",
+          "session_rank": 1,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000005.png?variant=thumbnail",
+          "title": "Ceramic vessel 5"
+        },
+        {
+          "created_at": 1.0,
+          "detail_url": "/api/images/library/record/sample-000004",
+          "dimensions": {
+            "height": 200,
+            "width": 200
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "workshop",
+          "filename": "sample-000004.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000004",
+          "image_id": "sample-000004",
+          "image_url": "/api/images/sample-000004/content",
+          "orientation": "square",
+          "session_rank": 2,
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000004.png?variant=thumbnail",
+          "title": "Ceramic vessel 4"
+        }
+      ],
+      "next_rank": 3,
+      "previous_rank": null,
+      "revision": 1,
+      "session_id": "22222222-2222-4222-8222-222222222222",
+      "snapshot_revision": 1,
+      "snapshot_total": 7,
+      "state": "ready"
+    }
+  },
+  "renew": {
+    "request": {},
+    "status": 200,
+    "response": {
+      "error": null,
+      "expires_at": 1700002710.0,
+      "first_image_member": false,
+      "session_id": "11111111-1111-4111-8111-111111111111",
+      "snapshot_revision": 1,
+      "snapshot_total": 7,
+      "state": "ready"
+    }
+  },
+  "expired_renewal": {
+    "status": 410,
+    "response": {
+      "detail": "Gallery session expired; create another session"
+    }
+  },
+  "building_preview": {
+    "request": {
+      "limit": 3
+    },
+    "status": 202,
+    "response": {
+      "expires_at": 1700001810.0,
+      "first_image_member": null,
+      "session_id": "11111111-1111-4111-8111-111111111111",
+      "state": "building",
+      "snapshot_revision": 0,
+      "snapshot_total": 0,
+      "error": null,
+      "preview": {
+        "snapshot_revision": 10,
+        "image": {
+          "created_at": 1.0,
+          "detail_url": "/api/images/library/record/sample-000005",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "sample-000005.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "sample-000005",
+          "image_id": "sample-000005",
+          "image_url": "/api/images/sample-000005/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/sample-000005.png?variant=thumbnail",
+          "title": "Ceramic vessel 5"
+        }
+      }
+    }
+  }
+}

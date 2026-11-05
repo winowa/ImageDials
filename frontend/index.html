@@ -6,17 +6,61 @@
     <meta name="color-scheme" content="dark" />
     <script>
       (() => {
-        let theme = 'dark';
-        try {
-          if (localStorage.getItem('imagedials-theme') === 'light')
-            theme = 'light';
-        } catch {}
-        document.documentElement.dataset.theme = theme;
+        // Replays the snapshot written by src/appearance.js before first paint.
+        const root = document.documentElement;
+        const read = (key) => {
+          try {
+            return localStorage.getItem(key);
+          } catch {
+            return null;
+          }
+        };
+        let mode = read('imagedials-theme');
+        if (mode !== 'light' && mode !== 'system') mode = 'dark';
+        let theme = mode;
+        if (mode === 'system') {
+          try {
+            theme = matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark';
+          } catch {
+            theme = 'dark';
+          }
+        }
+        root.dataset.theme = theme;
+        root.dataset.themeMode = mode;
         const scheme = theme === 'light' ? 'only light' : 'dark';
-        document.documentElement.style.colorScheme = scheme;
+        root.style.colorScheme = scheme;
         document.querySelector('meta[name="color-scheme"]').content = scheme;
+        try {
+          const stored = JSON.parse(read('imagedials-accent'));
+          const paint = stored && stored.v === 1 && stored.paint[theme];
+          const hex = /^#[0-9a-f]{6}([0-9a-f]{2})?$/;
+          const names = [
+            '--accent',
+            '--accent-ink',
+            '--accent-soft',
+            '--focus',
+          ];
+          if (paint && names.every((n) => hex.test(paint[n])))
+            for (const n of names) root.style.setProperty(n, paint[n]);
+        } catch {}
       })();
     </script>
+    <link
+      rel="preload"
+      href="/fonts/BricolageGrotesque-latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/AtkinsonHyperlegibleNext-latin-wght.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <title>ImageDials</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>

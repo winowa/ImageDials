@@ -1,0 +1,44 @@
+.library.library-usability {
+  column-gap: 1rem;
+}
+.library-usability > .toolbar {
+  align-items: end;
+  row-gap: 0.75rem;
+}
+.library-usability .inline-field > span:first-child {
+  line-height: 1.3;
+}
+.library-usability .density .slider {
+  min-width: 44px;
+  min-height: 44px;
+  margin-block: 0;
+}
+.library-usability .check-row {
+  min-height: 44px;
+}
+.library-usability .cards {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(
+        100%,
+        max(
+          9rem,
+          calc((100% - (var(--density) - 1) * var(--card-gap)) / var(--density))
+        )
+      ),
+      1fr
+    )
+  );
+}
+.library-usability .wm-tools {
+  flex-wrap: wrap;
+}
+@media (max-width: 36rem) {
+  .library-usability > .toolbar > .search-field {
+    flex-basis: 100%;
+  }
+  .library-usability .wm-tools {
+    flex-basis: 100%;
+  }
+}

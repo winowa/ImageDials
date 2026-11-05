@@ -1,0 +1,112 @@
+{
+  "controls": [
+    {
+      "id": "edit-identity-v1",
+      "label": "Preserve identity",
+      "description": "Choose what the edit should retain from the base image.",
+      "origin": "fixed",
+      "value": [],
+      "options": {
+        "facial-features": "Facial features",
+        "distinctive-markings": "Distinctive markings",
+        "body-or-object-proportions": "Body or object proportions"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No",
+      "apply_to_edit": false
+    },
+    {
+      "id": "edit-pose-v1",
+      "label": "Preserve pose",
+      "description": "Choose what the edit should retain from the base image.",
+      "origin": "fixed",
+      "value": [],
+      "options": {
+        "body-pose": "Body pose",
+        "expression": "Expression",
+        "gaze-direction": "Gaze direction"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No",
+      "apply_to_edit": false
+    },
+    {
+      "id": "edit-composition-v1",
+      "label": "Preserve composition",
+      "description": "Choose what the edit should retain from the base image.",
+      "origin": "fixed",
+      "value": [],
+      "options": {
+        "subject-placement": "Subject placement",
+        "camera-viewpoint": "Camera viewpoint",
+        "crop": "Crop"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No",
+      "apply_to_edit": false
+    },
+    {
+      "id": "edit-background-v1",
+      "label": "Background change",
+      "description": "An optional change instruction for the image editor.",
+      "origin": "fixed",
+      "value": "",
+      "options": {},
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "Describe the replacement or background change",
+      "kind": "text-input",
+      "trueLabel": "Yes",
+      "falseLabel": "No",
+      "apply_to_edit": false
+    },
+    {
+      "id": "edit-objects-v1",
+      "label": "Object changes",
+      "description": "An optional change instruction for the image editor.",
+      "origin": "fixed",
+      "value": "",
+      "options": {},
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "Name what to add, remove or replace",
+      "kind": "text-input",
+      "trueLabel": "Yes",
+      "falseLabel": "No",
+      "apply_to_edit": false
+    },
+    {
+      "id": "edit-appearance-v1",
+      "label": "Appearance change",
+      "description": "An optional change instruction for the image editor.",
+      "origin": "fixed",
+      "value": "",
+      "options": {},
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "Describe changes to color, materials or lighting",
+      "kind": "text-input",
+      "trueLabel": "Yes",
+      "falseLabel": "No",
+      "apply_to_edit": false
+    }
+  ]
+}

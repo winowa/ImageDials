@@ -1,0 +1,959 @@
+{
+  "about": "Synthetic ImageDials mock API fixture. No real model inference. Source PNGs are original solid-color test images. Edit upload analyses never propose prompt text. Joint-composition answers are separate.",
+  "capabilities": {
+    "enabled": true,
+    "transport": "multipart-generation-v1",
+    "model": "Qwen-Image-2.1",
+    "max_references": 10,
+    "model_max_references": 10,
+    "limit_source": "model",
+    "max_image_bytes": 33554432,
+    "max_total_bytes": 67108864,
+    "geometry": "first-reference",
+    "analysis_url": "/api/images/reference-analysis",
+    "prompting": {
+      "strategy": "qwen-image-2.1",
+      "model": "Qwen-Image-2.1",
+      "max_references": 10,
+      "labels": {
+        "1": ["the image"],
+        "2": ["<image1>", "<image2>"],
+        "3": ["<image1>", "<image2>", "<image3>"],
+        "4": ["<image1>", "<image2>", "<image3>", "<image4>"],
+        "5": ["<image1>", "<image2>", "<image3>", "<image4>", "<image5>"],
+        "6": [
+          "<image1>",
+          "<image2>",
+          "<image3>",
+          "<image4>",
+          "<image5>",
+          "<image6>"
+        ],
+        "7": [
+          "<image1>",
+          "<image2>",
+          "<image3>",
+          "<image4>",
+          "<image5>",
+          "<image6>",
+          "<image7>"
+        ],
+        "8": [
+          "<image1>",
+          "<image2>",
+          "<image3>",
+          "<image4>",
+          "<image5>",
+          "<image6>",
+          "<image7>",
+          "<image8>"
+        ],
+        "9": [
+          "<image1>",
+          "<image2>",
+          "<image3>",
+          "<image4>",
+          "<image5>",
+          "<image6>",
+          "<image7>",
+          "<image8>",
+          "<image9>"
+        ],
+        "10": [
+          "<image1>",
+          "<image2>",
+          "<image3>",
+          "<image4>",
+          "<image5>",
+          "<image6>",
+          "<image7>",
+          "<image8>",
+          "<image9>",
+          "<image10>"
+        ]
+      },
+      "guidance": [
+        "Lead with the change; name the subject or region to edit.",
+        "With multiple images, use the displayed tags and say what each supplies.",
+        "Specify what must stay unchanged; match the base image's lighting and perspective.",
+        "With one image, use natural wording without tags."
+      ],
+      "guidance_url": "https://github.com/QwenLM/Qwen-Image-2.1/blob/main/prompt_rewrite/prompts/system_prompt_edit.txt",
+      "example_single": "Recolor the jacket in {1} deep green. Keep the face, pose and background.",
+      "example_multiple": "Place the lamp from {2} on the table in {1}. Match the room's light on the lamp. Keep everything else in {1}."
+    }
+  },
+  "legacy_capabilities": {
+    "about": "Historical server response from before model-aware limits: a fixed four-reference cap without model or limit-source fields. Clients must still honor it exactly.",
+    "enabled": true,
+    "transport": "multipart-generation-v1",
+    "max_references": 4,
+    "max_image_bytes": 33554432,
+    "max_total_bytes": 67108864,
+    "geometry": "first-reference",
+    "analysis_url": "/api/images/reference-analysis",
+    "prompting": {
+      "strategy": "qwen-image-2.1",
+      "model": "Qwen-Image-2.1",
+      "labels": {
+        "1": ["the image"],
+        "2": ["<image1>", "<image2>"],
+        "3": ["<image1>", "<image2>", "<image3>"],
+        "4": ["<image1>", "<image2>", "<image3>", "<image4>"]
+      },
+      "guidance": [
+        "Lead with the change; name the subject or region to edit.",
+        "With multiple images, use the displayed tags and say what each supplies.",
+        "Specify what must stay unchanged; match the base image's lighting and perspective.",
+        "With one image, use natural wording without tags."
+      ],
+      "example_single": "Recolor the jacket in {1} deep green. Keep the face, pose and background.",
+      "example_multiple": "Place the lamp from {2} on the table in {1}. Match the room's light on the lamp. Keep everything else in {1}.",
+      "guidance_url": "https://github.com/QwenLM/Qwen-Image-2.1/blob/main/prompt_rewrite/prompts/system_prompt_edit.txt"
+    }
+  },
+  "transport": {
+    "method": "POST",
+    "url": "/api/generate-image",
+    "content_type": "multipart/form-data",
+    "request_field": "request",
+    "file_fields": ["reference_1", "reference_2"]
+  },
+  "files": [
+    {
+      "field": "reference_1",
+      "id": "fixture-reference-1",
+      "filename": "color-1.png",
+      "content_type": "image/png",
+      "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+      "base64": "iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAIAAAAH5iiXAAAAKUlEQVR4nO3NQREAAAQAMATR/6SUwvlsBZbTHR/qZRWLxWKxWCwWi08sTA0BFiCWDScAAAAASUVORK5CYII="
+    },
+    {
+      "field": "reference_2",
+      "id": "fixture-reference-2",
+      "filename": "color-2.png",
+      "content_type": "image/png",
+      "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+      "base64": "iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAIAAAAH5iiXAAAAK0lEQVR4nGOUc9vHMBCAaUBsHbV41OJRi0ctHrV41OJRi0ctHrV41GKaAADzJwFS0M+FfQAAAABJRU5ErkJggg=="
+    }
+  ],
+  "generation": {
+    "request": {
+      "prompt": "Change only the base color using <image2> as the color reference.",
+      "controls": [],
+      "generation_mode": "standard",
+      "dimensions": "96x64",
+      "idempotency_key": "fixture-reference-edit",
+      "reference_images": [
+        {
+          "id": "fixture-reference-1",
+          "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+          "description": "A red color sample",
+          "role": "base"
+        },
+        {
+          "id": "fixture-reference-2",
+          "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+          "description": "A blue color sample",
+          "role": "palette"
+        }
+      ]
+    },
+    "accepted": {
+      "generation_job_id": "44444444-4444-4444-8444-444444444444",
+      "enrichment": {
+        "status": "pending",
+        "transport": "server-sent-events"
+      }
+    },
+    "complete": {
+      "generation_job_id": "44444444-4444-4444-8444-444444444444",
+      "events": [
+        {
+          "event": "progress",
+          "data": {
+            "message": "queued",
+            "enrichment": {
+              "status": "running"
+            },
+            "final_prompt": null,
+            "prompt_creation_request": null
+          }
+        },
+        {
+          "event": "progress",
+          "data": {
+            "message": "composing",
+            "enrichment": {
+              "status": "running"
+            },
+            "final_prompt": null,
+            "prompt_creation_request": null
+          }
+        },
+        {
+          "event": "progress",
+          "data": {
+            "message": "rendering",
+            "enrichment": {
+              "status": "running"
+            },
+            "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+            "prompt_creation_request": null
+          }
+        },
+        {
+          "event": "image-ready",
+          "data": {
+            "id": "44444444-4444-4444-8444-444444444444",
+            "title": "Change only the base color using <image2> as the color reference.",
+            "alt_text": "",
+            "accessibility": {},
+            "prompt": "Change only the base color using <image2> as the color reference.",
+            "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+            "mode": "image",
+            "aspect": "3:2",
+            "categories": [],
+            "provider": "mock",
+            "model": "mock-geometric-v1",
+            "created_at": "2026-11-02T17:54:42.883680+00:00",
+            "image_url": "/api/generation-jobs/44444444-4444-4444-8444-444444444444/preview",
+            "diagnostics": {
+              "seed": 3473675721,
+              "provider_mode": "mock-reference-edit",
+              "references": [
+                {
+                  "index": 1,
+                  "filename": "color-1.png",
+                  "role": "base",
+                  "description": "A red color sample",
+                  "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+                  "normalized_sha256": "a3a0ded536db962c160a5fe091893c32149ac768cee9d7d578682b8b444c94ba",
+                  "width": 40,
+                  "height": 24
+                },
+                {
+                  "index": 2,
+                  "filename": "color-2.png",
+                  "role": "palette",
+                  "description": "A blue color sample",
+                  "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+                  "normalized_sha256": "1df0c6a07eb0d4a8866f1b3d0de7285192fb15bba52706e78b5b5dc0ba50241a",
+                  "width": 40,
+                  "height": 24
+                }
+              ]
+            },
+            "composition": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "keyword_extraction": {
+                "status": "not-required",
+                "keywords": []
+              },
+              "reference_images": [
+                {
+                  "index": 1,
+                  "role": "base",
+                  "description": "A red color sample"
+                },
+                {
+                  "index": 2,
+                  "role": "palette",
+                  "description": "A blue color sample"
+                }
+              ]
+            },
+            "selected_controls": [],
+            "resolved_controls": [],
+            "dynamic_controls_metadata": null,
+            "requested_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "must_have_terms": [],
+            "reference_images": [
+              {
+                "id": "fixture-reference-1",
+                "description": "A red color sample",
+                "role": "base",
+                "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+                "filename": "color-1.png",
+                "index": 1,
+                "dimensions": {
+                  "width": 40,
+                  "height": 24
+                },
+                "content_type": "image/png"
+              },
+              {
+                "id": "fixture-reference-2",
+                "description": "A blue color sample",
+                "role": "palette",
+                "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+                "filename": "color-2.png",
+                "index": 2,
+                "dimensions": {
+                  "width": 40,
+                  "height": 24
+                },
+                "content_type": "image/png"
+              }
+            ],
+            "generation_type": "image-edit",
+            "event_id": null,
+            "visibility": "shared",
+            "width": 40,
+            "height": 24,
+            "original_prompt": "Change only the base color using <image2> as the color reference.",
+            "prompt_creation_request": null,
+            "original_selected_controls": [],
+            "dimensions": "96x64",
+            "actual_dimensions": {
+              "width": 40,
+              "height": 24
+            },
+            "generation_mode": "standard",
+            "image_data_url": null,
+            "generation_job_id": "44444444-4444-4444-8444-444444444444",
+            "enrichment": {
+              "status": "running"
+            }
+          }
+        },
+        {
+          "event": "progress",
+          "data": {
+            "message": "enriching",
+            "enrichment": {
+              "status": "running"
+            },
+            "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+            "prompt_creation_request": null
+          }
+        },
+        {
+          "event": "progress",
+          "data": {
+            "message": "saving",
+            "enrichment": {
+              "status": "running"
+            },
+            "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+            "prompt_creation_request": null
+          }
+        },
+        {
+          "event": "complete",
+          "data": {
+            "id": "44444444-4444-4444-8444-444444444444",
+            "title": "Change only the base color using <image2> as the color reference.",
+            "alt_text": "Mock image: Change only the base color using <image2> as the color reference.",
+            "accessibility": {
+              "alt_text": "Mock image: Change only the base color using <image2> as the color reference.",
+              "prompt_source": "final_prompt",
+              "accessibility_features": ["alt_text"],
+              "image_url": "/api/images/44444444-4444-4444-8444-444444444444/content"
+            },
+            "prompt": "Change only the base color using <image2> as the color reference.",
+            "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+            "mode": "image",
+            "aspect": "3:2",
+            "categories": [],
+            "provider": "mock",
+            "model": "mock-geometric-v1",
+            "created_at": 1793642082.88368,
+            "image_url": "/api/images/44444444-4444-4444-8444-444444444444/content",
+            "diagnostics": {
+              "seed": 3473675721,
+              "provider_mode": "mock-reference-edit",
+              "references": [
+                {
+                  "index": 1,
+                  "filename": "color-1.png",
+                  "role": "base",
+                  "description": "A red color sample",
+                  "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+                  "normalized_sha256": "a3a0ded536db962c160a5fe091893c32149ac768cee9d7d578682b8b444c94ba",
+                  "width": 40,
+                  "height": 24
+                },
+                {
+                  "index": 2,
+                  "filename": "color-2.png",
+                  "role": "palette",
+                  "description": "A blue color sample",
+                  "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+                  "normalized_sha256": "1df0c6a07eb0d4a8866f1b3d0de7285192fb15bba52706e78b5b5dc0ba50241a",
+                  "width": 40,
+                  "height": 24
+                }
+              ]
+            },
+            "composition": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "keyword_extraction": {
+                "status": "not-required",
+                "keywords": []
+              },
+              "reference_images": [
+                {
+                  "index": 1,
+                  "role": "base",
+                  "description": "A red color sample"
+                },
+                {
+                  "index": 2,
+                  "role": "palette",
+                  "description": "A blue color sample"
+                }
+              ]
+            },
+            "selected_controls": [],
+            "resolved_controls": [],
+            "dynamic_controls_metadata": null,
+            "requested_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "must_have_terms": [],
+            "reference_images": [
+              {
+                "id": "fixture-reference-1",
+                "description": "A red color sample",
+                "role": "base",
+                "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+                "filename": "color-1.png",
+                "index": 1,
+                "dimensions": {
+                  "width": 40,
+                  "height": 24
+                },
+                "content_type": "image/png"
+              },
+              {
+                "id": "fixture-reference-2",
+                "description": "A blue color sample",
+                "role": "palette",
+                "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+                "filename": "color-2.png",
+                "index": 2,
+                "dimensions": {
+                  "width": 40,
+                  "height": 24
+                },
+                "content_type": "image/png"
+              }
+            ],
+            "generation_type": "image-edit",
+            "event_id": null,
+            "visibility": "shared",
+            "enrichment_metadata": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "prompt_source": "final_prompt"
+            },
+            "width": 40,
+            "height": 24,
+            "sha256": "d9f2626339ec6608af8cbfe9652eab501ad78d964f13c3a3bbe93c85f2078acd",
+            "image_id": "44444444-4444-4444-8444-444444444444",
+            "storage_id": "local-0",
+            "storage_type": "local",
+            "storage_label": "Image library",
+            "filename": "44444444-4444-4444-8444-444444444444.png",
+            "original_prompt": "Change only the base color using <image2> as the color reference.",
+            "prompt_creation_request": null,
+            "dimensions": "96x64",
+            "created_at_iso": 1793642082883680000,
+            "print_watermark": null,
+            "print_ready": null,
+            "print_watermark_key": null,
+            "print_ready_url": null,
+            "generation_mode": "standard",
+            "original_selected_controls": [],
+            "actual_dimensions": {
+              "width": 40,
+              "height": 24
+            },
+            "generation_job_id": "44444444-4444-4444-8444-444444444444",
+            "enrichment": {
+              "status": "complete"
+            }
+          }
+        }
+      ],
+      "latest_event": {
+        "event": "complete",
+        "data": {
+          "id": "44444444-4444-4444-8444-444444444444",
+          "title": "Change only the base color using <image2> as the color reference.",
+          "alt_text": "Mock image: Change only the base color using <image2> as the color reference.",
+          "accessibility": {
+            "alt_text": "Mock image: Change only the base color using <image2> as the color reference.",
+            "prompt_source": "final_prompt",
+            "accessibility_features": ["alt_text"],
+            "image_url": "/api/images/44444444-4444-4444-8444-444444444444/content"
+          },
+          "prompt": "Change only the base color using <image2> as the color reference.",
+          "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+          "mode": "image",
+          "aspect": "3:2",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": 1793642082.88368,
+          "image_url": "/api/images/44444444-4444-4444-8444-444444444444/content",
+          "diagnostics": {
+            "seed": 3473675721,
+            "provider_mode": "mock-reference-edit",
+            "references": [
+              {
+                "index": 1,
+                "filename": "color-1.png",
+                "role": "base",
+                "description": "A red color sample",
+                "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+                "normalized_sha256": "a3a0ded536db962c160a5fe091893c32149ac768cee9d7d578682b8b444c94ba",
+                "width": 40,
+                "height": 24
+              },
+              {
+                "index": 2,
+                "filename": "color-2.png",
+                "role": "palette",
+                "description": "A blue color sample",
+                "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+                "normalized_sha256": "1df0c6a07eb0d4a8866f1b3d0de7285192fb15bba52706e78b5b5dc0ba50241a",
+                "width": 40,
+                "height": 24
+              }
+            ]
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            },
+            "reference_images": [
+              {
+                "index": 1,
+                "role": "base",
+                "description": "A red color sample"
+              },
+              {
+                "index": 2,
+                "role": "palette",
+                "description": "A blue color sample"
+              }
+            ]
+          },
+          "selected_controls": [],
+          "resolved_controls": [],
+          "dynamic_controls_metadata": null,
+          "requested_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "must_have_terms": [],
+          "reference_images": [
+            {
+              "id": "fixture-reference-1",
+              "description": "A red color sample",
+              "role": "base",
+              "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+              "filename": "color-1.png",
+              "index": 1,
+              "dimensions": {
+                "width": 40,
+                "height": 24
+              },
+              "content_type": "image/png"
+            },
+            {
+              "id": "fixture-reference-2",
+              "description": "A blue color sample",
+              "role": "palette",
+              "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+              "filename": "color-2.png",
+              "index": 2,
+              "dimensions": {
+                "width": 40,
+                "height": 24
+              },
+              "content_type": "image/png"
+            }
+          ],
+          "generation_type": "image-edit",
+          "event_id": null,
+          "visibility": "shared",
+          "enrichment_metadata": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "prompt_source": "final_prompt"
+          },
+          "width": 40,
+          "height": 24,
+          "sha256": "d9f2626339ec6608af8cbfe9652eab501ad78d964f13c3a3bbe93c85f2078acd",
+          "image_id": "44444444-4444-4444-8444-444444444444",
+          "storage_id": "local-0",
+          "storage_type": "local",
+          "storage_label": "Image library",
+          "filename": "44444444-4444-4444-8444-444444444444.png",
+          "original_prompt": "Change only the base color using <image2> as the color reference.",
+          "prompt_creation_request": null,
+          "dimensions": "96x64",
+          "created_at_iso": 1793642082883680000,
+          "print_watermark": null,
+          "print_ready": null,
+          "print_watermark_key": null,
+          "print_ready_url": null,
+          "generation_mode": "standard",
+          "original_selected_controls": [],
+          "actual_dimensions": {
+            "width": 40,
+            "height": 24
+          },
+          "generation_job_id": "44444444-4444-4444-8444-444444444444",
+          "enrichment": {
+            "status": "complete"
+          }
+        }
+      },
+      "status": "complete",
+      "result": {
+        "id": "44444444-4444-4444-8444-444444444444",
+        "title": "Change only the base color using <image2> as the color reference.",
+        "alt_text": "Mock image: Change only the base color using <image2> as the color reference.",
+        "accessibility": {
+          "alt_text": "Mock image: Change only the base color using <image2> as the color reference.",
+          "prompt_source": "final_prompt",
+          "accessibility_features": ["alt_text"],
+          "image_url": "/api/images/44444444-4444-4444-8444-444444444444/content"
+        },
+        "prompt": "Change only the base color using <image2> as the color reference.",
+        "final_prompt": "Edit <image1>, <image2>: Change only the base color using <image2> as the color reference.. []",
+        "mode": "image",
+        "aspect": "3:2",
+        "categories": [],
+        "provider": "mock",
+        "model": "mock-geometric-v1",
+        "created_at": 1793642082.88368,
+        "image_url": "/api/images/44444444-4444-4444-8444-444444444444/content",
+        "diagnostics": {
+          "seed": 3473675721,
+          "provider_mode": "mock-reference-edit",
+          "references": [
+            {
+              "index": 1,
+              "filename": "color-1.png",
+              "role": "base",
+              "description": "A red color sample",
+              "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+              "normalized_sha256": "a3a0ded536db962c160a5fe091893c32149ac768cee9d7d578682b8b444c94ba",
+              "width": 40,
+              "height": 24
+            },
+            {
+              "index": 2,
+              "filename": "color-2.png",
+              "role": "palette",
+              "description": "A blue color sample",
+              "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+              "normalized_sha256": "1df0c6a07eb0d4a8866f1b3d0de7285192fb15bba52706e78b5b5dc0ba50241a",
+              "width": 40,
+              "height": 24
+            }
+          ]
+        },
+        "composition": {
+          "provider": "mock",
+          "model": "mock-composer-v1",
+          "keyword_extraction": {
+            "status": "not-required",
+            "keywords": []
+          },
+          "reference_images": [
+            {
+              "index": 1,
+              "role": "base",
+              "description": "A red color sample"
+            },
+            {
+              "index": 2,
+              "role": "palette",
+              "description": "A blue color sample"
+            }
+          ]
+        },
+        "selected_controls": [],
+        "resolved_controls": [],
+        "dynamic_controls_metadata": null,
+        "requested_dimensions": {
+          "width": 96,
+          "height": 64
+        },
+        "must_have_terms": [],
+        "reference_images": [
+          {
+            "id": "fixture-reference-1",
+            "description": "A red color sample",
+            "role": "base",
+            "sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+            "filename": "color-1.png",
+            "index": 1,
+            "dimensions": {
+              "width": 40,
+              "height": 24
+            },
+            "content_type": "image/png"
+          },
+          {
+            "id": "fixture-reference-2",
+            "description": "A blue color sample",
+            "role": "palette",
+            "sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+            "filename": "color-2.png",
+            "index": 2,
+            "dimensions": {
+              "width": 40,
+              "height": 24
+            },
+            "content_type": "image/png"
+          }
+        ],
+        "generation_type": "image-edit",
+        "event_id": null,
+        "visibility": "shared",
+        "enrichment_metadata": {
+          "provider": "mock",
+          "model": "mock-composer-v1",
+          "prompt_source": "final_prompt"
+        },
+        "width": 40,
+        "height": 24,
+        "sha256": "d9f2626339ec6608af8cbfe9652eab501ad78d964f13c3a3bbe93c85f2078acd",
+        "image_id": "44444444-4444-4444-8444-444444444444",
+        "storage_id": "local-0",
+        "storage_type": "local",
+        "storage_label": "Image library",
+        "filename": "44444444-4444-4444-8444-444444444444.png",
+        "original_prompt": "Change only the base color using <image2> as the color reference.",
+        "prompt_creation_request": null,
+        "dimensions": "96x64",
+        "created_at_iso": 1793642082883680000,
+        "print_watermark": null,
+        "print_ready": null,
+        "print_watermark_key": null,
+        "print_ready_url": null,
+        "generation_mode": "standard",
+        "original_selected_controls": [],
+        "actual_dimensions": {
+          "width": 40,
+          "height": 24
+        },
+        "generation_job_id": "44444444-4444-4444-8444-444444444444",
+        "enrichment": {
+          "status": "complete"
+        }
+      }
+    }
+  },
+  "analysis": {
+    "first": {
+      "status": 200,
+      "response": {
+        "source_sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+        "dimensions": {
+          "width": 40,
+          "height": 24
+        },
+        "description": "A mock image description of a small crafted object on a plain background",
+        "suggested_prompt": null,
+        "reference_index": 1,
+        "revision": 1,
+        "metadata": {
+          "description": {
+            "provider": "mock",
+            "model": ""
+          },
+          "prompt": {
+            "provider": "not-needed",
+            "model": ""
+          }
+        },
+        "prompt_strategy": "qwen-image-2.1"
+      }
+    },
+    "additional": {
+      "status": 200,
+      "response": {
+        "source_sha256": "90bbd88a7af228b36290f77b339cfc192778f1f8dbf0ed7aa018e9a4dff97bb6",
+        "dimensions": {
+          "width": 40,
+          "height": 24
+        },
+        "description": "A mock image description of a small crafted object on a plain background",
+        "suggested_prompt": null,
+        "reference_index": 2,
+        "revision": 2,
+        "metadata": {
+          "description": {
+            "provider": "mock",
+            "model": ""
+          },
+          "prompt": {
+            "provider": "not-needed",
+            "model": ""
+          }
+        },
+        "prompt_strategy": "qwen-image-2.1"
+      }
+    }
+  },
+  "errors": {
+    "missing_files": {
+      "status": 400,
+      "detail": "Attach reference image files with a multipart request"
+    },
+    "unsupported": {
+      "status": 503,
+      "detail": "This image provider does not support reference editing"
+    },
+    "changed_hash": {
+      "status": 400,
+      "detail": "Reference pixels do not match their description hash"
+    }
+  },
+  "canvas_cases": [
+    {
+      "name": "portrait",
+      "source": {
+        "filename": "portrait.png",
+        "content_type": "image/png",
+        "sha256": "4635b780e7b1a08bb47f5ae688f42bbb231c868df73f3ae28ae9ed5c893163e3",
+        "base64": "iVBORw0KGgoAAAANSUhEUgAAABgAAAAoCAIAAABrb60CAAAALElEQVR4nGO0CUhhoAZgooopowaNGjRq0KhBowaNGjRq0KhBowaNGjQsDAIAg9QBQJ28mEAAAAAASUVORK5CYII="
+      },
+      "request": {
+        "prompt": "Change only the source color.",
+        "controls": [],
+        "generation_mode": "standard",
+        "dimensions": "96x64",
+        "idempotency_key": "fixture-portrait-edit",
+        "reference_images": [
+          {
+            "id": "fixture-portrait",
+            "sha256": "4635b780e7b1a08bb47f5ae688f42bbb231c868df73f3ae28ae9ed5c893163e3",
+            "description": "Synthetic solid-color image.",
+            "role": "base"
+          }
+        ]
+      },
+      "expected": {
+        "aspect": "2:3",
+        "requested_aspect": "3:2",
+        "requested_dimensions": {
+          "width": 96,
+          "height": 64
+        },
+        "actual_dimensions": {
+          "width": 24,
+          "height": 40
+        }
+      },
+      "embedded": {
+        "aspect": "2:3",
+        "requested_aspect": "3:2",
+        "requested_dimensions": {
+          "width": 96,
+          "height": 64
+        },
+        "width": 24,
+        "height": 40
+      }
+    },
+    {
+      "name": "square",
+      "source": {
+        "filename": "square.png",
+        "content_type": "image/png",
+        "sha256": "917e94d54994bee2e53cf671c900113501a7f5a5746e3fda883da514b00d43ad",
+        "base64": "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAALUlEQVR4nGO0CUhhoCVgoqnpoxaMWjBqwagFoxaMWjBqwagFoxaMWjBqARUBAOzMATAVD13HAAAAAElFTkSuQmCC"
+      },
+      "request": {
+        "prompt": "Change only the source color.",
+        "controls": [],
+        "generation_mode": "standard",
+        "dimensions": "96x64",
+        "idempotency_key": "fixture-square-edit",
+        "reference_images": [
+          {
+            "id": "fixture-square",
+            "sha256": "917e94d54994bee2e53cf671c900113501a7f5a5746e3fda883da514b00d43ad",
+            "description": "Synthetic solid-color image.",
+            "role": "base"
+          }
+        ]
+      },
+      "expected": {
+        "aspect": "1:1",
+        "requested_aspect": "3:2",
+        "requested_dimensions": {
+          "width": 96,
+          "height": 64
+        },
+        "actual_dimensions": {
+          "width": 32,
+          "height": 32
+        }
+      },
+      "embedded": {
+        "aspect": "1:1",
+        "requested_aspect": "3:2",
+        "requested_dimensions": {
+          "width": 96,
+          "height": 64
+        },
+        "width": 32,
+        "height": 32
+      }
+    }
+  ],
+  "inspection": {
+    "method": "POST",
+    "url": "/api/images/reference-analysis?inspect_only=true",
+    "file_field": "image",
+    "source_file_index": 0,
+    "response": {
+      "source_sha256": "0d27d688157c372a7332250bb2fcd3cf6bca4d05d8313cc534570fb2b4d1c888",
+      "dimensions": {
+        "width": 40,
+        "height": 24
+      },
+      "metadata": {
+        "inspection": {
+          "provider": "local",
+          "method": "sha256"
+        }
+      }
+    },
+    "behavior": "Local checksum and oriented dimensions only; no model, prompt proposal, generation or library write, including when inference is disabled."
+  },
+  "composition": {
+    "response": {
+      "suggested_prompt": "Keep the base layout and change the color. Edit <image1> using <image2>. <image1> (base): A red color sample. <image2> (reference): A mock image description of a small crafted object on a plain background. Preserve everything in <image1> that is not mentioned.",
+      "reference_count": 2,
+      "prompt_strategy": "qwen-image-2.1",
+      "revision": 2,
+      "warnings": [],
+      "metadata": {
+        "prompt": {
+          "provider": "mock",
+          "model": "deterministic-reference-proposal-v2:qwen-image-2.1"
+        }
+      }
+    }
+  }
+}

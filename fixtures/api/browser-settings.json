@@ -1,0 +1,105 @@
+{
+  "fixture_kind": "Independent actual endpoint responses; no real provider inference",
+  "defaults": {
+    "providers": {
+      "LLM_MODEL_ENDPOINT_1": "https://language.example.invalid/v1",
+      "IMAGE_MODEL_ENDPOINT_1": "",
+      "DESCRIPTION_MODEL_ENDPOINT": "",
+      "LLM_MODEL_NAME": "example-vision-model",
+      "DESCRIPTION_MODEL_NAME": "",
+      "IMAGE_PROVIDER": "mock",
+      "IMAGE_MODEL_NAME": "mock-geometric-v1"
+    },
+    "keys_configured": {
+      "LLM_MODEL_KEY_1": true,
+      "IMAGE_MODEL_KEY_1": false,
+      "DESCRIPTION_MODEL_KEY": false
+    },
+    "watermark": {
+      "type": "text",
+      "text": "Initial mark",
+      "svg_markup": "",
+      "svg_recolor": true,
+      "fingerprint": "a0adbdc4548bf07006fd89eaca8da0344d4426b409ac009638784c71721de55a",
+      "limits": {
+        "max_lines": 4,
+        "max_line_length": 16,
+        "max_svg_bytes": 65536
+      },
+      "rendering": {
+        "rendererVersion": "edge-tonal-watermark-v4",
+        "analysisVersion": "pixel-analysis-v5",
+        "placementFrame": "image-edges",
+        "sizeFraction": 0.2,
+        "insetFraction": 0.035,
+        "sizeReferenceAspectRatios": {
+          "landscape": [3, 2],
+          "portrait": [2, 3],
+          "square": [2, 3]
+        },
+        "ruleHeightFraction": 0.036,
+        "contentGapFraction": 0.064,
+        "contentAnchor": "corner",
+        "haloPaddingFraction": 0.03,
+        "gradientStartHoldFraction": 0.2,
+        "separationOpacity": 0.55,
+        "separationBlurFraction": 0.014,
+        "glowOpacity": 0.3,
+        "glowBlurFraction": 0.03,
+        "textRulePlacement": "glyph-bounds",
+        "defaultPresentation": {
+          "gradient_start": "#ffd15e",
+          "gradient_end": null,
+          "separation_color": "#05070a",
+          "glow_color": "#05070a"
+        }
+      }
+    },
+    "storage": "browser"
+  },
+  "local_watermark": {
+    "type": "text",
+    "text": "Local initials",
+    "svg_markup": "",
+    "svg_recolor": true,
+    "fingerprint": "eab55ceaeba3e96722bf2d9610fa84790ffd31deed59d9ef8f9e6db65d96d40b",
+    "limits": {
+      "max_lines": 4,
+      "max_line_length": 16,
+      "max_svg_bytes": 65536
+    },
+    "rendering": {
+      "rendererVersion": "edge-tonal-watermark-v4",
+      "analysisVersion": "pixel-analysis-v5",
+      "placementFrame": "image-edges",
+      "sizeFraction": 0.2,
+      "insetFraction": 0.035,
+      "sizeReferenceAspectRatios": {
+        "landscape": [3, 2],
+        "portrait": [2, 3],
+        "square": [2, 3]
+      },
+      "ruleHeightFraction": 0.036,
+      "contentGapFraction": 0.064,
+      "contentAnchor": "corner",
+      "haloPaddingFraction": 0.03,
+      "gradientStartHoldFraction": 0.2,
+      "separationOpacity": 0.55,
+      "separationBlurFraction": 0.014,
+      "glowOpacity": 0.3,
+      "glowBlurFraction": 0.03,
+      "textRulePlacement": "glyph-bounds",
+      "defaultPresentation": {
+        "gradient_start": "#ffd15e",
+        "gradient_end": null,
+        "separation_color": "#05070a",
+        "glow_color": "#05070a"
+      }
+    }
+  },
+  "provider_override_example": {
+    "LLM_MODEL_ENDPOINT_1": "https://alternate.example.invalid/v1",
+    "LLM_MODEL_NAME": "example-alternate-model",
+    "LLM_MODEL_KEY_1": "example-browser-key"
+  }
+}

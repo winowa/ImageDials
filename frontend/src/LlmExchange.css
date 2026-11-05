@@ -1,0 +1,148 @@
+/* Model request and response inspector. */
+.dialog.exchange-dialog {
+  width: min(52rem, 100%);
+  padding-top: 0;
+  overscroll-behavior: contain;
+}
+.exchange-dialog .dialog-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  background: var(--background);
+}
+.exchange-title {
+  margin: 0;
+  font: var(--type-label);
+  font-weight: var(--weight-semibold);
+}
+.exchange-list,
+.exchange-body,
+.exchange-section,
+.exchange-block {
+  display: grid;
+  min-width: 0;
+  gap: 0.5rem;
+}
+.exchange-heading {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.exchange-section {
+  gap: 0;
+}
+.exchange-section > .mini {
+  margin: 0.5rem 0 0;
+}
+.exchange-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.exchange-chips .badge,
+.exchange-heading .badge,
+.disclosure-meta .badge {
+  overflow-wrap: anywhere;
+}
+.badge[data-state='failed'] {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.badge[data-state='mock'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.exchange-note {
+  margin: 0;
+  color: var(--muted);
+  font: var(--type-caption);
+  overflow-wrap: anywhere;
+}
+.exchange-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+}
+.exchange-views {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+.exchange-view,
+.exchange-tool {
+  min-height: 44px;
+  padding: 0 0.875rem;
+  font: var(--type-label);
+}
+.exchange-view {
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    background 0.15s var(--ease),
+    color 0.15s var(--ease);
+}
+.exchange-view[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.exchange-view:not([aria-pressed='true']):hover {
+  background: var(--surface);
+}
+.exchange-copy {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  margin-inline-start: auto;
+}
+.exchange-copy-status {
+  color: var(--muted);
+  font: var(--type-caption);
+}
+/* A nested open disclosure must stay hidden when its parent is closed. */
+.exchange-list .disclosure[data-open='false'] > .disclosure-body *,
+.disclosure[data-open='false'] > .disclosure-body .exchange-list,
+.disclosure[data-open='false'] > .disclosure-body .exchange-list * {
+  visibility: hidden;
+}
+.exchange-list
+  .disclosure[data-open='false']
+  > .disclosure-body
+  > .disclosure-inner {
+  padding-bottom: 0;
+}
+.exchange-dialog .disclosure-head {
+  flex-wrap: wrap;
+}
+.exchange-dialog .disclosure-meta {
+  margin-inline-start: auto;
+  color: var(--muted);
+  font: var(--type-caption);
+}
+@media (max-width: 30rem) {
+  .dialog.exchange-dialog {
+    padding-inline: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exchange-view {
+    transition: none;
+  }
+}

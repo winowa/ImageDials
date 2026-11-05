@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "scope": "Synthetic browser-private metadata and keyset traversal; no HTTP endpoint",
+  "page_size": 3,
+  "records": [
+    {
+      "record": {
+        "id": "oldest",
+        "original_prompt": "A folded paper shape",
+        "original_selected_controls": [],
+        "extension": {
+          "enabled": false,
+          "count": 0,
+          "note": null
+        }
+      },
+      "origin": "imported",
+      "addedAt": 0,
+      "hasFull": true,
+      "hasThumbnail": true,
+      "hasPrepared": false
+    },
+    {
+      "record": {
+        "id": "alpha",
+        "original_prompt": "A ceramic bowl",
+        "original_selected_controls": [],
+        "created_at": 999999
+      },
+      "origin": "generated",
+      "addedAt": 10,
+      "hasFull": true,
+      "hasThumbnail": false,
+      "hasPrepared": false
+    },
+    {
+      "record": {
+        "id": "beta",
+        "original_prompt": "A glass sphere",
+        "original_selected_controls": []
+      },
+      "origin": "generated",
+      "addedAt": 20,
+      "hasFull": true,
+      "hasThumbnail": true,
+      "hasPrepared": false
+    },
+    {
+      "record": {
+        "id": "delta",
+        "original_prompt": "A wooden frame",
+        "original_selected_controls": [],
+        "derivative_type": "watermarked"
+      },
+      "origin": "imported",
+      "addedAt": 30,
+      "hasFull": true,
+      "hasThumbnail": true,
+      "hasPrepared": false
+    },
+    {
+      "record": {
+        "id": "epsilon",
+        "original_prompt": "A brass ring",
+        "original_selected_controls": []
+      },
+      "origin": "generated",
+      "addedAt": 20,
+      "hasFull": false,
+      "hasThumbnail": false,
+      "hasPrepared": false
+    },
+    {
+      "record": {
+        "id": "gamma",
+        "original_prompt": "A woven basket",
+        "original_selected_controls": []
+      },
+      "origin": "imported",
+      "addedAt": 20,
+      "hasFull": false,
+      "hasThumbnail": true,
+      "hasPrepared": false
+    },
+    {
+      "record": {
+        "id": "zeta",
+        "original_prompt": "A painted tile",
+        "original_selected_controls": [
+          {
+            "id": "pattern",
+            "kind": "binary",
+            "label": "Pattern",
+            "value": false
+          },
+          {
+            "id": "tilt",
+            "kind": "slider",
+            "label": "Tilt",
+            "min": 0,
+            "max": 90,
+            "value": 0
+          }
+        ]
+      },
+      "origin": "generated",
+      "addedAt": 20,
+      "hasFull": true,
+      "hasThumbnail": true,
+      "hasPrepared": true
+    }
+  ],
+  "expected": {
+    "count": 7,
+    "newest_first_keys": [
+      "delta",
+      "zeta",
+      "gamma",
+      "epsilon",
+      "beta",
+      "alpha",
+      "oldest"
+    ],
+    "older_pages": [
+      ["delta", "zeta", "gamma"],
+      ["epsilon", "beta", "alpha"],
+      ["oldest"]
+    ],
+    "around_beta_one_each": ["epsilon", "beta", "alpha"],
+    "after_deleted_gamma_anchor": ["epsilon", "beta", "alpha"],
+    "after_newer_arrival_existing_gamma_anchor": ["epsilon", "beta", "alpha"],
+    "exact_detail_preserves_unknown_and_falsy_fields": true,
+    "new_admission_limit_must_not_reduce_read_count": true,
+    "metadata_reads_may_open_media_blobs": false,
+    "oldest_edge_page_keys": ["beta", "alpha", "oldest"]
+  }
+}

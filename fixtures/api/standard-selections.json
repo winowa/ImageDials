@@ -1,0 +1,419 @@
+{
+  "fixture_kind": "Sanitized contract for optional Standard category suggestions. Offline fixtures and the deterministic mock provider only; not real model output, quality or latency.",
+  "contract": {
+    "response_field": "standard_selections",
+    "placement": "top level of the existing POST /api/controls/dynamic response, beside controls and dynamic_controls_metadata",
+    "present_only_when": "at least one category has a usable suggestion (a valid null or empty list counts)",
+    "value_shapes": {
+      "single/select category": "one option id string, or null",
+      "multi/checkbox category": "array of option ids (at most 2, unique), [] for a deliberate empty choice, or null",
+      "null": "let the composer decide; consumer sets enabled=false (apply_to_generation=false) and keeps the stored value",
+      "absent key": "no usable suggestion; consumer applies its normal fallback"
+    },
+    "max_multi_suggestions": 2,
+    "validation_report": "dynamic_controls_metadata.suggestion_validation (diagnostic only)",
+    "evidence_anchor": "dynamic_controls_metadata.suggestion_anchor (16 hex characters)"
+  },
+  "cases": [
+    {
+      "name": "valid-mixed",
+      "mode": "image",
+      "model_field": {
+        "style": ["photography", "cinematic"],
+        "color": ["warm"],
+        "lighting": ["golden-hour"],
+        "composition": ["rule-of-thirds"],
+        "camera-angle": "low-angle",
+        "texture": null,
+        "mood": [],
+        "background": "outdoors"
+      },
+      "expected_selections": {
+        "style": ["photography", "cinematic"],
+        "color": ["warm"],
+        "lighting": ["golden-hour"],
+        "composition": ["rule-of-thirds"],
+        "camera-angle": "low-angle",
+        "texture": null,
+        "mood": [],
+        "background": "outdoors"
+      },
+      "expected_validation": {
+        "status": "valid",
+        "accepted": {
+          "style": "value",
+          "color": "value",
+          "lighting": "value",
+          "composition": "value",
+          "camera-angle": "value",
+          "texture": "model-decides",
+          "mood": "empty",
+          "background": "value"
+        },
+        "rejected": []
+      }
+    },
+    {
+      "name": "absent-field",
+      "mode": "image",
+      "model_field_absent": true,
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "absent",
+        "accepted": {},
+        "rejected": []
+      }
+    },
+    {
+      "name": "top-level-string",
+      "mode": "image",
+      "model_field": "photography",
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "invalid",
+        "accepted": {},
+        "rejected": [
+          {
+            "id": null,
+            "reason": "not-object"
+          }
+        ]
+      }
+    },
+    {
+      "name": "top-level-list",
+      "mode": "image",
+      "model_field": ["photography"],
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "invalid",
+        "accepted": {},
+        "rejected": [
+          {
+            "id": null,
+            "reason": "not-object"
+          }
+        ]
+      }
+    },
+    {
+      "name": "top-level-null",
+      "mode": "image",
+      "model_field": null,
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "invalid",
+        "accepted": {},
+        "rejected": [
+          {
+            "id": null,
+            "reason": "not-object"
+          }
+        ]
+      }
+    },
+    {
+      "name": "empty-object",
+      "mode": "image",
+      "model_field": {},
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "none-usable",
+        "accepted": {},
+        "rejected": []
+      }
+    },
+    {
+      "name": "missing-category-keys-are-not-requests-to-disable",
+      "mode": "image",
+      "model_field": {
+        "style": ["watercolor"]
+      },
+      "expected_selections": {
+        "style": ["watercolor"]
+      },
+      "expected_validation": {
+        "status": "valid",
+        "accepted": {
+          "style": "value"
+        },
+        "rejected": []
+      }
+    },
+    {
+      "name": "unknown-ids-dropped",
+      "mode": "image",
+      "model_field": {
+        "style": ["photography", "nonexistent"],
+        "bogus": ["x"],
+        "mood": ["not-a-mood"]
+      },
+      "expected_selections": {
+        "style": ["photography"]
+      },
+      "expected_validation": {
+        "status": "partial",
+        "accepted": {
+          "style": "value"
+        },
+        "rejected": [
+          {
+            "id": "bogus",
+            "reason": "unknown-category"
+          },
+          {
+            "id": "mood",
+            "reason": "no-valid-options"
+          }
+        ]
+      }
+    },
+    {
+      "name": "wrong-scalar-and-list-kinds-are-not-coerced",
+      "mode": "image",
+      "model_field": {
+        "style": "photography",
+        "camera-angle": ["eye-level"],
+        "color": 5,
+        "lighting": true,
+        "background": 7
+      },
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "none-usable",
+        "accepted": {},
+        "rejected": [
+          {
+            "id": "style",
+            "reason": "wrong-kind"
+          },
+          {
+            "id": "color",
+            "reason": "wrong-kind"
+          },
+          {
+            "id": "lighting",
+            "reason": "wrong-kind"
+          },
+          {
+            "id": "camera-angle",
+            "reason": "wrong-kind"
+          },
+          {
+            "id": "background",
+            "reason": "wrong-kind"
+          }
+        ]
+      }
+    },
+    {
+      "name": "unknown-single-option",
+      "mode": "image",
+      "model_field": {
+        "camera-angle": "sideways"
+      },
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "none-usable",
+        "accepted": {},
+        "rejected": [
+          {
+            "id": "camera-angle",
+            "reason": "unknown-option"
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicates-removed-and-multi-capped-at-two",
+      "mode": "image",
+      "model_field": {
+        "style": ["photography", "photography", "watercolor", "pastel"]
+      },
+      "expected_selections": {
+        "style": ["photography", "watercolor"]
+      },
+      "expected_validation": {
+        "status": "valid",
+        "accepted": {
+          "style": "value"
+        },
+        "rejected": [],
+        "capped": ["style"]
+      }
+    },
+    {
+      "name": "null-and-empty-are-distinct",
+      "mode": "image",
+      "model_field": {
+        "texture": null,
+        "mood": []
+      },
+      "expected_selections": {
+        "texture": null,
+        "mood": []
+      },
+      "expected_validation": {
+        "status": "valid",
+        "accepted": {
+          "texture": "model-decides",
+          "mood": "empty"
+        },
+        "rejected": []
+      }
+    },
+    {
+      "name": "nonempty-stripped-to-zero-is-invalid-not-empty",
+      "mode": "image",
+      "model_field": {
+        "mood": ["nope", 3],
+        "texture": []
+      },
+      "expected_selections": {
+        "texture": []
+      },
+      "expected_validation": {
+        "status": "partial",
+        "accepted": {
+          "texture": "empty"
+        },
+        "rejected": [
+          {
+            "id": "mood",
+            "reason": "no-valid-options"
+          }
+        ]
+      }
+    },
+    {
+      "name": "non-string-elements-are-dropped-not-coerced",
+      "mode": "image",
+      "model_field": {
+        "style": [1, true, "photography"],
+        "color": [1]
+      },
+      "expected_selections": {
+        "style": ["photography"]
+      },
+      "expected_validation": {
+        "status": "partial",
+        "accepted": {
+          "style": "value"
+        },
+        "rejected": [
+          {
+            "id": "color",
+            "reason": "no-valid-options"
+          }
+        ]
+      }
+    },
+    {
+      "name": "deliberate-contrasts-are-not-filtered",
+      "mode": "image",
+      "model_field": {
+        "color": ["warm", "cool"],
+        "texture": ["rough", "smooth"]
+      },
+      "expected_selections": {
+        "color": ["warm", "cool"],
+        "texture": ["rough", "smooth"]
+      },
+      "expected_validation": {
+        "status": "valid",
+        "accepted": {
+          "color": "value",
+          "texture": "value"
+        },
+        "rejected": []
+      }
+    },
+    {
+      "name": "asset-image-catalog",
+      "mode": "asset-image",
+      "model_field": {
+        "material": ["ceramic", "glass"],
+        "view": "front",
+        "construction": null,
+        "surface-detail": [],
+        "lighting": ["studio"],
+        "mood": ["calm"]
+      },
+      "expected_selections": {
+        "material": ["ceramic", "glass"],
+        "view": "front",
+        "construction": null,
+        "surface-detail": [],
+        "lighting": ["studio"]
+      },
+      "expected_validation": {
+        "status": "partial",
+        "accepted": {
+          "material": "value",
+          "view": "value",
+          "construction": "model-decides",
+          "surface-detail": "empty",
+          "lighting": "value"
+        },
+        "rejected": [
+          {
+            "id": "mood",
+            "reason": "unknown-category"
+          }
+        ]
+      }
+    },
+    {
+      "name": "standard-id-is-not-valid-for-asset-mode",
+      "mode": "asset-image",
+      "model_field": {
+        "camera-angle": "front"
+      },
+      "expected_selections": {},
+      "expected_validation": {
+        "status": "none-usable",
+        "accepted": {},
+        "rejected": [
+          {
+            "id": "camera-angle",
+            "reason": "unknown-category"
+          }
+        ]
+      }
+    }
+  ],
+  "mock_responses": {
+    "image": {
+      "standard_selections": {
+        "style": ["photography"],
+        "color": ["natural"],
+        "lighting": ["soft-daylight"],
+        "composition": ["balanced"],
+        "camera-angle": "eye-level",
+        "texture": null,
+        "mood": [],
+        "background": "plain"
+      }
+    },
+    "asset-image": {
+      "standard_selections": {
+        "material": ["ceramic"],
+        "finish": ["matte"],
+        "form": ["rounded"],
+        "view": "three-quarter",
+        "color": ["natural"],
+        "surface-detail": null,
+        "construction": [],
+        "lighting": ["studio"]
+      }
+    }
+  },
+  "old_response_shape": {
+    "controls": [],
+    "dynamic_controls_metadata": {
+      "provider": "mock",
+      "response": [],
+      "raw_response": ""
+    }
+  }
+}

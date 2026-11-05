@@ -1,13 +1,24 @@
 # ImageDials
 
-ImageDials turns a text prompt for an image into a set of adjustable controls (dials), then rebuilds the prompt from the values you choose and generates the image.
+ImageDials turns an image idea into adjustable controls, then uses your selections to generate or edit an image.
 
-## Layout
+Inspired by [Microsoft Research’s Promptions](https://github.com/microsoft/Promptions): dynamically generated controls help refine a prompt without having to write every detail. The Promptions approach can steer any type of model, not just image models; prompts can extensively customize both the kinds of controls and their categories, choices and starting values. ImageDials applies that approach to image generation and editing.
 
-| Path        | Purpose          |
-| ----------- | ---------------- |
-| `backend/`  | FastAPI service  |
-| `frontend/` | React app (Vite) |
+Here, the initial generated options deliberately include one of each of the eight supported control types: slider, single-select chips, multi-select chips, dropdown, radio buttons, checkboxes, text input and toggle. Their content is tailored to the idea, alongside reusable Standard controls.
+
+## Pages and modes
+
+- **Create:** write a prompt, refine generated and Standard controls, and generate images. Includes prompt ideas, reference images, undo/redo, control presets, variations and source/result comparison.
+- **Gallery:** play a slideshow of saved images, filter by shape, combine transitions and hide the controls for viewing.
+- **Library:** search saved images, organize favorites and collections, reopen generation settings, download, watermark and print.
+
+Create has three modes:
+
+- **Text to image:** generate from a prompt. Load an image to recover embedded settings or get a description to use as a prompt.
+- **Image edit:** attach ordered reference images and describe changes, using an editing-capable model. Model-specific guidance explains how to refer to each image.
+- **3D asset image:** generate a single isolated object against a contrasting plain background, ready to use as input to an image-to-3D model. ImageDials generates the input image, not the 3D asset itself.
+
+Primarily tested with **Qwen3.5-9B** for controls and prompt composition, and **Qwen-Image-Edit-2.1** for image generation and editing, with the **P-Q-Image-2.1 turbo LoRA** to speed up generation. Providers are configurable; editing requires model and adapter support. See [Image editing](docs/IMAGE-EDITING.md) and [Generation options](docs/GENERATION-OPTIONS.md) for contracts and limits.
 
 ## Configure and run
 
@@ -16,7 +27,7 @@ Copy `.env.example` to `.env` in the repository root and choose free, distinct
 using that API port. Both processes share this file; there are no per-app env files.
 Every supported setting is documented in the template. Keep `.env` private.
 
-Requires **Node 24.15+ (24.x) or 26+** and **Python 3.11+** on Windows, macOS or Linux.
+Requires **Node 24.15+ (24.x) or 26+**, **npm 11.20+**, and **Python 3.11+** on Windows, macOS or Linux.
 Create the Python environment from the project root:
 
 ```text
@@ -61,10 +72,10 @@ Run `python scripts/ci.py` with the locked development environment. See
 and the local CI runner. Local CI needs no hosted account; platform results identify
 which operating system actually ran.
 
-## Status
-
-Scaffold only. Image-generation features are not implemented yet.
+Checks have run on Linux; Windows/macOS and physical-device checks have not been run.
 
 ## License
 
 [MIT](LICENSE) © 2026 Brian Mahoney.
+
+Bundled fonts (Bricolage Grotesque, Atkinson Hyperlegible Next, JetBrains Mono) are licensed separately under the SIL Open Font License 1.1. Sources and license texts: [frontend/public/fonts/README.md](frontend/public/fonts/README.md).

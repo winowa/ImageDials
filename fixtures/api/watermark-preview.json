@@ -1,0 +1,53 @@
+{
+  "description": "Compact thumbnail preview captured from deterministic Python analysis of a synthetic PNG. No model inference.",
+  "source_record": {
+    "id": "batch-example",
+    "created_at": 1700000000,
+    "prompt": "A brass rectangle on a blue background",
+    "width": 192,
+    "height": 128,
+    "selected_controls": [],
+    "sha256": "8afccf91d55698e704fc0c08bfa108d24fc52822313e73473188db443874939d",
+    "extensions": {
+      "zero": 0,
+      "enabled": false
+    }
+  },
+  "source_png_base64": "iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAIAAADS5vE8AAABcklEQVR4nO3UQQ3CUAAFQUpASUVUQg+Vg44KQhsXPPxt8tNkRsE7bN6ybscDRj1nD+DeBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8po9YMT385s94Xr7+Z49YYQHIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREsqzbMXsDN+aBSAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIi+QNjLAVLUJdBLAAAAABJRU5ErkJggg==",
+  "summary": {
+    "created_at": 1700000000.0,
+    "detail_url": "/api/images/library/record/batch-example",
+    "dimensions": {
+      "height": 128,
+      "width": 192
+    },
+    "display_prompt": "A brass rectangle on a blue background",
+    "event_id": null,
+    "filename": "batch-example.png",
+    "generation_mode": "standard",
+    "has_prepared_record": false,
+    "has_watermark_analysis": true,
+    "id": "batch-example",
+    "image_id": "batch-example",
+    "image_url": "/api/images/batch-example/content",
+    "orientation": "landscape",
+    "print_watermark": {
+      "analysis_version": "pixel-analysis-v5",
+      "position": {
+        "corner": "bottom-left"
+      },
+      "presentation": {
+        "glow_color": "#05101c",
+        "gradient_end": "#a7bacd",
+        "gradient_start": "#8aa1b9",
+        "separation_color": "#05101c"
+      }
+    },
+    "sha256": "8afccf91d55698e704fc0c08bfa108d24fc52822313e73473188db443874939d",
+    "storage_id": "local-0",
+    "thumbnail_url": "/api/images/library/file/local-0/batch-example.png?variant=thumbnail",
+    "title": null,
+    "watermark_preview_status": "available"
+  },
+  "source_unchanged": true
+}

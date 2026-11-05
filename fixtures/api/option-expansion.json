@@ -1,0 +1,202 @@
+{
+  "fixture_kind": "Mock canonical option expansion with two exact-five appended batches. Real provider verification is recorded separately.",
+  "first": {
+    "request": {
+      "control": {
+        "id": "cloth",
+        "kind": "multi-select",
+        "label": "Cloth detail",
+        "description": "Details of the fabric.",
+        "value": ["woven"],
+        "options": {
+          "woven": {
+            "value": "Woven",
+            "description": "Interlaced fibers"
+          }
+        },
+        "origin": "generated",
+        "independent_extension": {
+          "zero": 0,
+          "false": false
+        }
+      },
+      "categories": [
+        {
+          "id": "color",
+          "kind": "multi-select",
+          "label": "Color",
+          "description": "Palette combinations."
+        },
+        {
+          "id": "cloth",
+          "kind": "multi-select",
+          "label": "Cloth detail",
+          "description": "Details of the fabric."
+        }
+      ]
+    },
+    "response": {
+      "id": "cloth",
+      "kind": "multi-select",
+      "label": "Cloth detail",
+      "description": "Details of the fabric.",
+      "value": ["woven"],
+      "options": {
+        "woven": {
+          "value": "Woven",
+          "description": "Interlaced fibers"
+        },
+        "mock-additional-choice": {
+          "value": "Additional variation",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-2": {
+          "value": "Additional variation 2",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-3": {
+          "value": "Additional variation 3",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-4": {
+          "value": "Additional variation 4",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-5": {
+          "value": "Additional variation 5",
+          "description": "Mock provider option"
+        }
+      },
+      "origin": "generated",
+      "independent_extension": {
+        "zero": 0,
+        "false": false
+      }
+    }
+  },
+  "second": {
+    "request": {
+      "control": {
+        "id": "cloth",
+        "kind": "multi-select",
+        "label": "Cloth detail",
+        "description": "Details of the fabric.",
+        "value": ["woven"],
+        "options": {
+          "woven": {
+            "value": "Woven",
+            "description": "Interlaced fibers"
+          },
+          "mock-additional-choice": {
+            "value": "Additional variation",
+            "description": "Mock provider option"
+          },
+          "mock-additional-choice-2": {
+            "value": "Additional variation 2",
+            "description": "Mock provider option"
+          },
+          "mock-additional-choice-3": {
+            "value": "Additional variation 3",
+            "description": "Mock provider option"
+          },
+          "mock-additional-choice-4": {
+            "value": "Additional variation 4",
+            "description": "Mock provider option"
+          },
+          "mock-additional-choice-5": {
+            "value": "Additional variation 5",
+            "description": "Mock provider option"
+          }
+        },
+        "origin": "generated",
+        "independent_extension": {
+          "zero": 0,
+          "false": false
+        }
+      },
+      "categories": [
+        {
+          "id": "color",
+          "kind": "multi-select",
+          "label": "Color",
+          "description": "Palette combinations."
+        },
+        {
+          "id": "cloth",
+          "kind": "multi-select",
+          "label": "Cloth detail",
+          "description": "Details of the fabric."
+        }
+      ]
+    },
+    "response": {
+      "id": "cloth",
+      "kind": "multi-select",
+      "label": "Cloth detail",
+      "description": "Details of the fabric.",
+      "value": ["woven"],
+      "options": {
+        "woven": {
+          "value": "Woven",
+          "description": "Interlaced fibers"
+        },
+        "mock-additional-choice": {
+          "value": "Additional variation",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-2": {
+          "value": "Additional variation 2",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-3": {
+          "value": "Additional variation 3",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-4": {
+          "value": "Additional variation 4",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-5": {
+          "value": "Additional variation 5",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-10": {
+          "value": "Additional variation 10",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-6": {
+          "value": "Additional variation 6",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-7": {
+          "value": "Additional variation 7",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-8": {
+          "value": "Additional variation 8",
+          "description": "Mock provider option"
+        },
+        "mock-additional-choice-9": {
+          "value": "Additional variation 9",
+          "description": "Mock provider option"
+        }
+      },
+      "origin": "generated",
+      "independent_extension": {
+        "zero": 0,
+        "false": false
+      }
+    }
+  },
+  "option_count_per_click": 5,
+  "errors": {
+    "insufficient": {
+      "status": 502,
+      "body": {
+        "detail": "The language provider did not return 5 distinct additional choices"
+      }
+    }
+  },
+  "max_generation_attempts": 2,
+  "max_schema_fallbacks_per_attempt": 1
+}

@@ -48,6 +48,7 @@ test('selects native venv paths and passes arguments without shell quoting', () 
         : join(root, 'backend', '.venv', 'bin', 'python'),
     );
     assert.equal(spec.cwd, join(root, 'backend'));
+    assert.ok(spec.args.includes('--no-access-log'));
     assert.deepEqual(spec.args.slice(-4), [
       '--host',
       env.API_HOST,
@@ -116,4 +117,18 @@ test('real launcher handles a checkout path with spaces/Unicode and propagates c
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
+});
+
+test('API shutdown drains event streams for a bounded configured interval', () => {
+  const value = (settings) => {
+    const args = launchSpec('api', settings).args;
+    return args[args.indexOf('--timeout-graceful-shutdown') + 1];
+  };
+  assert.equal(value(env), '10');
+  assert.equal(value({ ...env, API_SHUTDOWN_GRACE_SECONDS: '2' }), '2');
+  for (const invalid of ['', '0', '-1', '1.5', 'Infinity', 'later'])
+    assert.throws(
+      () => value({ ...env, API_SHUTDOWN_GRACE_SECONDS: invalid }),
+      /API_SHUTDOWN_GRACE_SECONDS/,
+    );
 });

@@ -1,0 +1,1063 @@
+{
+  "fixture_kind": "Independent mock API examples. The prepared PNG tests transport, not watermark renderer correctness.",
+  "settings": {
+    "type": "text",
+    "text": "ImageDials",
+    "svg_markup": "",
+    "svg_recolor": true,
+    "fingerprint": "b50becee0d2dcf31a85d5b131788e4ea002462b7dd9fb49f861393457d7340b6",
+    "limits": {
+      "max_lines": 4,
+      "max_line_length": 16,
+      "max_svg_bytes": 65536
+    },
+    "rendering": {
+      "rendererVersion": "square-watermark-v1",
+      "analysisVersion": "pixel-analysis-v2",
+      "sizeFraction": 0.2,
+      "insetFraction": 0.06,
+      "ruleHeightFraction": 0.044,
+      "contentGapFraction": 0.064,
+      "gradientStartHoldFraction": 0.4,
+      "separationOpacity": 0.6,
+      "glowOpacity": 0.32,
+      "safeAspectRatios": {
+        "landscape": [3, 2],
+        "portrait": [2, 3],
+        "square": [2, 3]
+      },
+      "defaultPresentation": {
+        "gradient_start": "#ffd15e",
+        "gradient_end": null,
+        "separation_color": "#05070a",
+        "glow_color": "#ff6f3d"
+      }
+    }
+  },
+  "save_request": {
+    "type": "text",
+    "text": "Studio\n2026"
+  },
+  "save_response": {
+    "type": "text",
+    "text": "Studio\n2026",
+    "svg_markup": "",
+    "svg_recolor": true,
+    "fingerprint": "a6d10ac55ed82152abbeb6b71c2b5b57e2aaa112a3e2b79f533eb8500710620e",
+    "limits": {
+      "max_lines": 4,
+      "max_line_length": 16,
+      "max_svg_bytes": 65536
+    },
+    "rendering": {
+      "rendererVersion": "square-watermark-v1",
+      "analysisVersion": "pixel-analysis-v2",
+      "sizeFraction": 0.2,
+      "insetFraction": 0.06,
+      "ruleHeightFraction": 0.044,
+      "contentGapFraction": 0.064,
+      "gradientStartHoldFraction": 0.4,
+      "separationOpacity": 0.6,
+      "glowOpacity": 0.32,
+      "safeAspectRatios": {
+        "landscape": [3, 2],
+        "portrait": [2, 3],
+        "square": [2, 3]
+      },
+      "defaultPresentation": {
+        "gradient_start": "#ffd15e",
+        "gradient_end": null,
+        "separation_color": "#05070a",
+        "glow_color": "#ff6f3d"
+      }
+    }
+  },
+  "analysis_request": {
+    "storage_id": "local-0",
+    "filename": "11111111-1111-4111-8111-111111111111.png"
+  },
+  "analysis_response": {
+    "status": "generated",
+    "print_watermark": {
+      "position": {
+        "corner": "bottom-left"
+      },
+      "presentation": {
+        "glow_color": "#8381b1",
+        "gradient_end": "#8381b1",
+        "gradient_start": "#7986ac",
+        "separation_color": "#faf9f6",
+        "use_gradient": true
+      },
+      "provenance": {
+        "contrast": {
+          "gradient_end_against_median": 4.544521361759431,
+          "gradient_start_against_median": 4.6068406884959545,
+          "scope": "Median region background; not a per-pixel contrast guarantee",
+          "target_ratio": 4.5
+        },
+        "corner_scores": [
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.0,
+            "color_entropy": -0.0,
+            "corner": "bottom-left",
+            "edge_mean": 0.0,
+            "geometry": {
+              "corner": "bottom-left",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 12,
+              "y": 148
+            },
+            "luminance_deviation": 0.0,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          },
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.0,
+            "color_entropy": -0.0,
+            "corner": "bottom-right",
+            "edge_mean": 0.0,
+            "geometry": {
+              "corner": "bottom-right",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 248,
+              "y": 148
+            },
+            "luminance_deviation": 0.0,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          },
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.05165541827802171,
+            "color_entropy": 0.09415496129369234,
+            "corner": "top-left",
+            "edge_mean": 0.014503711876320304,
+            "geometry": {
+              "corner": "top-left",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 12,
+              "y": 12
+            },
+            "luminance_deviation": 0.08524190027041029,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          },
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.06033516525475683,
+            "color_entropy": 0.1048069064860806,
+            "corner": "top-right",
+            "edge_mean": 0.019222312871431113,
+            "geometry": {
+              "corner": "top-right",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 248,
+              "y": 12
+            },
+            "luminance_deviation": 0.09920875840608384,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          }
+        ],
+        "generator_version": "pixel-analysis-v2",
+        "geometry_policy_fingerprint": "4dad42d65c466d7d5400f14f94bd4a1fe1bfc62f17534d9dec436f60abdb2451",
+        "local_background": "#1a1e2a",
+        "method": "deterministic-python-pixels",
+        "palette": [
+          "#1a1e2a",
+          "#6d63ac",
+          "#1b1e2a",
+          "#151a25",
+          "#191e29",
+          "#1a1e29"
+        ],
+        "selected_corner": "bottom-left",
+        "source_sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5"
+      }
+    },
+    "image": {
+      "id": "11111111-1111-4111-8111-111111111111",
+      "title": "An amber glass bird on a small wooden stand",
+      "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+      "enrichment_metadata": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "prompt_source": "final_prompt"
+      },
+      "prompt": "An amber glass bird on a small wooden stand",
+      "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+      "mode": "image",
+      "aspect": "3:2",
+      "categories": [],
+      "provider": "mock",
+      "model": "mock-geometric-v1",
+      "created_at": 1793506262.56516,
+      "image_url": "/api/images/11111111-1111-4111-8111-111111111111/content",
+      "diagnostics": {
+        "seed": 4015112176
+      },
+      "composition": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "keyword_extraction": {
+          "status": "not-required",
+          "keywords": []
+        }
+      },
+      "selected_controls": [
+        {
+          "id": "surface",
+          "kind": "single-select",
+          "label": "Surface",
+          "options": {
+            "smooth": {
+              "value": "smooth glass",
+              "description": "Even surface"
+            }
+          },
+          "value": "smooth",
+          "extension": {
+            "retained": true
+          }
+        },
+        {
+          "id": "angle",
+          "kind": "slider",
+          "label": "Head angle",
+          "min": 0,
+          "max": 90,
+          "step": 1,
+          "value": 0
+        },
+        {
+          "id": "pattern",
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "id": "notes",
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "id": "future",
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          },
+          "vendor": "independent-fixture"
+        }
+      ],
+      "resolved_controls": [
+        {
+          "kind": "single-select",
+          "label": "Surface",
+          "value": "smooth glass"
+        },
+        {
+          "kind": "slider",
+          "label": "Head angle",
+          "value": 0
+        },
+        {
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          }
+        }
+      ],
+      "dynamic_controls_metadata": {
+        "prompt": "Independent fixture request",
+        "response": {
+          "extension": [false, 0]
+        },
+        "raw_response": "{}"
+      },
+      "requested_dimensions": {
+        "width": 300,
+        "height": 200
+      },
+      "must_have_terms": ["amber"],
+      "accessibility": {
+        "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+        "prompt_source": "final_prompt",
+        "accessibility_features": ["alt_text"],
+        "image_url": "/api/images/11111111-1111-4111-8111-111111111111/content"
+      },
+      "width": 300,
+      "height": 200,
+      "sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5",
+      "image_id": "11111111-1111-4111-8111-111111111111",
+      "storage_id": "local-0",
+      "storage_type": "local",
+      "storage_label": "Image library",
+      "filename": "11111111-1111-4111-8111-111111111111.png",
+      "event_id": null,
+      "visibility": "shared",
+      "original_prompt": "An amber glass bird on a small wooden stand",
+      "prompt_creation_request": null,
+      "dimensions": {
+        "width": 300,
+        "height": 200
+      },
+      "created_at_iso": 1793506262565159936,
+      "print_watermark": {
+        "position": {
+          "corner": "bottom-left"
+        },
+        "presentation": {
+          "glow_color": "#8381b1",
+          "gradient_end": "#8381b1",
+          "gradient_start": "#7986ac",
+          "separation_color": "#faf9f6",
+          "use_gradient": true
+        },
+        "provenance": {
+          "contrast": {
+            "gradient_end_against_median": 4.544521361759431,
+            "gradient_start_against_median": 4.6068406884959545,
+            "scope": "Median region background; not a per-pixel contrast guarantee",
+            "target_ratio": 4.5
+          },
+          "corner_scores": [
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.0,
+              "color_entropy": -0.0,
+              "corner": "bottom-left",
+              "edge_mean": 0.0,
+              "geometry": {
+                "corner": "bottom-left",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 12,
+                "y": 148
+              },
+              "luminance_deviation": 0.0,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            },
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.0,
+              "color_entropy": -0.0,
+              "corner": "bottom-right",
+              "edge_mean": 0.0,
+              "geometry": {
+                "corner": "bottom-right",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 248,
+                "y": 148
+              },
+              "luminance_deviation": 0.0,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            },
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.05165541827802171,
+              "color_entropy": 0.09415496129369234,
+              "corner": "top-left",
+              "edge_mean": 0.014503711876320304,
+              "geometry": {
+                "corner": "top-left",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 12,
+                "y": 12
+              },
+              "luminance_deviation": 0.08524190027041029,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            },
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.06033516525475683,
+              "color_entropy": 0.1048069064860806,
+              "corner": "top-right",
+              "edge_mean": 0.019222312871431113,
+              "geometry": {
+                "corner": "top-right",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 248,
+                "y": 12
+              },
+              "luminance_deviation": 0.09920875840608384,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            }
+          ],
+          "generator_version": "pixel-analysis-v2",
+          "geometry_policy_fingerprint": "4dad42d65c466d7d5400f14f94bd4a1fe1bfc62f17534d9dec436f60abdb2451",
+          "local_background": "#1a1e2a",
+          "method": "deterministic-python-pixels",
+          "palette": [
+            "#1a1e2a",
+            "#6d63ac",
+            "#1b1e2a",
+            "#151a25",
+            "#191e29",
+            "#1a1e29"
+          ],
+          "selected_corner": "bottom-left",
+          "source_sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5"
+        }
+      },
+      "print_ready": null,
+      "print_watermark_key": "b42a5435d173bc9c15b1df1235d29d222d76183157ce9b2e492d7c587ec6bed8",
+      "print_ready_url": null,
+      "generation_mode": "standard"
+    }
+  },
+  "current_analysis_image": {
+    "accessibility": {
+      "accessibility_features": ["alt_text"],
+      "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+      "image_url": "/api/images/11111111-1111-4111-8111-111111111111/content",
+      "prompt_source": "final_prompt"
+    },
+    "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+    "aspect": "3:2",
+    "categories": [],
+    "composition": {
+      "keyword_extraction": {
+        "keywords": [],
+        "status": "not-required"
+      },
+      "model": "mock-composer-v1",
+      "provider": "mock"
+    },
+    "created_at": 1793506262.56516,
+    "created_at_iso": 1793506262565159936,
+    "diagnostics": {
+      "seed": 4015112176
+    },
+    "dimensions": {
+      "height": 200,
+      "width": 300
+    },
+    "dynamic_controls_metadata": {
+      "prompt": "Independent fixture request",
+      "raw_response": "{}",
+      "response": {
+        "extension": [false, 0]
+      }
+    },
+    "enrichment_metadata": {
+      "model": "mock-composer-v1",
+      "prompt_source": "final_prompt",
+      "provider": "mock"
+    },
+    "event_id": null,
+    "filename": "11111111-1111-4111-8111-111111111111.png",
+    "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+    "generation_mode": "standard",
+    "height": 200,
+    "id": "11111111-1111-4111-8111-111111111111",
+    "image_id": "11111111-1111-4111-8111-111111111111",
+    "image_url": "/api/images/11111111-1111-4111-8111-111111111111/content",
+    "mode": "image",
+    "model": "mock-geometric-v1",
+    "must_have_terms": ["amber"],
+    "original_prompt": "An amber glass bird on a small wooden stand",
+    "print_ready": null,
+    "print_ready_url": null,
+    "print_watermark": {
+      "position": {
+        "corner": "bottom-left"
+      },
+      "presentation": {
+        "glow_color": "#8381b1",
+        "gradient_end": "#8381b1",
+        "gradient_start": "#7986ac",
+        "separation_color": "#faf9f6",
+        "use_gradient": true
+      },
+      "provenance": {
+        "contrast": {
+          "gradient_end_against_median": 4.544521361759431,
+          "gradient_start_against_median": 4.6068406884959545,
+          "scope": "Median region background; not a per-pixel contrast guarantee",
+          "target_ratio": 4.5
+        },
+        "corner_scores": [
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.0,
+            "color_entropy": -0.0,
+            "corner": "bottom-left",
+            "edge_mean": 0.0,
+            "geometry": {
+              "corner": "bottom-left",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 12,
+              "y": 148
+            },
+            "luminance_deviation": 0.0,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          },
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.0,
+            "color_entropy": -0.0,
+            "corner": "bottom-right",
+            "edge_mean": 0.0,
+            "geometry": {
+              "corner": "bottom-right",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 248,
+              "y": 148
+            },
+            "luminance_deviation": 0.0,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          },
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.05165541827802171,
+            "color_entropy": 0.09415496129369234,
+            "corner": "top-left",
+            "edge_mean": 0.014503711876320304,
+            "geometry": {
+              "corner": "top-left",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 12,
+              "y": 12
+            },
+            "luminance_deviation": 0.08524190027041029,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          },
+          {
+            "background": "#1a1e2a",
+            "busyness": 0.06033516525475683,
+            "color_entropy": 0.1048069064860806,
+            "corner": "top-right",
+            "edge_mean": 0.019222312871431113,
+            "geometry": {
+              "corner": "top-right",
+              "inset": 12,
+              "safe_rectangle": {
+                "height": 200.0,
+                "width": 300,
+                "x": 0.0,
+                "y": 0.0
+              },
+              "size": 40,
+              "x": 248,
+              "y": 12
+            },
+            "luminance_deviation": 0.09920875840608384,
+            "maximum_background_contrast": 16.62622057573872,
+            "palette_distance": 0.0
+          }
+        ],
+        "generator_version": "pixel-analysis-v2",
+        "geometry_policy_fingerprint": "4dad42d65c466d7d5400f14f94bd4a1fe1bfc62f17534d9dec436f60abdb2451",
+        "local_background": "#1a1e2a",
+        "method": "deterministic-python-pixels",
+        "palette": [
+          "#1a1e2a",
+          "#6d63ac",
+          "#1b1e2a",
+          "#151a25",
+          "#191e29",
+          "#1a1e29"
+        ],
+        "selected_corner": "bottom-left",
+        "source_sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5"
+      }
+    },
+    "print_watermark_key": "e8cf37d4e2642f196ff91f9bcac28ec18b72064e85129d761bea83075ea19fd1",
+    "prompt": "An amber glass bird on a small wooden stand",
+    "prompt_creation_request": null,
+    "provider": "mock",
+    "requested_dimensions": {
+      "height": 200,
+      "width": 300
+    },
+    "resolved_controls": [
+      {
+        "kind": "single-select",
+        "label": "Surface",
+        "value": "smooth glass"
+      },
+      {
+        "kind": "slider",
+        "label": "Head angle",
+        "value": 0
+      },
+      {
+        "kind": "binary",
+        "label": "Etched pattern",
+        "value": false
+      },
+      {
+        "kind": "text-input",
+        "label": "Stand details",
+        "value": "Rounded edges"
+      },
+      {
+        "kind": "future-control",
+        "label": "Future detail",
+        "value": {
+          "nested": 0
+        }
+      }
+    ],
+    "selected_controls": [
+      {
+        "extension": {
+          "retained": true
+        },
+        "id": "surface",
+        "kind": "single-select",
+        "label": "Surface",
+        "options": {
+          "smooth": {
+            "description": "Even surface",
+            "value": "smooth glass"
+          }
+        },
+        "value": "smooth"
+      },
+      {
+        "id": "angle",
+        "kind": "slider",
+        "label": "Head angle",
+        "max": 90,
+        "min": 0,
+        "step": 1,
+        "value": 0
+      },
+      {
+        "id": "pattern",
+        "kind": "binary",
+        "label": "Etched pattern",
+        "value": false
+      },
+      {
+        "id": "notes",
+        "kind": "text-input",
+        "label": "Stand details",
+        "value": "Rounded edges"
+      },
+      {
+        "id": "future",
+        "kind": "future-control",
+        "label": "Future detail",
+        "value": {
+          "nested": 0
+        },
+        "vendor": "independent-fixture"
+      }
+    ],
+    "sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5",
+    "storage_id": "local-0",
+    "storage_label": "Image library",
+    "storage_type": "local",
+    "title": "An amber glass bird on a small wooden stand",
+    "visibility": "shared",
+    "width": 300
+  },
+  "prepared_upload_fields": {
+    "storage_id": "local-0",
+    "filename": "11111111-1111-4111-8111-111111111111.png",
+    "watermark_key": "e8cf37d4e2642f196ff91f9bcac28ec18b72064e85129d761bea83075ea19fd1"
+  },
+  "prepared_response": {
+    "image": {
+      "id": "11111111-1111-4111-8111-111111111111",
+      "title": "An amber glass bird on a small wooden stand",
+      "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+      "enrichment_metadata": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "prompt_source": "final_prompt"
+      },
+      "prompt": "An amber glass bird on a small wooden stand",
+      "final_prompt": "An amber glass bird on a small wooden stand. [{\"kind\": \"single-select\", \"label\": \"Surface\", \"value\": \"smooth glass\"}, {\"kind\": \"slider\", \"label\": \"Head angle\", \"value\": 0}, {\"kind\": \"binary\", \"label\": \"Etched pattern\", \"value\": false}, {\"kind\": \"text-input\", \"label\": \"Stand details\", \"value\": \"Rounded edges\"}, {\"kind\": \"future-control\", \"label\": \"Future detail\", \"value\": {\"nested\": 0}}]",
+      "mode": "image",
+      "aspect": "3:2",
+      "categories": [],
+      "provider": "mock",
+      "model": "mock-geometric-v1",
+      "created_at": 1793506262.56516,
+      "image_url": "/api/images/11111111-1111-4111-8111-111111111111/content",
+      "diagnostics": {
+        "seed": 4015112176
+      },
+      "composition": {
+        "provider": "mock",
+        "model": "mock-composer-v1",
+        "keyword_extraction": {
+          "status": "not-required",
+          "keywords": []
+        }
+      },
+      "selected_controls": [
+        {
+          "id": "surface",
+          "kind": "single-select",
+          "label": "Surface",
+          "options": {
+            "smooth": {
+              "value": "smooth glass",
+              "description": "Even surface"
+            }
+          },
+          "value": "smooth",
+          "extension": {
+            "retained": true
+          }
+        },
+        {
+          "id": "angle",
+          "kind": "slider",
+          "label": "Head angle",
+          "min": 0,
+          "max": 90,
+          "step": 1,
+          "value": 0
+        },
+        {
+          "id": "pattern",
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "id": "notes",
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "id": "future",
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          },
+          "vendor": "independent-fixture"
+        }
+      ],
+      "resolved_controls": [
+        {
+          "kind": "single-select",
+          "label": "Surface",
+          "value": "smooth glass"
+        },
+        {
+          "kind": "slider",
+          "label": "Head angle",
+          "value": 0
+        },
+        {
+          "kind": "binary",
+          "label": "Etched pattern",
+          "value": false
+        },
+        {
+          "kind": "text-input",
+          "label": "Stand details",
+          "value": "Rounded edges"
+        },
+        {
+          "kind": "future-control",
+          "label": "Future detail",
+          "value": {
+            "nested": 0
+          }
+        }
+      ],
+      "dynamic_controls_metadata": {
+        "prompt": "Independent fixture request",
+        "response": {
+          "extension": [false, 0]
+        },
+        "raw_response": "{}"
+      },
+      "requested_dimensions": {
+        "width": 300,
+        "height": 200
+      },
+      "must_have_terms": ["amber"],
+      "accessibility": {
+        "alt_text": "Mock image: An amber glass bird on a small wooden stand",
+        "prompt_source": "final_prompt",
+        "accessibility_features": ["alt_text"],
+        "image_url": "/api/images/11111111-1111-4111-8111-111111111111/content"
+      },
+      "width": 300,
+      "height": 200,
+      "sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5",
+      "image_id": "11111111-1111-4111-8111-111111111111",
+      "storage_id": "local-0",
+      "storage_type": "local",
+      "storage_label": "Image library",
+      "filename": "11111111-1111-4111-8111-111111111111.png",
+      "event_id": null,
+      "visibility": "shared",
+      "original_prompt": "An amber glass bird on a small wooden stand",
+      "prompt_creation_request": null,
+      "dimensions": {
+        "width": 300,
+        "height": 200
+      },
+      "created_at_iso": 1793506262565159936,
+      "print_watermark": {
+        "position": {
+          "corner": "bottom-left"
+        },
+        "presentation": {
+          "glow_color": "#8381b1",
+          "gradient_end": "#8381b1",
+          "gradient_start": "#7986ac",
+          "separation_color": "#faf9f6",
+          "use_gradient": true
+        },
+        "provenance": {
+          "contrast": {
+            "gradient_end_against_median": 4.544521361759431,
+            "gradient_start_against_median": 4.6068406884959545,
+            "scope": "Median region background; not a per-pixel contrast guarantee",
+            "target_ratio": 4.5
+          },
+          "corner_scores": [
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.0,
+              "color_entropy": -0.0,
+              "corner": "bottom-left",
+              "edge_mean": 0.0,
+              "geometry": {
+                "corner": "bottom-left",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 12,
+                "y": 148
+              },
+              "luminance_deviation": 0.0,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            },
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.0,
+              "color_entropy": -0.0,
+              "corner": "bottom-right",
+              "edge_mean": 0.0,
+              "geometry": {
+                "corner": "bottom-right",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 248,
+                "y": 148
+              },
+              "luminance_deviation": 0.0,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            },
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.05165541827802171,
+              "color_entropy": 0.09415496129369234,
+              "corner": "top-left",
+              "edge_mean": 0.014503711876320304,
+              "geometry": {
+                "corner": "top-left",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 12,
+                "y": 12
+              },
+              "luminance_deviation": 0.08524190027041029,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            },
+            {
+              "background": "#1a1e2a",
+              "busyness": 0.06033516525475683,
+              "color_entropy": 0.1048069064860806,
+              "corner": "top-right",
+              "edge_mean": 0.019222312871431113,
+              "geometry": {
+                "corner": "top-right",
+                "inset": 12,
+                "safe_rectangle": {
+                  "height": 200.0,
+                  "width": 300,
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "size": 40,
+                "x": 248,
+                "y": 12
+              },
+              "luminance_deviation": 0.09920875840608384,
+              "maximum_background_contrast": 16.62622057573872,
+              "palette_distance": 0.0
+            }
+          ],
+          "generator_version": "pixel-analysis-v2",
+          "geometry_policy_fingerprint": "4dad42d65c466d7d5400f14f94bd4a1fe1bfc62f17534d9dec436f60abdb2451",
+          "local_background": "#1a1e2a",
+          "method": "deterministic-python-pixels",
+          "palette": [
+            "#1a1e2a",
+            "#6d63ac",
+            "#1b1e2a",
+            "#151a25",
+            "#191e29",
+            "#1a1e29"
+          ],
+          "selected_corner": "bottom-left",
+          "source_sha256": "c413c70902a5e749c3875c4cf5bb1d4e80dfdda65061b653015ea4ac4a8f38e5"
+        }
+      },
+      "print_ready": {
+        "bytes": 636,
+        "created_at": 1793506262.640679,
+        "dimensions": {
+          "height": 200,
+          "width": 300
+        },
+        "sha256": "420011f7526229c7d2d26b55705ba3f5f9ee9c0de998a27e1ff0e0230814af84",
+        "watermark_key": "e8cf37d4e2642f196ff91f9bcac28ec18b72064e85129d761bea83075ea19fd1"
+      },
+      "print_watermark_key": "e8cf37d4e2642f196ff91f9bcac28ec18b72064e85129d761bea83075ea19fd1",
+      "print_ready_url": "/api/images/library/print-ready/local-0/11111111-1111-4111-8111-111111111111.png?v=e8cf37d4e2642f196ff91f9bcac28ec18b72064e85129d761bea83075ea19fd1",
+      "generation_mode": "standard"
+    }
+  },
+  "prepared_png_base64": "iVBORw0KGgoAAAANSUhEUgAAASwAAADICAIAAADdvUsCAAACQ0lEQVR4nO3TMQEAIAzAsIF/z0NGDxIFfXpmdoDOrQPgdyaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSFmQoiZEGImhJgJIWZCiJkQYiaEmAkhZkKImRBiJoSYCSH2ABu9Ao9VTBpdAAAAAElFTkSuQmCC",
+  "errors": {
+    "stale": {
+      "detail": "Watermark settings or analysis changed; refresh and render again"
+    },
+    "dimensions": {
+      "detail": "Prepared PNG dimensions must match the original"
+    },
+    "invalid_png": {
+      "detail": "Prepared file must be a valid PNG"
+    },
+    "oversize": {
+      "detail": "Request body too large"
+    },
+    "missing": {
+      "detail": "Current print-ready image not found"
+    }
+  }
+}

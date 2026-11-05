@@ -1,0 +1,28 @@
+{
+  "rendererVersion": "edge-tonal-watermark-v4",
+  "analysisVersion": "pixel-analysis-v5",
+  "placementFrame": "image-edges",
+  "sizeFraction": 0.2,
+  "insetFraction": 0.035,
+  "sizeReferenceAspectRatios": {
+    "landscape": [3, 2],
+    "portrait": [2, 3],
+    "square": [2, 3]
+  },
+  "ruleHeightFraction": 0.036,
+  "contentGapFraction": 0.064,
+  "contentAnchor": "corner",
+  "haloPaddingFraction": 0.03,
+  "gradientStartHoldFraction": 0.2,
+  "separationOpacity": 0.55,
+  "separationBlurFraction": 0.014,
+  "glowOpacity": 0.3,
+  "glowBlurFraction": 0.03,
+  "textRulePlacement": "glyph-bounds",
+  "defaultPresentation": {
+    "gradient_start": "#ffd15e",
+    "gradient_end": null,
+    "separation_color": "#05070a",
+    "glow_color": "#05070a"
+  }
+}

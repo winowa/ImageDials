@@ -1,0 +1,50 @@
+{
+  "fixture_kind": "Independent public model information and optional resource links.",
+  "image_model": "ExampleImage-v1+ExampleFinish-v1",
+  "llm_model": "ExampleLanguage-v1",
+  "metadata": {
+    "ExampleImage-v1": {
+      "publisher": "Example Models",
+      "detail": "Image generation model.",
+      "url": "https://models.example.test/image"
+    },
+    "ExampleFinish-v1": {
+      "publisher": "Example Models",
+      "detail": "Surface treatment adapter.",
+      "url": "https://models.example.test/finish"
+    },
+    "ExampleLanguage-v1": {
+      "publisher": "Example Models",
+      "detail": "Text composition model.",
+      "url": "https://models.example.test/language"
+    }
+  },
+  "models": {
+    "image": {
+      "id": "ExampleImage-v1",
+      "name": "ExampleImage-v1",
+      "role": "base",
+      "publisher": "Example Models",
+      "detail": "Image generation model.",
+      "url": "https://models.example.test/image"
+    },
+    "image_loras": [
+      {
+        "id": "ExampleFinish-v1",
+        "name": "ExampleFinish-v1",
+        "role": "lora",
+        "publisher": "Example Models",
+        "detail": "Surface treatment adapter.",
+        "url": "https://models.example.test/finish"
+      }
+    ],
+    "llm": {
+      "id": "ExampleLanguage-v1",
+      "name": "ExampleLanguage-v1",
+      "role": "llm",
+      "publisher": "Example Models",
+      "detail": "Text composition model.",
+      "url": "https://models.example.test/language"
+    }
+  }
+}

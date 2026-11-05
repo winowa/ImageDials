@@ -1,0 +1,362 @@
+{
+  "fixture_kind": "Independent deterministic pixel-analysis example from the implemented endpoint; no model inference or shared library writes.",
+  "request": {
+    "method": "POST",
+    "path": "/api/watermark/analyze-image",
+    "multipart_field": "image",
+    "image": {
+      "format": "PNG",
+      "width": 120,
+      "height": 80,
+      "rgb": [20, 90, 160]
+    }
+  },
+  "response": {
+    "print_watermark": {
+      "position": {
+        "corner": "bottom-left"
+      },
+      "presentation": {
+        "gradient_start": "#aed3ff",
+        "gradient_end": "#dbebff",
+        "separation_color": "#06101c",
+        "glow_color": "#06101c",
+        "use_gradient": true
+      },
+      "provenance": {
+        "method": "deterministic-python-pixels",
+        "generator_version": "pixel-analysis-v5",
+        "geometry_policy_fingerprint": "3b69f1976cf8523250b53e55dc6a6d21454e2e0636e35a15b58f428bd1c217d5",
+        "source_sha256": "8944ea57bf4690065d310ca5e12b0e8992280c404368d2443fdc927d9469d892",
+        "source_dimensions": {
+          "width": 120,
+          "height": 80
+        },
+        "analysis_dimensions": {
+          "width": 120,
+          "height": 80
+        },
+        "selected_corner": "bottom-left",
+        "local_background": "#145aa0",
+        "palette": ["#145aa0"],
+        "candidate_source": "image-palette",
+        "source_colors": ["#145aa0"],
+        "corner_scores": [
+          {
+            "corner": "top-left",
+            "placement_score": 0.0,
+            "legibility_shortfall": 0.0,
+            "busyness": 0.0,
+            "band_busyness": 0.0,
+            "footprint_busyness": 0.0,
+            "context_busyness": 0.0,
+            "edge_activity": 0.0,
+            "tonal_spread": 0.0,
+            "color_entropy": -0.0,
+            "band_rectangle": [3, 3, 19, 10],
+            "footprint_rectangle": [2, 2, 20, 20],
+            "context_rectangle": [3, 3, 29, 29],
+            "context_scale": 1.6,
+            "background": "#145aa0",
+            "local_palette": [
+              {
+                "share": 1.0,
+                "color": "#145aa0"
+              }
+            ],
+            "mark_side": "light",
+            "achievable_ratio": 7.000412305880526,
+            "target_met": true,
+            "candidate_source": "image-palette",
+            "source_colors": ["#145aa0"],
+            "gradient_start": "#aed3ff",
+            "gradient_end": "#dbebff",
+            "separation_color": "#06101c",
+            "endpoint_difference": 0.08899986479565591,
+            "start_contrast": {
+              "minimum_material_ratio": 4.520746383554797,
+              "weighted_ratio": 4.520746383554797,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "end_contrast": {
+              "minimum_material_ratio": 5.780122478512577,
+              "weighted_ratio": 5.780122478512577,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "geometry": {
+              "corner": "top-left",
+              "x": 3,
+              "y": 3,
+              "size": 16,
+              "inset": 3,
+              "frame": "image-edges",
+              "placement_rectangle": {
+                "x": 0,
+                "y": 0,
+                "width": 120,
+                "height": 80
+              }
+            }
+          },
+          {
+            "corner": "top-right",
+            "placement_score": 0.0,
+            "legibility_shortfall": 0.0,
+            "busyness": 0.0,
+            "band_busyness": 0.0,
+            "footprint_busyness": 0.0,
+            "context_busyness": 0.0,
+            "edge_activity": 0.0,
+            "tonal_spread": 0.0,
+            "color_entropy": -0.0,
+            "band_rectangle": [101, 3, 117, 10],
+            "footprint_rectangle": [100, 2, 118, 20],
+            "context_rectangle": [91, 3, 117, 29],
+            "context_scale": 1.6,
+            "background": "#145aa0",
+            "local_palette": [
+              {
+                "share": 1.0,
+                "color": "#145aa0"
+              }
+            ],
+            "mark_side": "light",
+            "achievable_ratio": 7.000412305880526,
+            "target_met": true,
+            "candidate_source": "image-palette",
+            "source_colors": ["#145aa0"],
+            "gradient_start": "#aed3ff",
+            "gradient_end": "#dbebff",
+            "separation_color": "#06101c",
+            "endpoint_difference": 0.08899986479565591,
+            "start_contrast": {
+              "minimum_material_ratio": 4.520746383554797,
+              "weighted_ratio": 4.520746383554797,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "end_contrast": {
+              "minimum_material_ratio": 5.780122478512577,
+              "weighted_ratio": 5.780122478512577,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "geometry": {
+              "corner": "top-right",
+              "x": 101,
+              "y": 3,
+              "size": 16,
+              "inset": 3,
+              "frame": "image-edges",
+              "placement_rectangle": {
+                "x": 0,
+                "y": 0,
+                "width": 120,
+                "height": 80
+              }
+            }
+          },
+          {
+            "corner": "bottom-left",
+            "placement_score": 0.0,
+            "legibility_shortfall": 0.0,
+            "busyness": 0.0,
+            "band_busyness": 0.0,
+            "footprint_busyness": 0.0,
+            "context_busyness": 0.0,
+            "edge_activity": 0.0,
+            "tonal_spread": 0.0,
+            "color_entropy": -0.0,
+            "band_rectangle": [3, 70, 19, 77],
+            "footprint_rectangle": [2, 60, 20, 78],
+            "context_rectangle": [3, 51, 29, 77],
+            "context_scale": 1.6,
+            "background": "#145aa0",
+            "local_palette": [
+              {
+                "share": 1.0,
+                "color": "#145aa0"
+              }
+            ],
+            "mark_side": "light",
+            "achievable_ratio": 7.000412305880526,
+            "target_met": true,
+            "candidate_source": "image-palette",
+            "source_colors": ["#145aa0"],
+            "gradient_start": "#aed3ff",
+            "gradient_end": "#dbebff",
+            "separation_color": "#06101c",
+            "endpoint_difference": 0.08899986479565591,
+            "start_contrast": {
+              "minimum_material_ratio": 4.520746383554797,
+              "weighted_ratio": 4.520746383554797,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "end_contrast": {
+              "minimum_material_ratio": 5.780122478512577,
+              "weighted_ratio": 5.780122478512577,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "geometry": {
+              "corner": "bottom-left",
+              "x": 3,
+              "y": 61,
+              "size": 16,
+              "inset": 3,
+              "frame": "image-edges",
+              "placement_rectangle": {
+                "x": 0,
+                "y": 0,
+                "width": 120,
+                "height": 80
+              }
+            }
+          },
+          {
+            "corner": "bottom-right",
+            "placement_score": 0.0,
+            "legibility_shortfall": 0.0,
+            "busyness": 0.0,
+            "band_busyness": 0.0,
+            "footprint_busyness": 0.0,
+            "context_busyness": 0.0,
+            "edge_activity": 0.0,
+            "tonal_spread": 0.0,
+            "color_entropy": -0.0,
+            "band_rectangle": [101, 70, 117, 77],
+            "footprint_rectangle": [100, 60, 118, 78],
+            "context_rectangle": [91, 51, 117, 77],
+            "context_scale": 1.6,
+            "background": "#145aa0",
+            "local_palette": [
+              {
+                "share": 1.0,
+                "color": "#145aa0"
+              }
+            ],
+            "mark_side": "light",
+            "achievable_ratio": 7.000412305880526,
+            "target_met": true,
+            "candidate_source": "image-palette",
+            "source_colors": ["#145aa0"],
+            "gradient_start": "#aed3ff",
+            "gradient_end": "#dbebff",
+            "separation_color": "#06101c",
+            "endpoint_difference": 0.08899986479565591,
+            "start_contrast": {
+              "minimum_material_ratio": 4.520746383554797,
+              "weighted_ratio": 4.520746383554797,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "end_contrast": {
+              "minimum_material_ratio": 5.780122478512577,
+              "weighted_ratio": 5.780122478512577,
+              "footprint_pixels_at_target": 1.0,
+              "footprint_pixels_at_minimum": 1.0
+            },
+            "geometry": {
+              "corner": "bottom-right",
+              "x": 101,
+              "y": 61,
+              "size": 16,
+              "inset": 3,
+              "frame": "image-edges",
+              "placement_rectangle": {
+                "x": 0,
+                "y": 0,
+                "width": 120,
+                "height": 80
+              }
+            }
+          }
+        ],
+        "contrast": {
+          "target_ratio": 4.5,
+          "minimum_ratio": 2.1,
+          "mark_side": "light",
+          "target_met": true,
+          "achievable_ratio": 7.000412305880526,
+          "gradient_start": {
+            "minimum_material_ratio": 4.520746383554797,
+            "weighted_ratio": 4.520746383554797,
+            "footprint_pixels_at_target": 1.0,
+            "footprint_pixels_at_minimum": 1.0
+          },
+          "gradient_end": {
+            "minimum_material_ratio": 5.780122478512577,
+            "weighted_ratio": 5.780122478512577,
+            "footprint_pixels_at_target": 1.0,
+            "footprint_pixels_at_minimum": 1.0
+          },
+          "scope": "Ratios against local palette colors covering at least 10% of the padded footprint; pixel shares count footprint pixels at the analysis resolution. The halo is not included."
+        }
+      }
+    },
+    "print_watermark_key": "dbfd95b7b0b422c126729cadacc51ea0b0738886e8668fed351d83c92e97736e",
+    "source_sha256": "8944ea57bf4690065d310ca5e12b0e8992280c404368d2443fdc927d9469d892",
+    "dimensions": {
+      "width": 120,
+      "height": 80
+    },
+    "watermark_settings": {
+      "type": "text",
+      "text": "ImageDials",
+      "svg_markup": "",
+      "svg_recolor": true,
+      "fingerprint": "b50becee0d2dcf31a85d5b131788e4ea002462b7dd9fb49f861393457d7340b6",
+      "limits": {
+        "max_lines": 4,
+        "max_line_length": 16,
+        "max_svg_bytes": 65536
+      },
+      "rendering": {
+        "rendererVersion": "edge-tonal-watermark-v4",
+        "analysisVersion": "pixel-analysis-v5",
+        "placementFrame": "image-edges",
+        "sizeFraction": 0.2,
+        "insetFraction": 0.035,
+        "sizeReferenceAspectRatios": {
+          "landscape": [3, 2],
+          "portrait": [2, 3],
+          "square": [2, 3]
+        },
+        "ruleHeightFraction": 0.036,
+        "contentGapFraction": 0.064,
+        "contentAnchor": "corner",
+        "haloPaddingFraction": 0.03,
+        "gradientStartHoldFraction": 0.2,
+        "separationOpacity": 0.55,
+        "separationBlurFraction": 0.014,
+        "glowOpacity": 0.3,
+        "glowBlurFraction": 0.03,
+        "textRulePlacement": "glyph-bounds",
+        "defaultPresentation": {
+          "gradient_start": "#ffd15e",
+          "gradient_end": null,
+          "separation_color": "#05070a",
+          "glow_color": "#05070a"
+        }
+      }
+    },
+    "storage": "transient"
+  },
+  "errors": {
+    "empty": {
+      "status": 400,
+      "detail": "The uploaded image is empty"
+    },
+    "oversized": {
+      "status": 413,
+      "detail": "The image exceeds the upload byte limit"
+    },
+    "invalid": {
+      "status": 400,
+      "detail": "The upload is not a decodable image"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "cache": {
+    "shared_record_limit": 3000,
+    "shared_variant_limit": 3000,
+    "shared_variant_max_bytes": 524288000,
+    "private_record_limit": 40,
+    "private_max_bytes": 524288000,
+    "private_volatile_record_limit": 8,
+    "private_volatile_max_bytes": 268435456,
+    "shared_detail_record_limit": 64,
+    "shared_detail_max_bytes": 16777216,
+    "shared_page_manifest_limit": 64,
+    "shared_page_max_bytes": 8388608,
+    "reference_record_limit": 32,
+    "reference_max_bytes": 268435456
+  },
+  "controls": {
+    "debounce_ms": 900,
+    "reset_debounce_ms": 250,
+    "similarity_minimum_ratio": 0.5,
+    "max_attempts": 2,
+    "reveal_hold_ms": 2000
+  },
+  "transport": {
+    "job_poll_interval_ms": 1000,
+    "job_poll_max_failures": 5,
+    "library_reconnect_initial_ms": 1000,
+    "library_reconnect_max_ms": 30000,
+    "library_change_debounce_ms": 150,
+    "gallery_poll_interval_ms": 5000,
+    "library_poll_interval_ms": 10000,
+    "library_pointer_idle_ms": 2500
+  },
+  "gallery": {
+    "new_image_hold_ms": 20000,
+    "filmstrip_initial_count": 36,
+    "filmstrip_batch_count": 24
+  }
+}

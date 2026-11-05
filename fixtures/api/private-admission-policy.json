@@ -1,0 +1,19 @@
+{
+  "fixture_kind": "Target browser-private admission rules; configurable limits are published separately.",
+  "cache": {
+    "shared_record_limit": 3000,
+    "shared_variant_limit": 3000,
+    "shared_variant_max_bytes": 524288000,
+    "private_record_limit": 40,
+    "private_max_bytes": 524288000,
+    "private_volatile_record_limit": 8,
+    "private_volatile_max_bytes": 268435456
+  },
+  "admission_rules": [
+    "Only confirmed removal deletes an original.",
+    "Lowered limits preserve stored rows.",
+    "Generated results never displace an older original.",
+    "Volatile count and byte limits block new work before provider calls when full."
+  ],
+  "limits_are_configurable": true
+}

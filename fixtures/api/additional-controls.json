@@ -1,0 +1,1165 @@
+{
+  "description": "Additional-control request and response contract. Mock provider captures establish transport, not model quality.",
+  "generation_metadata_field": "additional_controls_metadata",
+  "generation_metadata_shape": "Append each returned metadata object to this list; retain dynamic_controls_metadata unchanged.",
+  "source_controls": [
+    {
+      "id": "style",
+      "label": "Style",
+      "description": "Visual media and rendering styles.",
+      "origin": "fixed",
+      "value": ["photography"],
+      "options": {
+        "photography": "Photography",
+        "watercolor": "Watercolor",
+        "illustration": "Illustration",
+        "oil-painting": "Oil painting",
+        "digital-painting": "Digital painting",
+        "pencil-drawing": "Pencil drawing",
+        "ink-drawing": "Ink drawing",
+        "pastel": "Pastel",
+        "charcoal": "Charcoal",
+        "linocut": "Linocut",
+        "screen-print": "Screen print",
+        "collage": "Collage",
+        "paper-craft": "Paper craft",
+        "clay-animation": "Clay animation",
+        "pixel-art": "Pixel art",
+        "3d-render": "3D render",
+        "minimalist": "Minimalist",
+        "cinematic": "Cinematic",
+        "vintage": "Vintage",
+        "graphic-novel": "Graphic novel"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "color",
+      "label": "Color",
+      "description": "Palette and color relationships.",
+      "origin": "fixed",
+      "value": ["natural"],
+      "options": {
+        "natural": "Natural",
+        "warm": "Warm",
+        "cool": "Cool",
+        "monochrome": "Monochrome",
+        "muted": "Muted",
+        "vibrant": "Vibrant",
+        "pastel": "Pastel",
+        "earth-tones": "Earth tones",
+        "jewel-tones": "Jewel tones",
+        "limited-palette": "Limited palette",
+        "complementary-colors": "Complementary colors",
+        "analogous-colors": "Analogous colors",
+        "duotone": "Duotone",
+        "metallic": "Metallic",
+        "black-and-white": "Black and white",
+        "high-contrast": "High contrast"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "lighting",
+      "label": "Lighting",
+      "description": "Light sources, direction and contrast.",
+      "origin": "fixed",
+      "value": ["soft-daylight"],
+      "options": {
+        "soft-daylight": "Soft daylight",
+        "studio": "Studio",
+        "golden-hour": "Golden hour",
+        "dramatic": "Dramatic",
+        "overcast": "Overcast",
+        "window-light": "Window light",
+        "backlight": "Backlight",
+        "rim-light": "Rim light",
+        "neon": "Neon",
+        "candlelight": "Candlelight",
+        "moonlight": "Moonlight",
+        "dappled-light": "Dappled light",
+        "hard-light": "Hard light",
+        "low-key": "Low-key",
+        "high-key": "High-key",
+        "volumetric": "Volumetric"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "description": "Framing and arrangement of the image.",
+      "origin": "fixed",
+      "value": ["balanced"],
+      "options": {
+        "balanced": "Balanced",
+        "close-up": "Close-up",
+        "wide": "Wide",
+        "centered": "Centered",
+        "rule-of-thirds": "Rule of thirds",
+        "negative-space": "Negative space",
+        "symmetrical": "Symmetrical",
+        "asymmetrical": "Asymmetrical",
+        "leading-lines": "Leading lines",
+        "frame-within-a-frame": "Frame within a frame",
+        "diagonal": "Diagonal",
+        "minimal": "Minimal",
+        "layered": "Layered",
+        "foreground-detail": "Foreground detail",
+        "panoramic": "Panoramic",
+        "macro": "Macro"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "camera-angle",
+      "label": "Camera angle",
+      "description": "Viewpoint relative to the subject.",
+      "origin": "fixed",
+      "value": null,
+      "options": {
+        "eye-level": "Eye level",
+        "low-angle": "Low angle",
+        "high-angle": "High angle",
+        "bird-s-eye": "Bird's-eye",
+        "worm-s-eye": "Worm's-eye",
+        "frontal": "Frontal",
+        "profile": "Profile",
+        "three-quarter": "Three-quarter",
+        "over-the-shoulder": "Over the shoulder",
+        "isometric": "Isometric",
+        "tilted": "Tilted",
+        "orthographic": "Orthographic",
+        "wide-shot": "Wide shot"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "single-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "texture",
+      "label": "Texture",
+      "description": "Visible surface qualities.",
+      "origin": "fixed",
+      "value": [],
+      "options": {
+        "smooth": "Smooth",
+        "rough": "Rough",
+        "grainy": "Grainy",
+        "soft": "Soft",
+        "matte": "Matte",
+        "glossy": "Glossy",
+        "woven": "Woven",
+        "weathered": "Weathered",
+        "polished": "Polished",
+        "brushed": "Brushed",
+        "translucent": "Translucent",
+        "handcrafted": "Handcrafted"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "mood",
+      "label": "Mood",
+      "description": "Emotional tone conveyed by the image.",
+      "origin": "fixed",
+      "value": [],
+      "options": {
+        "calm": "Calm",
+        "playful": "Playful",
+        "mysterious": "Mysterious",
+        "hopeful": "Hopeful",
+        "dramatic": "Dramatic",
+        "dreamlike": "Dreamlike",
+        "melancholic": "Melancholic",
+        "energetic": "Energetic",
+        "serene": "Serene",
+        "tense": "Tense",
+        "whimsical": "Whimsical",
+        "nostalgic": "Nostalgic"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "multi-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    },
+    {
+      "id": "background",
+      "label": "Background",
+      "description": "Setting behind the subject.",
+      "origin": "fixed",
+      "value": null,
+      "options": {
+        "plain": "Plain",
+        "gradient": "Gradient",
+        "studio": "Studio",
+        "outdoors": "Outdoors",
+        "interior": "Interior",
+        "urban": "Urban",
+        "nature": "Nature",
+        "abstract": "Abstract",
+        "textured": "Textured",
+        "minimal": "Minimal",
+        "defocused": "Defocused",
+        "environmental-context": "Environmental context"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "placeholder": "",
+      "kind": "single-select",
+      "trueLabel": "Yes",
+      "falseLabel": "No"
+    }
+  ],
+  "first": {
+    "request": {
+      "prompt": "A ceramic diving helmet with brass fittings",
+      "generation_mode": "standard",
+      "categories": [
+        {
+          "id": "style",
+          "label": "Style",
+          "description": "Visual media and rendering styles.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "description": "Palette and color relationships.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "lighting",
+          "label": "Lighting",
+          "description": "Light sources, direction and contrast.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "composition",
+          "label": "Composition",
+          "description": "Framing and arrangement of the image.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "camera-angle",
+          "label": "Camera angle",
+          "description": "Viewpoint relative to the subject.",
+          "kind": "single-select"
+        },
+        {
+          "id": "texture",
+          "label": "Texture",
+          "description": "Visible surface qualities.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "mood",
+          "label": "Mood",
+          "description": "Emotional tone conveyed by the image.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "background",
+          "label": "Background",
+          "description": "Setting behind the subject.",
+          "kind": "single-select"
+        }
+      ]
+    },
+    "status": 200,
+    "response": {
+      "controls": [
+        {
+          "id": "surface-accent-1",
+          "label": "Surface accent 1",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        },
+        {
+          "id": "surface-accent-2",
+          "label": "Surface accent 2",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        },
+        {
+          "id": "surface-accent-3",
+          "label": "Surface accent 3",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        }
+      ],
+      "additional_controls_metadata": {
+        "provider": "mock",
+        "request": {
+          "idea": "A ceramic diving helmet with brass fittings",
+          "mode": "image",
+          "current_categories": [
+            {
+              "id": "style",
+              "label": "Style",
+              "kind": "multi-select",
+              "description": "Visual media and rendering styles."
+            },
+            {
+              "id": "color",
+              "label": "Color",
+              "kind": "multi-select",
+              "description": "Palette and color relationships."
+            },
+            {
+              "id": "lighting",
+              "label": "Lighting",
+              "kind": "multi-select",
+              "description": "Light sources, direction and contrast."
+            },
+            {
+              "id": "composition",
+              "label": "Composition",
+              "kind": "multi-select",
+              "description": "Framing and arrangement of the image."
+            },
+            {
+              "id": "camera-angle",
+              "label": "Camera angle",
+              "kind": "single-select",
+              "description": "Viewpoint relative to the subject."
+            },
+            {
+              "id": "texture",
+              "label": "Texture",
+              "kind": "multi-select",
+              "description": "Visible surface qualities."
+            },
+            {
+              "id": "mood",
+              "label": "Mood",
+              "kind": "multi-select",
+              "description": "Emotional tone conveyed by the image."
+            },
+            {
+              "id": "background",
+              "label": "Background",
+              "kind": "single-select",
+              "description": "Setting behind the subject."
+            }
+          ],
+          "count": 3
+        },
+        "response": {
+          "categories": [
+            {
+              "id": "surface-accent-1",
+              "label": "Surface accent 1",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            },
+            {
+              "id": "surface-accent-2",
+              "label": "Surface accent 2",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            },
+            {
+              "id": "surface-accent-3",
+              "label": "Surface accent 3",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "second": {
+    "request": {
+      "prompt": "A ceramic diving helmet with brass fittings",
+      "generation_mode": "standard",
+      "categories": [
+        {
+          "id": "style",
+          "label": "Style",
+          "description": "Visual media and rendering styles.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "description": "Palette and color relationships.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "lighting",
+          "label": "Lighting",
+          "description": "Light sources, direction and contrast.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "composition",
+          "label": "Composition",
+          "description": "Framing and arrangement of the image.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "camera-angle",
+          "label": "Camera angle",
+          "description": "Viewpoint relative to the subject.",
+          "kind": "single-select"
+        },
+        {
+          "id": "texture",
+          "label": "Texture",
+          "description": "Visible surface qualities.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "mood",
+          "label": "Mood",
+          "description": "Emotional tone conveyed by the image.",
+          "kind": "multi-select"
+        },
+        {
+          "id": "background",
+          "label": "Background",
+          "description": "Setting behind the subject.",
+          "kind": "single-select"
+        },
+        {
+          "id": "surface-accent-1",
+          "label": "Surface accent 1",
+          "description": "",
+          "kind": "multi-select"
+        },
+        {
+          "id": "surface-accent-2",
+          "label": "Surface accent 2",
+          "description": "",
+          "kind": "multi-select"
+        },
+        {
+          "id": "surface-accent-3",
+          "label": "Surface accent 3",
+          "description": "",
+          "kind": "multi-select"
+        }
+      ]
+    },
+    "status": 200,
+    "response": {
+      "controls": [
+        {
+          "id": "surface-accent-4",
+          "label": "Surface accent 4",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        },
+        {
+          "id": "surface-accent-5",
+          "label": "Surface accent 5",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        },
+        {
+          "id": "surface-accent-6",
+          "label": "Surface accent 6",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        }
+      ],
+      "additional_controls_metadata": {
+        "provider": "mock",
+        "request": {
+          "idea": "A ceramic diving helmet with brass fittings",
+          "mode": "image",
+          "current_categories": [
+            {
+              "id": "style",
+              "label": "Style",
+              "kind": "multi-select",
+              "description": "Visual media and rendering styles."
+            },
+            {
+              "id": "color",
+              "label": "Color",
+              "kind": "multi-select",
+              "description": "Palette and color relationships."
+            },
+            {
+              "id": "lighting",
+              "label": "Lighting",
+              "kind": "multi-select",
+              "description": "Light sources, direction and contrast."
+            },
+            {
+              "id": "composition",
+              "label": "Composition",
+              "kind": "multi-select",
+              "description": "Framing and arrangement of the image."
+            },
+            {
+              "id": "camera-angle",
+              "label": "Camera angle",
+              "kind": "single-select",
+              "description": "Viewpoint relative to the subject."
+            },
+            {
+              "id": "texture",
+              "label": "Texture",
+              "kind": "multi-select",
+              "description": "Visible surface qualities."
+            },
+            {
+              "id": "mood",
+              "label": "Mood",
+              "kind": "multi-select",
+              "description": "Emotional tone conveyed by the image."
+            },
+            {
+              "id": "background",
+              "label": "Background",
+              "kind": "single-select",
+              "description": "Setting behind the subject."
+            },
+            {
+              "id": "surface-accent-1",
+              "label": "Surface accent 1",
+              "kind": "multi-select",
+              "description": ""
+            },
+            {
+              "id": "surface-accent-2",
+              "label": "Surface accent 2",
+              "kind": "multi-select",
+              "description": ""
+            },
+            {
+              "id": "surface-accent-3",
+              "label": "Surface accent 3",
+              "kind": "multi-select",
+              "description": ""
+            }
+          ],
+          "count": 3
+        },
+        "response": {
+          "categories": [
+            {
+              "id": "surface-accent-4",
+              "label": "Surface accent 4",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            },
+            {
+              "id": "surface-accent-5",
+              "label": "Surface accent 5",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            },
+            {
+              "id": "surface-accent-6",
+              "label": "Surface accent 6",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "asset": {
+    "request": {
+      "prompt": "An isolated mechanical music box",
+      "generation_mode": "trellis",
+      "categories": []
+    },
+    "status": 200,
+    "response": {
+      "controls": [
+        {
+          "id": "surface-accent-1",
+          "label": "Surface accent 1",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        },
+        {
+          "id": "surface-accent-2",
+          "label": "Surface accent 2",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        },
+        {
+          "id": "surface-accent-3",
+          "label": "Surface accent 3",
+          "description": "",
+          "origin": "generated",
+          "value": ["fine-pattern"],
+          "options": {
+            "fine-pattern": "Fine pattern",
+            "broad-pattern": "Broad pattern",
+            "no-pattern": "No pattern"
+          },
+          "min": 0.0,
+          "max": 100.0,
+          "step": 1.0,
+          "placeholder": "",
+          "kind": "multi-select",
+          "trueLabel": "Yes",
+          "falseLabel": "No"
+        }
+      ],
+      "additional_controls_metadata": {
+        "provider": "mock",
+        "request": {
+          "idea": "An isolated mechanical music box",
+          "mode": "asset-image",
+          "current_categories": [],
+          "count": 3
+        },
+        "response": {
+          "categories": [
+            {
+              "id": "surface-accent-1",
+              "label": "Surface accent 1",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            },
+            {
+              "id": "surface-accent-2",
+              "label": "Surface accent 2",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            },
+            {
+              "id": "surface-accent-3",
+              "label": "Surface accent 3",
+              "description": "",
+              "type": "multi",
+              "origin": "generated",
+              "value": ["fine-pattern"],
+              "options": [
+                {
+                  "id": "fine-pattern",
+                  "label": "Fine pattern"
+                },
+                {
+                  "id": "broad-pattern",
+                  "label": "Broad pattern"
+                },
+                {
+                  "id": "no-pattern",
+                  "label": "No pattern"
+                }
+              ],
+              "min": 0.0,
+              "max": 100.0,
+              "step": 1.0,
+              "placeholder": "",
+              "true_label": "Yes",
+              "false_label": "No"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "invalid": {
+    "request": {
+      "prompt": "",
+      "categories": []
+    },
+    "status": 400,
+    "response": {
+      "detail": "Provide an idea, current category descriptors and a count from one to five"
+    }
+  },
+  "at_capacity": {
+    "request": {
+      "prompt": "A ceramic diving helmet",
+      "categories": [
+        {
+          "id": "item-0",
+          "label": "Existing item 0",
+          "kind": "binary"
+        },
+        {
+          "id": "item-1",
+          "label": "Existing item 1",
+          "kind": "binary"
+        },
+        {
+          "id": "item-2",
+          "label": "Existing item 2",
+          "kind": "binary"
+        },
+        {
+          "id": "item-3",
+          "label": "Existing item 3",
+          "kind": "binary"
+        },
+        {
+          "id": "item-4",
+          "label": "Existing item 4",
+          "kind": "binary"
+        },
+        {
+          "id": "item-5",
+          "label": "Existing item 5",
+          "kind": "binary"
+        },
+        {
+          "id": "item-6",
+          "label": "Existing item 6",
+          "kind": "binary"
+        },
+        {
+          "id": "item-7",
+          "label": "Existing item 7",
+          "kind": "binary"
+        },
+        {
+          "id": "item-8",
+          "label": "Existing item 8",
+          "kind": "binary"
+        },
+        {
+          "id": "item-9",
+          "label": "Existing item 9",
+          "kind": "binary"
+        },
+        {
+          "id": "item-10",
+          "label": "Existing item 10",
+          "kind": "binary"
+        },
+        {
+          "id": "item-11",
+          "label": "Existing item 11",
+          "kind": "binary"
+        },
+        {
+          "id": "item-12",
+          "label": "Existing item 12",
+          "kind": "binary"
+        },
+        {
+          "id": "item-13",
+          "label": "Existing item 13",
+          "kind": "binary"
+        },
+        {
+          "id": "item-14",
+          "label": "Existing item 14",
+          "kind": "binary"
+        },
+        {
+          "id": "item-15",
+          "label": "Existing item 15",
+          "kind": "binary"
+        },
+        {
+          "id": "item-16",
+          "label": "Existing item 16",
+          "kind": "binary"
+        },
+        {
+          "id": "item-17",
+          "label": "Existing item 17",
+          "kind": "binary"
+        },
+        {
+          "id": "item-18",
+          "label": "Existing item 18",
+          "kind": "binary"
+        },
+        {
+          "id": "item-19",
+          "label": "Existing item 19",
+          "kind": "binary"
+        },
+        {
+          "id": "item-20",
+          "label": "Existing item 20",
+          "kind": "binary"
+        },
+        {
+          "id": "item-21",
+          "label": "Existing item 21",
+          "kind": "binary"
+        },
+        {
+          "id": "item-22",
+          "label": "Existing item 22",
+          "kind": "binary"
+        },
+        {
+          "id": "item-23",
+          "label": "Existing item 23",
+          "kind": "binary"
+        },
+        {
+          "id": "item-24",
+          "label": "Existing item 24",
+          "kind": "binary"
+        },
+        {
+          "id": "item-25",
+          "label": "Existing item 25",
+          "kind": "binary"
+        },
+        {
+          "id": "item-26",
+          "label": "Existing item 26",
+          "kind": "binary"
+        },
+        {
+          "id": "item-27",
+          "label": "Existing item 27",
+          "kind": "binary"
+        },
+        {
+          "id": "item-28",
+          "label": "Existing item 28",
+          "kind": "binary"
+        },
+        {
+          "id": "item-29",
+          "label": "Existing item 29",
+          "kind": "binary"
+        }
+      ]
+    },
+    "status": 400,
+    "response": {
+      "detail": "The current controls have reached the 30-control limit"
+    }
+  },
+  "upstream_failure": {
+    "status": 502,
+    "response": {
+      "detail": "The language provider did not return enough distinct additional controls"
+    }
+  },
+  "disabled": {
+    "status": 503,
+    "response": {
+      "detail": "Inference is disabled"
+    }
+  }
+}

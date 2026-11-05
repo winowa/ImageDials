@@ -1,0 +1,165 @@
+{
+  "description": "Native Python batch API captures using a synthetic PNG and a missing-file fixture. No model inference.",
+  "source_records": [
+    {
+      "id": "batch-example",
+      "created_at": 1700000000,
+      "prompt": "A brass rectangle on a blue background",
+      "width": 192,
+      "height": 128,
+      "selected_controls": [],
+      "sha256": "8afccf91d55698e704fc0c08bfa108d24fc52822313e73473188db443874939d",
+      "extensions": {
+        "zero": 0,
+        "enabled": false
+      }
+    }
+  ],
+  "source_png_base64": "iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAIAAADS5vE8AAABcklEQVR4nO3UQQ3CUAAFQUpASUVUQg+Vg44KQhsXPPxt8tNkRsE7bN6ybscDRj1nD+DeBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8po9YMT385s94Xr7+Z49YYQHIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREsqzbMXsDN+aBSAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIi+QNjLAVLUJdBLAAAAABJRU5ErkJggg==",
+  "legacy": {
+    "request": {},
+    "status": 200,
+    "response": {
+      "status": "queued",
+      "queued_count": 1,
+      "force": false,
+      "analysis_batch_id": "33333333-3333-4333-8333-333333333333"
+    }
+  },
+  "legacy_complete": {
+    "status": 200,
+    "response": {
+      "watermark_backfill": {
+        "candidate_count": 1,
+        "completed_count": 1,
+        "completion_scope": "analysis",
+        "count_pending": false,
+        "error": null,
+        "failed_count": 0,
+        "force": false,
+        "id": "33333333-3333-4333-8333-333333333333",
+        "omitted_error_count": 0,
+        "phase": "analysis",
+        "queued_count": 1,
+        "status": "complete"
+      }
+    }
+  },
+  "async": {
+    "request": {
+      "async_preparation": true
+    },
+    "status": 202,
+    "response": {
+      "status": "queued",
+      "queued_count": null,
+      "force": false,
+      "analysis_batch_id": "44444444-4444-4444-8444-444444444444",
+      "phase": "preparing",
+      "candidate_count": 1,
+      "count_pending": true
+    }
+  },
+  "preparing": {
+    "status": 200,
+    "response": {
+      "watermark_backfill": {
+        "candidate_count": 1,
+        "completed_count": 0,
+        "completion_scope": "analysis",
+        "count_pending": true,
+        "error": null,
+        "failed_count": 0,
+        "force": false,
+        "id": "44444444-4444-4444-8444-444444444444",
+        "omitted_error_count": 0,
+        "phase": "preparing",
+        "queued_count": null,
+        "status": "queued"
+      }
+    }
+  },
+  "busy": {
+    "status": 409,
+    "response": {
+      "detail": "An analysis batch is already running"
+    }
+  },
+  "async_complete": {
+    "status": 200,
+    "response": {
+      "watermark_backfill": {
+        "candidate_count": 1,
+        "completed_count": 1,
+        "completion_scope": "analysis",
+        "count_pending": false,
+        "error": null,
+        "failed_count": 0,
+        "force": false,
+        "id": "44444444-4444-4444-8444-444444444444",
+        "omitted_error_count": 0,
+        "phase": "analysis",
+        "queued_count": 1,
+        "status": "complete"
+      }
+    }
+  },
+  "missing_record": {
+    "id": "batch-missing",
+    "created_at": 1700000000,
+    "prompt": "A brass rectangle on a blue background",
+    "width": 192,
+    "height": 128,
+    "selected_controls": [],
+    "sha256": null,
+    "extensions": {
+      "zero": 0,
+      "enabled": false
+    }
+  },
+  "failure_accepted": {
+    "request": {
+      "async_preparation": true
+    },
+    "status": 202,
+    "response": {
+      "status": "queued",
+      "queued_count": null,
+      "force": false,
+      "analysis_batch_id": "66666666-6666-4666-8666-666666666666",
+      "phase": "preparing",
+      "candidate_count": 2,
+      "count_pending": true
+    }
+  },
+  "failed": {
+    "status": 200,
+    "response": {
+      "watermark_backfill": {
+        "candidate_count": 2,
+        "completed_count": 1,
+        "completion_scope": "analysis",
+        "count_pending": false,
+        "error": null,
+        "error_sample": {
+          "error": "Image storage is unavailable",
+          "image_id": "batch-missing"
+        },
+        "failed_count": 1,
+        "force": false,
+        "id": "66666666-6666-4666-8666-666666666666",
+        "omitted_error_count": 0,
+        "phase": "analysis",
+        "queued_count": 2,
+        "status": "failed"
+      }
+    }
+  },
+  "failed_diagnostics": [
+    {
+      "image_id": "batch-missing",
+      "error": "Image storage is unavailable"
+    }
+  ],
+  "source_unchanged": true
+}

@@ -1,0 +1,49 @@
+{
+  "fixture_kind": "Independent control application examples from the implemented protocol.",
+  "capability": {
+    "enabled": true,
+    "text_flag": "apply_to_generation",
+    "edit_flag": "apply_to_edit",
+    "preserves_values": true
+  },
+  "controls": [
+    {
+      "id": "lighting",
+      "kind": "single-select",
+      "label": "Lighting",
+      "options": {
+        "sun": "Golden sunlight"
+      },
+      "value": "sun",
+      "apply_to_generation": false
+    },
+    {
+      "id": "gloss",
+      "kind": "binary",
+      "label": "Gloss",
+      "value": false
+    }
+  ],
+  "resolved_controls": [
+    {
+      "kind": "single-select",
+      "label": "Lighting",
+      "value": "sun",
+      "apply_to_generation": false
+    },
+    {
+      "kind": "binary",
+      "label": "Gloss",
+      "value": false
+    }
+  ],
+  "composition_controls": [
+    {
+      "kind": "binary",
+      "label": "Gloss",
+      "value": false
+    }
+  ],
+  "legacy_default": "enabled",
+  "edit_authority": "apply_to_edit"
+}

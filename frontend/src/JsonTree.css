@@ -1,0 +1,128 @@
+/* Collapsible JSON tree and the colours shared with highlighted raw text. */
+.json-tree-viewer {
+  min-width: 0;
+}
+.json-tree {
+  max-height: min(20rem, 85dvh);
+  transition-property: none;
+  overflow: auto;
+  padding: 0.375rem 0.5rem;
+  border-radius: 10px;
+  background: var(--surface-2);
+  font: var(--type-code);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+.json-tree[data-sized='true'] {
+  min-height: 96px;
+  max-height: 85dvh;
+}
+.json-tree[data-flush='true'] {
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+.j-line {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: start;
+  overflow-wrap: anywhere;
+}
+.j-gutter {
+  display: grid;
+  place-items: center;
+  height: 1.4em;
+  color: var(--muted);
+}
+/* The whole opening line is the control, so no hit area leaves its own row. */
+.j-toggle {
+  width: 100%;
+  min-height: 44px;
+  align-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background var(--duration-base) var(--ease);
+}
+.j-toggle:hover {
+  background: color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+.j-toggle:focus-visible {
+  outline-offset: -2px;
+}
+.j-toggle .icon {
+  transition: transform var(--duration-base) var(--ease);
+}
+.j-node[data-open='true'] > .j-toggle .icon {
+  transform: rotate(90deg);
+}
+.j-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-base) var(--ease);
+}
+.j-body[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+.j-inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease);
+}
+.j-body[data-open='true'] > .j-inner {
+  opacity: 1;
+}
+.j-node[data-phase='open'] > .j-body > .j-inner {
+  overflow: visible;
+}
+.j-children {
+  margin-inline-start: 0.625rem;
+  padding-inline-start: 0.5rem;
+  border-inline-start: 1px solid var(--border);
+}
+.j-key {
+  color: oklch(0.55 0.12 250);
+}
+.j-str {
+  color: oklch(0.55 0.12 150);
+}
+.j-num {
+  color: oklch(0.55 0.15 40);
+}
+.j-bool,
+.j-null {
+  color: oklch(0.55 0.14 310);
+}
+.j-punct {
+  color: var(--muted);
+}
+:root:not([data-theme='light']) .j-key {
+  color: oklch(0.78 0.1 250);
+}
+:root:not([data-theme='light']) .j-str {
+  color: oklch(0.8 0.11 150);
+}
+:root:not([data-theme='light']) .j-num {
+  color: oklch(0.8 0.13 60);
+}
+:root:not([data-theme='light']) .j-bool,
+:root:not([data-theme='light']) .j-null {
+  color: oklch(0.78 0.12 310);
+}
+@media (prefers-reduced-motion: reduce) {
+  .j-toggle,
+  .j-toggle .icon,
+  .j-body,
+  .j-inner {
+    transition: none;
+  }
+}

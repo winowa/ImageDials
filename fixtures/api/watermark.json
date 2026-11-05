@@ -1,0 +1,224 @@
+{
+  "text_request": {
+    "type": "text",
+    "text": "Studio\n2026"
+  },
+  "svg_request": {
+    "type": "svg",
+    "svg_markup": "<svg viewBox=\"0 0 10 10\"><path d=\"M1 1h8v8H1z\" fill=\"#345678\"/></svg>",
+    "svg_recolor": true
+  },
+  "geometry_cases": [
+    {
+      "width": 1800,
+      "height": 1200,
+      "corner": "bottom-left",
+      "expected": {
+        "x": 42,
+        "y": 918,
+        "size": 240,
+        "inset": 42
+      }
+    },
+    {
+      "width": 1800,
+      "height": 1200,
+      "corner": " TOP-RIGHT ",
+      "expected": {
+        "x": 1518,
+        "y": 42,
+        "size": 240,
+        "inset": 42
+      }
+    },
+    {
+      "width": 1200,
+      "height": 1800,
+      "corner": "bottom-right",
+      "expected": {
+        "x": 918,
+        "y": 1518,
+        "size": 240,
+        "inset": 42
+      }
+    },
+    {
+      "width": 1200,
+      "height": 1200,
+      "corner": "bottom-left",
+      "expected": {
+        "x": 42,
+        "y": 998,
+        "size": 160,
+        "inset": 42
+      }
+    },
+    {
+      "width": 1200,
+      "height": 1200,
+      "corner": "top-right",
+      "expected": {
+        "x": 998,
+        "y": 42,
+        "size": 160,
+        "inset": 42
+      }
+    },
+    {
+      "width": 1152,
+      "height": 768,
+      "corner": "invalid",
+      "expected": {
+        "x": 27,
+        "y": 587,
+        "size": 154,
+        "inset": 27
+      }
+    },
+    {
+      "width": 1536,
+      "height": 1024,
+      "corner": "bottom-right",
+      "expected": {
+        "x": 1295,
+        "y": 783,
+        "size": 205,
+        "inset": 36
+      }
+    },
+    {
+      "width": 3000,
+      "height": 1000,
+      "corner": "bottom-left",
+      "expected": {
+        "x": 35,
+        "y": 765,
+        "size": 200,
+        "inset": 35
+      }
+    },
+    {
+      "width": 1000,
+      "height": 3000,
+      "corner": "top-right",
+      "expected": {
+        "x": 765,
+        "y": 35,
+        "size": 200,
+        "inset": 35
+      }
+    },
+    {
+      "width": 1,
+      "height": 1,
+      "corner": "top-left",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "size": 1,
+        "inset": 0
+      }
+    }
+  ],
+  "legacy_geometry_policy": {
+    "insetFraction": 0.06,
+    "sizeFraction": 0.2,
+    "safeAspectRatios": {
+      "landscape": [3, 2],
+      "portrait": [2, 3],
+      "square": [2, 3]
+    }
+  },
+  "legacy_geometry_cases": [
+    {
+      "width": 1800,
+      "height": 1200,
+      "corner": "bottom-left",
+      "expected": {
+        "x": 72,
+        "y": 888,
+        "size": 240,
+        "inset": 72
+      }
+    },
+    {
+      "width": 1800,
+      "height": 1200,
+      "corner": " TOP-RIGHT ",
+      "expected": {
+        "x": 1488,
+        "y": 72,
+        "size": 240,
+        "inset": 72
+      }
+    },
+    {
+      "width": 1200,
+      "height": 1800,
+      "corner": "bottom-right",
+      "expected": {
+        "x": 888,
+        "y": 1488,
+        "size": 240,
+        "inset": 72
+      }
+    },
+    {
+      "width": 1200,
+      "height": 1200,
+      "corner": "bottom-left",
+      "expected": {
+        "x": 248,
+        "y": 992,
+        "size": 160,
+        "inset": 48
+      }
+    },
+    {
+      "width": 1152,
+      "height": 768,
+      "corner": "invalid",
+      "expected": {
+        "x": 46,
+        "y": 568,
+        "size": 154,
+        "inset": 46
+      }
+    },
+    {
+      "width": 1,
+      "height": 1,
+      "corner": "top-left",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "size": 1,
+        "inset": 0
+      }
+    }
+  ],
+  "unicode_text_cases": [
+    {
+      "text": "  Studio  \n \n 2026 ",
+      "normalized": "Studio\n2026",
+      "valid": true
+    },
+    {
+      "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "valid": true
+    },
+    {
+      "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "valid": false
+    },
+    {
+      "text": "A\rB\r\nC D",
+      "normalized": "A\nB\nC\nD",
+      "valid": true
+    },
+    {
+      "text": "A\nB\nC\nD\nE",
+      "valid": false
+    }
+  ]
+}

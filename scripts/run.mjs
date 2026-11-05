@@ -6,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { runtimeConfig } from '../frontend/runtime-config.js';
 import { loadRuntimeEnv, projectRoot } from './runtime-env.mjs';
 
+const DEFAULT_API_SHUTDOWN_GRACE_SECONDS = 10;
+
 export function launchSpec(
   component,
   env,
@@ -20,6 +22,13 @@ export function launchSpec(
   }
   runtimeConfig(env);
   if (component === 'api') {
+    const grace =
+      env.API_SHUTDOWN_GRACE_SECONDS ??
+      String(DEFAULT_API_SHUTDOWN_GRACE_SECONDS);
+    if (!/^[1-9]\d*$/.test(grace) || !Number.isSafeInteger(Number(grace)))
+      throw new Error(
+        'API_SHUTDOWN_GRACE_SECONDS must be a positive integer in seconds.',
+      );
     const python =
       env.API_PYTHON ||
       (platform === 'win32'
@@ -31,6 +40,9 @@ export function launchSpec(
         '-m',
         'uvicorn',
         'app.main:app',
+        '--no-access-log',
+        '--timeout-graceful-shutdown',
+        grace,
         '--host',
         env.API_HOST,
         '--port',

@@ -1,0 +1,1261 @@
+{
+  "fixture_kind": "synthetic",
+  "capability": {
+    "enabled": true,
+    "default_count": 1,
+    "max_count": 4,
+    "execution": "serial",
+    "status_url": "/api/generation-groups/{group_id}",
+    "retry": "failed-only"
+  },
+  "generate_request": {
+    "prompt": "A small teal ceramic sphere",
+    "controls": [
+      {
+        "kind": "binary",
+        "label": "Gloss",
+        "value": false
+      },
+      {
+        "kind": "slider",
+        "label": "Detail",
+        "value": 0,
+        "min": 0,
+        "max": 5
+      }
+    ],
+    "dimensions": "96x64",
+    "idempotency_key": "synthetic-variation-group",
+    "variation_count": 2,
+    "dynamic_controls_metadata": {
+      "opaque": {
+        "false": false,
+        "zero": 0
+      }
+    }
+  },
+  "accepted": {
+    "generation_job_id": "10000000-0000-4000-8000-000000000001",
+    "enrichment": {
+      "status": "pending",
+      "transport": "server-sent-events"
+    },
+    "variation_group": {
+      "id": "20000000-0000-4000-8000-000000000001",
+      "count": 2,
+      "jobs": [
+        {
+          "generation_job_id": "10000000-0000-4000-8000-000000000001",
+          "index": 0,
+          "attempt": 0
+        },
+        {
+          "generation_job_id": "10000000-0000-4000-8000-000000000002",
+          "index": 1,
+          "attempt": 0
+        }
+      ]
+    }
+  },
+  "partial": {
+    "generation_group_id": "20000000-0000-4000-8000-000000000001",
+    "variation_count": 2,
+    "status": "partial",
+    "jobs": [
+      {
+        "generation_job_id": "10000000-0000-4000-8000-000000000001",
+        "events": [
+          {
+            "event": "complete",
+            "data": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "title": "A small teal ceramic sphere",
+              "alt_text": "Mock image: A small teal ceramic sphere",
+              "accessibility": {
+                "alt_text": "Mock image: A small teal ceramic sphere",
+                "prompt_source": "final_prompt",
+                "accessibility_features": ["alt_text"],
+                "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content"
+              },
+              "prompt": "A small teal ceramic sphere",
+              "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+              "mode": "image",
+              "aspect": "3:2",
+              "categories": [],
+              "provider": "mock",
+              "model": "mock-geometric-v1",
+              "created_at": 1793674151.75078,
+              "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content",
+              "diagnostics": {
+                "seed": 1225269263
+              },
+              "composition": {
+                "provider": "mock",
+                "model": "mock-composer-v1",
+                "keyword_extraction": {
+                  "status": "not-required",
+                  "keywords": []
+                }
+              },
+              "selected_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0
+                }
+              ],
+              "resolved_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0
+                }
+              ],
+              "dynamic_controls_metadata": {
+                "opaque": {
+                  "false": false,
+                  "zero": 0
+                }
+              },
+              "requested_dimensions": {
+                "width": 96,
+                "height": 64
+              },
+              "must_have_terms": [],
+              "variation": {
+                "group_id": "20000000-0000-4000-8000-000000000001",
+                "index": 0,
+                "count": 2,
+                "attempt": 0
+              },
+              "event_id": null,
+              "visibility": "shared",
+              "enrichment_metadata": {
+                "provider": "mock",
+                "model": "mock-composer-v1",
+                "prompt_source": "final_prompt"
+              },
+              "width": 96,
+              "height": 64,
+              "sha256": "0714b36104f15229e2b3cf096007c616cc17952677d803762cb4c41825b1548d",
+              "image_id": "10000000-0000-4000-8000-000000000001",
+              "storage_id": "local-0",
+              "storage_type": "local",
+              "storage_label": "Image library",
+              "filename": "10000000-0000-4000-8000-000000000001.png",
+              "original_prompt": "A small teal ceramic sphere",
+              "prompt_creation_request": null,
+              "dimensions": "96x64",
+              "created_at_iso": 1793674151750780160,
+              "print_watermark": null,
+              "print_ready": null,
+              "print_watermark_key": null,
+              "print_ready_url": null,
+              "generation_mode": "standard",
+              "original_selected_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0,
+                  "min": 0,
+                  "max": 5
+                }
+              ],
+              "actual_dimensions": {
+                "width": 96,
+                "height": 64
+              },
+              "generation_job_id": "10000000-0000-4000-8000-000000000001",
+              "enrichment": {
+                "status": "complete"
+              }
+            }
+          }
+        ],
+        "latest_event": {
+          "event": "complete",
+          "data": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "title": "A small teal ceramic sphere",
+            "alt_text": "Mock image: A small teal ceramic sphere",
+            "accessibility": {
+              "alt_text": "Mock image: A small teal ceramic sphere",
+              "prompt_source": "final_prompt",
+              "accessibility_features": ["alt_text"],
+              "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content"
+            },
+            "prompt": "A small teal ceramic sphere",
+            "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+            "mode": "image",
+            "aspect": "3:2",
+            "categories": [],
+            "provider": "mock",
+            "model": "mock-geometric-v1",
+            "created_at": 1793674151.75078,
+            "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content",
+            "diagnostics": {
+              "seed": 1225269263
+            },
+            "composition": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "keyword_extraction": {
+                "status": "not-required",
+                "keywords": []
+              }
+            },
+            "selected_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0
+              }
+            ],
+            "resolved_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0
+              }
+            ],
+            "dynamic_controls_metadata": {
+              "opaque": {
+                "false": false,
+                "zero": 0
+              }
+            },
+            "requested_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "must_have_terms": [],
+            "variation": {
+              "group_id": "20000000-0000-4000-8000-000000000001",
+              "index": 0,
+              "count": 2,
+              "attempt": 0
+            },
+            "event_id": null,
+            "visibility": "shared",
+            "enrichment_metadata": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "prompt_source": "final_prompt"
+            },
+            "width": 96,
+            "height": 64,
+            "sha256": "0714b36104f15229e2b3cf096007c616cc17952677d803762cb4c41825b1548d",
+            "image_id": "10000000-0000-4000-8000-000000000001",
+            "storage_id": "local-0",
+            "storage_type": "local",
+            "storage_label": "Image library",
+            "filename": "10000000-0000-4000-8000-000000000001.png",
+            "original_prompt": "A small teal ceramic sphere",
+            "prompt_creation_request": null,
+            "dimensions": "96x64",
+            "created_at_iso": 1793674151750780160,
+            "print_watermark": null,
+            "print_ready": null,
+            "print_watermark_key": null,
+            "print_ready_url": null,
+            "generation_mode": "standard",
+            "original_selected_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0,
+                "min": 0,
+                "max": 5
+              }
+            ],
+            "actual_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "generation_job_id": "10000000-0000-4000-8000-000000000001",
+            "enrichment": {
+              "status": "complete"
+            }
+          }
+        },
+        "status": "complete",
+        "result": {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "title": "A small teal ceramic sphere",
+          "alt_text": "Mock image: A small teal ceramic sphere",
+          "accessibility": {
+            "alt_text": "Mock image: A small teal ceramic sphere",
+            "prompt_source": "final_prompt",
+            "accessibility_features": ["alt_text"],
+            "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content"
+          },
+          "prompt": "A small teal ceramic sphere",
+          "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+          "mode": "image",
+          "aspect": "3:2",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": 1793674151.75078,
+          "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content",
+          "diagnostics": {
+            "seed": 1225269263
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "opaque": {
+              "false": false,
+              "zero": 0
+            }
+          },
+          "requested_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "must_have_terms": [],
+          "variation": {
+            "group_id": "20000000-0000-4000-8000-000000000001",
+            "index": 0,
+            "count": 2,
+            "attempt": 0
+          },
+          "event_id": null,
+          "visibility": "shared",
+          "enrichment_metadata": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "prompt_source": "final_prompt"
+          },
+          "width": 96,
+          "height": 64,
+          "sha256": "0714b36104f15229e2b3cf096007c616cc17952677d803762cb4c41825b1548d",
+          "image_id": "10000000-0000-4000-8000-000000000001",
+          "storage_id": "local-0",
+          "storage_type": "local",
+          "storage_label": "Image library",
+          "filename": "10000000-0000-4000-8000-000000000001.png",
+          "original_prompt": "A small teal ceramic sphere",
+          "prompt_creation_request": null,
+          "dimensions": "96x64",
+          "created_at_iso": 1793674151750780160,
+          "print_watermark": null,
+          "print_ready": null,
+          "print_watermark_key": null,
+          "print_ready_url": null,
+          "generation_mode": "standard",
+          "original_selected_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0,
+              "min": 0,
+              "max": 5
+            }
+          ],
+          "actual_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "generation_job_id": "10000000-0000-4000-8000-000000000001",
+          "enrichment": {
+            "status": "complete"
+          }
+        },
+        "index": 0,
+        "attempt": 0
+      },
+      {
+        "generation_job_id": "10000000-0000-4000-8000-000000000002",
+        "events": [
+          {
+            "event": "failed",
+            "data": {
+              "error": "Synthetic second variation failed",
+              "enrichment": {
+                "status": "failed"
+              },
+              "generation_job_id": "10000000-0000-4000-8000-000000000002"
+            }
+          }
+        ],
+        "latest_event": {
+          "event": "failed",
+          "data": {
+            "error": "Synthetic second variation failed",
+            "enrichment": {
+              "status": "failed"
+            },
+            "generation_job_id": "10000000-0000-4000-8000-000000000002"
+          }
+        },
+        "status": "failed",
+        "result": {
+          "error": "Synthetic second variation failed",
+          "enrichment": {
+            "status": "failed"
+          },
+          "generation_job_id": "10000000-0000-4000-8000-000000000002"
+        },
+        "index": 1,
+        "attempt": 0
+      }
+    ]
+  },
+  "retry_request": {
+    "prompt": "A small teal ceramic sphere",
+    "controls": [
+      {
+        "kind": "binary",
+        "label": "Gloss",
+        "value": false
+      },
+      {
+        "kind": "slider",
+        "label": "Detail",
+        "value": 0,
+        "min": 0,
+        "max": 5
+      }
+    ],
+    "dimensions": "96x64",
+    "idempotency_key": "synthetic-variation-retry",
+    "variation_count": 1,
+    "dynamic_controls_metadata": {
+      "opaque": {
+        "false": false,
+        "zero": 0
+      }
+    },
+    "retry_variations": {
+      "group_id": "20000000-0000-4000-8000-000000000001",
+      "indices": [1]
+    }
+  },
+  "retry_accepted": {
+    "generation_job_id": "10000000-0000-4000-8000-000000000003",
+    "enrichment": {
+      "status": "pending",
+      "transport": "server-sent-events"
+    },
+    "variation_group": {
+      "id": "20000000-0000-4000-8000-000000000001",
+      "count": 2,
+      "jobs": [
+        {
+          "generation_job_id": "10000000-0000-4000-8000-000000000003",
+          "index": 1,
+          "attempt": 1
+        }
+      ]
+    }
+  },
+  "complete": {
+    "generation_group_id": "20000000-0000-4000-8000-000000000001",
+    "variation_count": 2,
+    "status": "complete",
+    "jobs": [
+      {
+        "generation_job_id": "10000000-0000-4000-8000-000000000001",
+        "events": [
+          {
+            "event": "complete",
+            "data": {
+              "id": "10000000-0000-4000-8000-000000000001",
+              "title": "A small teal ceramic sphere",
+              "alt_text": "Mock image: A small teal ceramic sphere",
+              "accessibility": {
+                "alt_text": "Mock image: A small teal ceramic sphere",
+                "prompt_source": "final_prompt",
+                "accessibility_features": ["alt_text"],
+                "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content"
+              },
+              "prompt": "A small teal ceramic sphere",
+              "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+              "mode": "image",
+              "aspect": "3:2",
+              "categories": [],
+              "provider": "mock",
+              "model": "mock-geometric-v1",
+              "created_at": 1793674151.75078,
+              "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content",
+              "diagnostics": {
+                "seed": 1225269263
+              },
+              "composition": {
+                "provider": "mock",
+                "model": "mock-composer-v1",
+                "keyword_extraction": {
+                  "status": "not-required",
+                  "keywords": []
+                }
+              },
+              "selected_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0
+                }
+              ],
+              "resolved_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0
+                }
+              ],
+              "dynamic_controls_metadata": {
+                "opaque": {
+                  "false": false,
+                  "zero": 0
+                }
+              },
+              "requested_dimensions": {
+                "width": 96,
+                "height": 64
+              },
+              "must_have_terms": [],
+              "variation": {
+                "group_id": "20000000-0000-4000-8000-000000000001",
+                "index": 0,
+                "count": 2,
+                "attempt": 0
+              },
+              "event_id": null,
+              "visibility": "shared",
+              "enrichment_metadata": {
+                "provider": "mock",
+                "model": "mock-composer-v1",
+                "prompt_source": "final_prompt"
+              },
+              "width": 96,
+              "height": 64,
+              "sha256": "0714b36104f15229e2b3cf096007c616cc17952677d803762cb4c41825b1548d",
+              "image_id": "10000000-0000-4000-8000-000000000001",
+              "storage_id": "local-0",
+              "storage_type": "local",
+              "storage_label": "Image library",
+              "filename": "10000000-0000-4000-8000-000000000001.png",
+              "original_prompt": "A small teal ceramic sphere",
+              "prompt_creation_request": null,
+              "dimensions": "96x64",
+              "created_at_iso": 1793674151750780160,
+              "print_watermark": null,
+              "print_ready": null,
+              "print_watermark_key": null,
+              "print_ready_url": null,
+              "generation_mode": "standard",
+              "original_selected_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0,
+                  "min": 0,
+                  "max": 5
+                }
+              ],
+              "actual_dimensions": {
+                "width": 96,
+                "height": 64
+              },
+              "generation_job_id": "10000000-0000-4000-8000-000000000001",
+              "enrichment": {
+                "status": "complete"
+              }
+            }
+          }
+        ],
+        "latest_event": {
+          "event": "complete",
+          "data": {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "title": "A small teal ceramic sphere",
+            "alt_text": "Mock image: A small teal ceramic sphere",
+            "accessibility": {
+              "alt_text": "Mock image: A small teal ceramic sphere",
+              "prompt_source": "final_prompt",
+              "accessibility_features": ["alt_text"],
+              "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content"
+            },
+            "prompt": "A small teal ceramic sphere",
+            "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+            "mode": "image",
+            "aspect": "3:2",
+            "categories": [],
+            "provider": "mock",
+            "model": "mock-geometric-v1",
+            "created_at": 1793674151.75078,
+            "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content",
+            "diagnostics": {
+              "seed": 1225269263
+            },
+            "composition": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "keyword_extraction": {
+                "status": "not-required",
+                "keywords": []
+              }
+            },
+            "selected_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0
+              }
+            ],
+            "resolved_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0
+              }
+            ],
+            "dynamic_controls_metadata": {
+              "opaque": {
+                "false": false,
+                "zero": 0
+              }
+            },
+            "requested_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "must_have_terms": [],
+            "variation": {
+              "group_id": "20000000-0000-4000-8000-000000000001",
+              "index": 0,
+              "count": 2,
+              "attempt": 0
+            },
+            "event_id": null,
+            "visibility": "shared",
+            "enrichment_metadata": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "prompt_source": "final_prompt"
+            },
+            "width": 96,
+            "height": 64,
+            "sha256": "0714b36104f15229e2b3cf096007c616cc17952677d803762cb4c41825b1548d",
+            "image_id": "10000000-0000-4000-8000-000000000001",
+            "storage_id": "local-0",
+            "storage_type": "local",
+            "storage_label": "Image library",
+            "filename": "10000000-0000-4000-8000-000000000001.png",
+            "original_prompt": "A small teal ceramic sphere",
+            "prompt_creation_request": null,
+            "dimensions": "96x64",
+            "created_at_iso": 1793674151750780160,
+            "print_watermark": null,
+            "print_ready": null,
+            "print_watermark_key": null,
+            "print_ready_url": null,
+            "generation_mode": "standard",
+            "original_selected_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0,
+                "min": 0,
+                "max": 5
+              }
+            ],
+            "actual_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "generation_job_id": "10000000-0000-4000-8000-000000000001",
+            "enrichment": {
+              "status": "complete"
+            }
+          }
+        },
+        "status": "complete",
+        "result": {
+          "id": "10000000-0000-4000-8000-000000000001",
+          "title": "A small teal ceramic sphere",
+          "alt_text": "Mock image: A small teal ceramic sphere",
+          "accessibility": {
+            "alt_text": "Mock image: A small teal ceramic sphere",
+            "prompt_source": "final_prompt",
+            "accessibility_features": ["alt_text"],
+            "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content"
+          },
+          "prompt": "A small teal ceramic sphere",
+          "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+          "mode": "image",
+          "aspect": "3:2",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": 1793674151.75078,
+          "image_url": "/api/images/10000000-0000-4000-8000-000000000001/content",
+          "diagnostics": {
+            "seed": 1225269263
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "opaque": {
+              "false": false,
+              "zero": 0
+            }
+          },
+          "requested_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "must_have_terms": [],
+          "variation": {
+            "group_id": "20000000-0000-4000-8000-000000000001",
+            "index": 0,
+            "count": 2,
+            "attempt": 0
+          },
+          "event_id": null,
+          "visibility": "shared",
+          "enrichment_metadata": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "prompt_source": "final_prompt"
+          },
+          "width": 96,
+          "height": 64,
+          "sha256": "0714b36104f15229e2b3cf096007c616cc17952677d803762cb4c41825b1548d",
+          "image_id": "10000000-0000-4000-8000-000000000001",
+          "storage_id": "local-0",
+          "storage_type": "local",
+          "storage_label": "Image library",
+          "filename": "10000000-0000-4000-8000-000000000001.png",
+          "original_prompt": "A small teal ceramic sphere",
+          "prompt_creation_request": null,
+          "dimensions": "96x64",
+          "created_at_iso": 1793674151750780160,
+          "print_watermark": null,
+          "print_ready": null,
+          "print_watermark_key": null,
+          "print_ready_url": null,
+          "generation_mode": "standard",
+          "original_selected_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0,
+              "min": 0,
+              "max": 5
+            }
+          ],
+          "actual_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "generation_job_id": "10000000-0000-4000-8000-000000000001",
+          "enrichment": {
+            "status": "complete"
+          }
+        },
+        "index": 0,
+        "attempt": 0
+      },
+      {
+        "generation_job_id": "10000000-0000-4000-8000-000000000003",
+        "events": [
+          {
+            "event": "complete",
+            "data": {
+              "id": "10000000-0000-4000-8000-000000000003",
+              "title": "A small teal ceramic sphere",
+              "alt_text": "Mock image: A small teal ceramic sphere",
+              "accessibility": {
+                "alt_text": "Mock image: A small teal ceramic sphere",
+                "prompt_source": "final_prompt",
+                "accessibility_features": ["alt_text"],
+                "image_url": "/api/images/10000000-0000-4000-8000-000000000003/content"
+              },
+              "prompt": "A small teal ceramic sphere",
+              "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+              "mode": "image",
+              "aspect": "3:2",
+              "categories": [],
+              "provider": "mock",
+              "model": "mock-geometric-v1",
+              "created_at": 1793674151.791239,
+              "image_url": "/api/images/10000000-0000-4000-8000-000000000003/content",
+              "diagnostics": {
+                "seed": 251932374
+              },
+              "composition": {
+                "provider": "mock",
+                "model": "mock-composer-v1",
+                "keyword_extraction": {
+                  "status": "not-required",
+                  "keywords": []
+                }
+              },
+              "selected_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0
+                }
+              ],
+              "resolved_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0
+                }
+              ],
+              "dynamic_controls_metadata": {
+                "opaque": {
+                  "false": false,
+                  "zero": 0
+                }
+              },
+              "requested_dimensions": {
+                "width": 96,
+                "height": 64
+              },
+              "must_have_terms": [],
+              "variation": {
+                "group_id": "20000000-0000-4000-8000-000000000001",
+                "index": 1,
+                "count": 2,
+                "attempt": 1
+              },
+              "event_id": null,
+              "visibility": "shared",
+              "enrichment_metadata": {
+                "provider": "mock",
+                "model": "mock-composer-v1",
+                "prompt_source": "final_prompt"
+              },
+              "width": 96,
+              "height": 64,
+              "sha256": "f143efd5a82d03b82e185707eed6a0f785766d12a07dd0c82a2850afc7e1df61",
+              "image_id": "10000000-0000-4000-8000-000000000003",
+              "storage_id": "local-0",
+              "storage_type": "local",
+              "storage_label": "Image library",
+              "filename": "10000000-0000-4000-8000-000000000003.png",
+              "original_prompt": "A small teal ceramic sphere",
+              "prompt_creation_request": null,
+              "dimensions": "96x64",
+              "created_at_iso": 1793674151791238912,
+              "print_watermark": null,
+              "print_ready": null,
+              "print_watermark_key": null,
+              "print_ready_url": null,
+              "generation_mode": "standard",
+              "original_selected_controls": [
+                {
+                  "kind": "binary",
+                  "label": "Gloss",
+                  "value": false
+                },
+                {
+                  "kind": "slider",
+                  "label": "Detail",
+                  "value": 0,
+                  "min": 0,
+                  "max": 5
+                }
+              ],
+              "actual_dimensions": {
+                "width": 96,
+                "height": 64
+              },
+              "generation_job_id": "10000000-0000-4000-8000-000000000003",
+              "enrichment": {
+                "status": "complete"
+              }
+            }
+          }
+        ],
+        "latest_event": {
+          "event": "complete",
+          "data": {
+            "id": "10000000-0000-4000-8000-000000000003",
+            "title": "A small teal ceramic sphere",
+            "alt_text": "Mock image: A small teal ceramic sphere",
+            "accessibility": {
+              "alt_text": "Mock image: A small teal ceramic sphere",
+              "prompt_source": "final_prompt",
+              "accessibility_features": ["alt_text"],
+              "image_url": "/api/images/10000000-0000-4000-8000-000000000003/content"
+            },
+            "prompt": "A small teal ceramic sphere",
+            "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+            "mode": "image",
+            "aspect": "3:2",
+            "categories": [],
+            "provider": "mock",
+            "model": "mock-geometric-v1",
+            "created_at": 1793674151.791239,
+            "image_url": "/api/images/10000000-0000-4000-8000-000000000003/content",
+            "diagnostics": {
+              "seed": 251932374
+            },
+            "composition": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "keyword_extraction": {
+                "status": "not-required",
+                "keywords": []
+              }
+            },
+            "selected_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0
+              }
+            ],
+            "resolved_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0
+              }
+            ],
+            "dynamic_controls_metadata": {
+              "opaque": {
+                "false": false,
+                "zero": 0
+              }
+            },
+            "requested_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "must_have_terms": [],
+            "variation": {
+              "group_id": "20000000-0000-4000-8000-000000000001",
+              "index": 1,
+              "count": 2,
+              "attempt": 1
+            },
+            "event_id": null,
+            "visibility": "shared",
+            "enrichment_metadata": {
+              "provider": "mock",
+              "model": "mock-composer-v1",
+              "prompt_source": "final_prompt"
+            },
+            "width": 96,
+            "height": 64,
+            "sha256": "f143efd5a82d03b82e185707eed6a0f785766d12a07dd0c82a2850afc7e1df61",
+            "image_id": "10000000-0000-4000-8000-000000000003",
+            "storage_id": "local-0",
+            "storage_type": "local",
+            "storage_label": "Image library",
+            "filename": "10000000-0000-4000-8000-000000000003.png",
+            "original_prompt": "A small teal ceramic sphere",
+            "prompt_creation_request": null,
+            "dimensions": "96x64",
+            "created_at_iso": 1793674151791238912,
+            "print_watermark": null,
+            "print_ready": null,
+            "print_watermark_key": null,
+            "print_ready_url": null,
+            "generation_mode": "standard",
+            "original_selected_controls": [
+              {
+                "kind": "binary",
+                "label": "Gloss",
+                "value": false
+              },
+              {
+                "kind": "slider",
+                "label": "Detail",
+                "value": 0,
+                "min": 0,
+                "max": 5
+              }
+            ],
+            "actual_dimensions": {
+              "width": 96,
+              "height": 64
+            },
+            "generation_job_id": "10000000-0000-4000-8000-000000000003",
+            "enrichment": {
+              "status": "complete"
+            }
+          }
+        },
+        "status": "complete",
+        "result": {
+          "id": "10000000-0000-4000-8000-000000000003",
+          "title": "A small teal ceramic sphere",
+          "alt_text": "Mock image: A small teal ceramic sphere",
+          "accessibility": {
+            "alt_text": "Mock image: A small teal ceramic sphere",
+            "prompt_source": "final_prompt",
+            "accessibility_features": ["alt_text"],
+            "image_url": "/api/images/10000000-0000-4000-8000-000000000003/content"
+          },
+          "prompt": "A small teal ceramic sphere",
+          "final_prompt": "A small teal ceramic sphere. [{\"kind\": \"binary\", \"label\": \"Gloss\", \"value\": false}, {\"kind\": \"slider\", \"label\": \"Detail\", \"value\": 0}]",
+          "mode": "image",
+          "aspect": "3:2",
+          "categories": [],
+          "provider": "mock",
+          "model": "mock-geometric-v1",
+          "created_at": 1793674151.791239,
+          "image_url": "/api/images/10000000-0000-4000-8000-000000000003/content",
+          "diagnostics": {
+            "seed": 251932374
+          },
+          "composition": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "keyword_extraction": {
+              "status": "not-required",
+              "keywords": []
+            }
+          },
+          "selected_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0
+            }
+          ],
+          "resolved_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0
+            }
+          ],
+          "dynamic_controls_metadata": {
+            "opaque": {
+              "false": false,
+              "zero": 0
+            }
+          },
+          "requested_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "must_have_terms": [],
+          "variation": {
+            "group_id": "20000000-0000-4000-8000-000000000001",
+            "index": 1,
+            "count": 2,
+            "attempt": 1
+          },
+          "event_id": null,
+          "visibility": "shared",
+          "enrichment_metadata": {
+            "provider": "mock",
+            "model": "mock-composer-v1",
+            "prompt_source": "final_prompt"
+          },
+          "width": 96,
+          "height": 64,
+          "sha256": "f143efd5a82d03b82e185707eed6a0f785766d12a07dd0c82a2850afc7e1df61",
+          "image_id": "10000000-0000-4000-8000-000000000003",
+          "storage_id": "local-0",
+          "storage_type": "local",
+          "storage_label": "Image library",
+          "filename": "10000000-0000-4000-8000-000000000003.png",
+          "original_prompt": "A small teal ceramic sphere",
+          "prompt_creation_request": null,
+          "dimensions": "96x64",
+          "created_at_iso": 1793674151791238912,
+          "print_watermark": null,
+          "print_ready": null,
+          "print_watermark_key": null,
+          "print_ready_url": null,
+          "generation_mode": "standard",
+          "original_selected_controls": [
+            {
+              "kind": "binary",
+              "label": "Gloss",
+              "value": false
+            },
+            {
+              "kind": "slider",
+              "label": "Detail",
+              "value": 0,
+              "min": 0,
+              "max": 5
+            }
+          ],
+          "actual_dimensions": {
+            "width": 96,
+            "height": 64
+          },
+          "generation_job_id": "10000000-0000-4000-8000-000000000003",
+          "enrichment": {
+            "status": "complete"
+          }
+        },
+        "index": 1,
+        "attempt": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "controls": [
+    {
+      "id": "earlier-glaze",
+      "kind": "multi-select",
+      "label": "Glaze regions",
+      "value": ["warm", "cool"],
+      "options": {
+        "warm": { "value": "Amber outer glaze", "region": "outside" },
+        "cool": { "value": "Cobalt inner glaze", "region": "inside" }
+      },
+      "apply_to_edit": true,
+      "selection_provenance": {
+        "version": 1,
+        "source": "explicit",
+        "anchor": "earlier-response"
+      },
+      "future_detail": { "preserve": [false, 0] }
+    },
+    {
+      "id": "earlier-surface",
+      "kind": "binary",
+      "label": "Inner surface",
+      "value": false,
+      "trueLabel": "Pitted interior",
+      "falseLabel": "Smooth interior",
+      "apply_to_edit": true
+    },
+    {
+      "id": "unused-lettering",
+      "kind": "text-input",
+      "label": "Unused lettering",
+      "value": "Do not print these words",
+      "apply_to_generation": false,
+      "apply_to_edit": false
+    },
+    {
+      "id": "kept-pattern",
+      "kind": "text-input",
+      "label": "Source pattern",
+      "value": "Saffron dots",
+      "apply_to_edit": false
+    }
+  ],
+  "new_metadata": {
+    "suggestion_anchor": "new-response",
+    "response": {
+      "categories": [
+        { "id": "unrelated-shape", "label": "New shape", "value": "Faceted" }
+      ]
+    }
+  }
+}

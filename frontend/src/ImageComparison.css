@@ -1,0 +1,333 @@
+/* Animatable divider position shared by the clip, the handle and the tags. */
+@property --cmp-split {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 50%;
+}
+
+.cmp-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: var(--background);
+  animation: cmp-fade var(--duration-base) var(--ease) both;
+}
+
+.cmp-dialog {
+  --cmp-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  padding-block: max(0.75rem, env(safe-area-inset-top))
+    max(0.75rem, env(safe-area-inset-bottom));
+  padding-inline: max(0.75rem, env(safe-area-inset-left))
+    max(0.75rem, env(safe-area-inset-right));
+  outline: none;
+}
+
+.cmp-bar {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.cmp-title {
+  margin: 0;
+  margin-inline-end: auto;
+  font: var(--type-heading);
+  letter-spacing: var(--tracking-display);
+}
+
+.cmp-choose {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.cmp-choose label {
+  font: var(--type-label);
+  color: var(--muted);
+}
+
+.cmp-select {
+  width: auto;
+  max-width: min(24rem, 60vw);
+  text-overflow: ellipsis;
+}
+
+.cmp-close {
+  border-radius: 999px;
+}
+
+.cmp-close:focus-visible,
+.cmp-tools .btn:focus-visible,
+.cmp-tools .icon-btn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.cmp-note {
+  flex-shrink: 0;
+  margin: 0;
+  font: var(--type-caption);
+  color: var(--muted);
+}
+
+.cmp-stage {
+  flex: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--surface-2);
+  outline: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.cmp-stage:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+
+.cmp-stage[data-zoomed='true'] {
+  cursor: grab;
+}
+
+.cmp-stage[data-zoomed='true'][data-gesture='pan'],
+.cmp-stage[data-gesture='pinch'] {
+  cursor: grabbing;
+}
+
+.cmp-frame {
+  position: relative;
+  overflow: hidden;
+  contain: paint;
+  transition: --cmp-split 160ms var(--cmp-ease-out);
+  animation: cmp-sweep 420ms var(--cmp-ease-out);
+}
+
+.cmp-stage[data-gesture='divider'] .cmp-frame {
+  transition: none;
+}
+
+.cmp-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.cmp-before {
+  clip-path: inset(0 calc(100% - var(--cmp-split)) 0 0);
+}
+
+.cmp-content {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  transition: transform var(--duration-base) var(--cmp-ease-out);
+}
+
+.cmp-stage[data-gesture] .cmp-content {
+  transition: none;
+  will-change: transform;
+}
+
+.cmp-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: opacity var(--duration-base) var(--ease);
+}
+
+.cmp-img[data-state='loading'] {
+  opacity: 0;
+}
+
+.cmp-missing {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: calc(var(--cmp-split) / 2);
+  translate: -50% -50%;
+  max-width: 40%;
+  font: var(--type-caption);
+  color: var(--muted);
+  text-align: center;
+}
+
+.cmp-tag {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  max-width: calc(50% - 1rem);
+  overflow: hidden;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  background: oklch(0.16 0.006 250 / 0.78);
+  color: oklch(0.97 0.003 250);
+  font: var(--type-label);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  transition: opacity var(--duration-quick) var(--ease);
+}
+
+.cmp-tag-before {
+  inset-inline-start: 0.5rem;
+}
+
+.cmp-tag-after {
+  inset-inline-end: 0.5rem;
+}
+
+/* Holding for the source shows only the source. */
+.cmp-frame[data-peek='true'] .cmp-tag-after {
+  opacity: 0;
+}
+
+.cmp-handle {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: var(--cmp-split);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  translate: -50% 0;
+  outline: none;
+  cursor: ew-resize;
+  touch-action: none;
+  transition: opacity var(--duration-quick) var(--ease);
+}
+
+.cmp-frame[data-peek='true'] .cmp-handle {
+  opacity: 0;
+}
+
+.cmp-handle-line {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 50%;
+  width: 2px;
+  translate: -50% 0;
+  background: oklch(0.98 0.003 250);
+  box-shadow: 0 0 0 1px oklch(0.1 0.005 250 / 0.4);
+}
+
+.cmp-handle-grip {
+  position: relative;
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid oklch(0.98 0.003 250);
+  border-radius: 999px;
+  background:
+    linear-gradient(oklch(0.98 0.003 250), oklch(0.98 0.003 250))
+      calc(50% - 4px) 50% / 2px 0.875rem no-repeat,
+    linear-gradient(oklch(0.98 0.003 250), oklch(0.98 0.003 250))
+      calc(50% + 4px) 50% / 2px 0.875rem no-repeat,
+    oklch(0.16 0.006 250 / 0.82);
+  box-shadow: 0 2px 10px oklch(0.1 0.005 250 / 0.45);
+  transition:
+    transform var(--duration-quick) var(--cmp-ease-out),
+    border-color var(--duration-quick) var(--ease);
+}
+
+.cmp-handle:hover .cmp-handle-grip,
+.cmp-handle[data-dragging='true'] .cmp-handle-grip {
+  transform: scale(1.1);
+  border-color: var(--accent);
+}
+
+.cmp-handle:focus-visible .cmp-handle-grip {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.cmp-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cmp-tools {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.cmp-zoom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cmp-zoom-value {
+  min-width: 4.5ch;
+  font: var(--type-code);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.cmp-peek {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: none;
+}
+
+.cmp-peek[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+@keyframes cmp-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* On open the divider sweeps from the right edge to the middle, revealing
+   the result. No forwards fill, so later divider transitions still run. */
+@keyframes cmp-sweep {
+  from {
+    --cmp-split: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp-backdrop,
+  .cmp-frame {
+    animation: none;
+  }
+  .cmp-frame,
+  .cmp-content,
+  .cmp-img,
+  .cmp-tag,
+  .cmp-handle,
+  .cmp-handle-grip {
+    transition: none;
+  }
+}
+
+/* The stage takes focus when a comparison is removed under it. */
+.stage-card:focus {
+  outline: none;
+}
+.stage-card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}

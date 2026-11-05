@@ -1,0 +1,123 @@
+{
+  "fixture_kind": "Watermark text-rule spacing contract fixture. Browser proof is recorded separately.",
+  "rendering": {
+    "rendererVersion": "edge-tonal-watermark-v4",
+    "analysisVersion": "pixel-analysis-v5",
+    "placementFrame": "image-edges",
+    "sizeFraction": 0.2,
+    "insetFraction": 0.035,
+    "sizeReferenceAspectRatios": {
+      "landscape": [3, 2],
+      "portrait": [2, 3],
+      "square": [2, 3]
+    },
+    "ruleHeightFraction": 0.036,
+    "contentGapFraction": 0.064,
+    "contentAnchor": "corner",
+    "haloPaddingFraction": 0.03,
+    "gradientStartHoldFraction": 0.2,
+    "separationOpacity": 0.55,
+    "separationBlurFraction": 0.014,
+    "glowOpacity": 0.3,
+    "glowBlurFraction": 0.03,
+    "textRulePlacement": "glyph-bounds",
+    "defaultPresentation": {
+      "gradient_start": "#ffd15e",
+      "gradient_end": null,
+      "separation_color": "#05070a",
+      "glow_color": "#05070a"
+    }
+  },
+  "text_cases": [
+    {
+      "text": "ImageDials",
+      "line_count": 1
+    },
+    {
+      "text": "Studio\nAfter\nHours",
+      "line_count": 3
+    },
+    {
+      "text": "North\nSouth\nEast\nWest",
+      "line_count": 4
+    },
+    {
+      "text": "\u00c5ngstr\u00f6m\ngyp jq",
+      "line_count": 2
+    }
+  ],
+  "gap_cases": [
+    {
+      "mark_size_pixels": 64,
+      "gap_pixels": 4
+    },
+    {
+      "mark_size_pixels": 154,
+      "gap_pixels": 10
+    },
+    {
+      "mark_size_pixels": 240,
+      "gap_pixels": 15
+    },
+    {
+      "mark_size_pixels": 256,
+      "gap_pixels": 16
+    }
+  ],
+  "compatibility": {
+    "missing_textRulePlacement": "fixed-square-edges",
+    "missing_contentAnchor": "glyph-block-centred",
+    "missing_haloPaddingFraction": "no-halo-padding",
+    "svg": "existing-aspect-fit-and-square-rules",
+    "source_bytes_unchanged": true
+  },
+  "rule_cases": [
+    {
+      "mark_size_pixels": 154,
+      "rule_pixels": 6,
+      "previous_rule_pixels": 7
+    },
+    {
+      "mark_size_pixels": 160,
+      "rule_pixels": 6,
+      "previous_rule_pixels": 7
+    },
+    {
+      "mark_size_pixels": 205,
+      "rule_pixels": 7,
+      "previous_rule_pixels": 9
+    },
+    {
+      "mark_size_pixels": 240,
+      "rule_pixels": 9,
+      "previous_rule_pixels": 11
+    },
+    {
+      "mark_size_pixels": 256,
+      "rule_pixels": 9,
+      "previous_rule_pixels": 11
+    }
+  ],
+  "legacy_rendering": {
+    "rendererVersion": "glyph-rules-watermark-v2",
+    "analysisVersion": "pixel-analysis-v3",
+    "sizeFraction": 0.2,
+    "insetFraction": 0.06,
+    "ruleHeightFraction": 0.044,
+    "contentGapFraction": 0.064,
+    "gradientStartHoldFraction": 0.4,
+    "separationOpacity": 0.6,
+    "glowOpacity": 0.32,
+    "safeAspectRatios": {
+      "landscape": [3, 2],
+      "portrait": [2, 3],
+      "square": [2, 3]
+    },
+    "defaultPresentation": {
+      "gradient_start": "#ffd15e",
+      "gradient_end": null,
+      "separation_color": "#05070a",
+      "glow_color": "#ff6f3d"
+    }
+  }
+}

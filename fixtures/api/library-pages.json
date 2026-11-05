@@ -1,0 +1,669 @@
+{
+  "source_records": [
+    {
+      "id": "catalog-example-2",
+      "created_at": 1700000002,
+      "title": "Ceramic vessel 2",
+      "prompt": "A blue paper circle",
+      "width": 300,
+      "height": 200,
+      "event_id": "exhibit",
+      "selected_controls": [],
+      "extension": {
+        "enabled": false,
+        "number": 0
+      }
+    },
+    {
+      "id": "catalog-example-1",
+      "created_at": 1700000001,
+      "title": "Ceramic vessel 1",
+      "prompt": "A blue paper circle",
+      "width": 300,
+      "height": 200,
+      "event_id": "exhibit",
+      "selected_controls": [],
+      "extension": {
+        "enabled": false,
+        "number": 0
+      }
+    },
+    {
+      "id": "catalog-example-0",
+      "created_at": 1700000000,
+      "title": "Ceramic vessel 0",
+      "prompt": "A blue paper circle",
+      "width": 300,
+      "height": 200,
+      "event_id": "exhibit",
+      "selected_controls": [],
+      "extension": {
+        "enabled": false,
+        "number": 0
+      }
+    }
+  ],
+  "first": {
+    "request": {
+      "limit": 2
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 2,
+      "images": [
+        {
+          "created_at": 1700000002.0,
+          "detail_url": "/api/images/library/record/catalog-example-2",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-2.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-2",
+          "image_id": "catalog-example-2",
+          "image_url": "/api/images/catalog-example-2/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-2.png?variant=thumbnail",
+          "title": "Ceramic vessel 2"
+        },
+        {
+          "created_at": 1700000001.0,
+          "detail_url": "/api/images/library/record/catalog-example-1",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-1.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-1",
+          "image_id": "catalog-example-1",
+          "image_url": "/api/images/catalog-example-1/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-1.png?variant=thumbnail",
+          "title": "Ceramic vessel 1"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY1NzM4OTc1MzZiZDIxMDA1M2UzOTE1MWVjZWNhNDk0NWFhNjM5ZDIxOGJmZTFiZjE4ZDU4MGI1OTc2NjcyMzUiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ",
+      "order": "newest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 0,
+      "previous_cursor": null,
+      "revision": 1,
+      "total": 3,
+      "watermark_backfill": null
+    },
+    "etag": "\"bfa9b7632f81d09a4179d5d2efe4fca33567d163829aa432667f172930d47f0d\""
+  },
+  "next": {
+    "request": {
+      "limit": 2,
+      "cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY1NzM4OTc1MzZiZDIxMDA1M2UzOTE1MWVjZWNhNDk0NWFhNjM5ZDIxOGJmZTFiZjE4ZDU4MGI1OTc2NjcyMzUiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ"
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 1,
+      "images": [
+        {
+          "created_at": 1700000000.0,
+          "detail_url": "/api/images/library/record/catalog-example-0",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-0.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-0",
+          "image_id": "catalog-example-0",
+          "image_url": "/api/images/catalog-example-0/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-0.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": null,
+      "order": "newest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 2,
+      "previous_cursor": "eyJkaXJlY3Rpb24iOiJiYWNrd2FyZCIsImlkIjoiY2F0YWxvZy1leGFtcGxlLTAiLCJpbmNsdXNpdmUiOmZhbHNlLCJpbmRleF92ZXJzaW9uIjozLCJwb3NpdGlvbiI6MCwicXVlcnkiOiJmNTczODk3NTM2YmQyMTAwNTNlMzkxNTFlY2VjYTQ5NDVhYTYzOWQyMThiZmUxYmYxOGQ1ODBiNTk3NjY3MjM1IiwicmV2aXNpb24iOjEsInRpbWUiOjE3MDAwMDAwMDAuMCwidiI6MX0",
+      "revision": 1,
+      "total": 3
+    },
+    "etag": "\"3f3b32ec0fb90576b48873835ab0ffd297b64d793819ff4799371b8d7f9a482f\""
+  },
+  "detail": {
+    "alt_text": null,
+    "created_at": 1700000002,
+    "created_at_iso": 1700000002000000000,
+    "dimensions": {
+      "height": 200,
+      "width": 300
+    },
+    "dynamic_controls_metadata": null,
+    "event_id": "exhibit",
+    "extension": {
+      "enabled": false,
+      "number": 0
+    },
+    "filename": "catalog-example-2.png",
+    "final_prompt": null,
+    "generation_mode": "standard",
+    "height": 200,
+    "id": "catalog-example-2",
+    "image_id": "catalog-example-2",
+    "image_url": "/api/images/catalog-example-2/content",
+    "original_prompt": "A blue paper circle",
+    "print_ready": null,
+    "print_ready_url": null,
+    "print_watermark": null,
+    "print_watermark_key": null,
+    "prompt": "A blue paper circle",
+    "prompt_creation_request": null,
+    "selected_controls": [],
+    "storage_id": "local-0",
+    "storage_label": "Image library",
+    "storage_type": "local",
+    "title": "Ceramic vessel 2",
+    "visibility": "shared",
+    "width": 300
+  },
+  "invalid_limit": {
+    "detail": "Library page limit must be between 1 and 96"
+  },
+  "oldest": {
+    "request": {
+      "limit": 2,
+      "order": "oldest"
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 2,
+      "images": [
+        {
+          "created_at": 1700000000.0,
+          "detail_url": "/api/images/library/record/catalog-example-0",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-0.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-0",
+          "image_id": "catalog-example-0",
+          "image_url": "/api/images/catalog-example-0/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-0.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        },
+        {
+          "created_at": 1700000001.0,
+          "detail_url": "/api/images/library/record/catalog-example-1",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-1.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-1",
+          "image_id": "catalog-example-1",
+          "image_url": "/api/images/catalog-example-1/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-1.png?variant=thumbnail",
+          "title": "Ceramic vessel 1"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY2ZGEwNzJkNjYwZWI4NzQ4NmIxNzU5MjViOTRmYzk3NDQwOGVlZjY0YWZhMDU4OWI0OTQzZjNkZWEzZWFhNDQiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ",
+      "order": "oldest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 0,
+      "previous_cursor": null,
+      "revision": 1,
+      "total": 3,
+      "watermark_backfill": null
+    },
+    "etag": "\"54227e6f3a407c30321bffb055f68ef14ded64aa5b58e5108e9f8eacc1ded5a3\""
+  },
+  "oldest_next": {
+    "request": {
+      "limit": 2,
+      "order": "oldest",
+      "cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY2ZGEwNzJkNjYwZWI4NzQ4NmIxNzU5MjViOTRmYzk3NDQwOGVlZjY0YWZhMDU4OWI0OTQzZjNkZWEzZWFhNDQiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ"
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 1,
+      "images": [
+        {
+          "created_at": 1700000002.0,
+          "detail_url": "/api/images/library/record/catalog-example-2",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-2.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-2",
+          "image_id": "catalog-example-2",
+          "image_url": "/api/images/catalog-example-2/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-2.png?variant=thumbnail",
+          "title": "Ceramic vessel 2"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": null,
+      "order": "oldest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 2,
+      "previous_cursor": "eyJkaXJlY3Rpb24iOiJiYWNrd2FyZCIsImlkIjoiY2F0YWxvZy1leGFtcGxlLTIiLCJpbmNsdXNpdmUiOmZhbHNlLCJpbmRleF92ZXJzaW9uIjozLCJwb3NpdGlvbiI6MCwicXVlcnkiOiJmNmRhMDcyZDY2MGViODc0ODZiMTc1OTI1Yjk0ZmM5NzQ0MDhlZWY2NGFmYTA1ODliNDk0M2YzZGVhM2VhYTQ0IiwicmV2aXNpb24iOjEsInRpbWUiOjE3MDAwMDAwMDIuMCwidiI6MX0",
+      "revision": 1,
+      "total": 3
+    },
+    "etag": "\"a0e3ce83337f491057a772368658c5f6439994d8065bd121338aef742161babb\""
+  },
+  "previous": {
+    "request": {
+      "limit": 2,
+      "cursor": "eyJkaXJlY3Rpb24iOiJiYWNrd2FyZCIsImlkIjoiY2F0YWxvZy1leGFtcGxlLTAiLCJpbmNsdXNpdmUiOmZhbHNlLCJpbmRleF92ZXJzaW9uIjozLCJwb3NpdGlvbiI6MCwicXVlcnkiOiJmNTczODk3NTM2YmQyMTAwNTNlMzkxNTFlY2VjYTQ5NDVhYTYzOWQyMThiZmUxYmYxOGQ1ODBiNTk3NjY3MjM1IiwicmV2aXNpb24iOjEsInRpbWUiOjE3MDAwMDAwMDAuMCwidiI6MX0"
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 2,
+      "images": [
+        {
+          "created_at": 1700000002.0,
+          "detail_url": "/api/images/library/record/catalog-example-2",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-2.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-2",
+          "image_id": "catalog-example-2",
+          "image_url": "/api/images/catalog-example-2/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-2.png?variant=thumbnail",
+          "title": "Ceramic vessel 2"
+        },
+        {
+          "created_at": 1700000001.0,
+          "detail_url": "/api/images/library/record/catalog-example-1",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-1.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-1",
+          "image_id": "catalog-example-1",
+          "image_url": "/api/images/catalog-example-1/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-1.png?variant=thumbnail",
+          "title": "Ceramic vessel 1"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY1NzM4OTc1MzZiZDIxMDA1M2UzOTE1MWVjZWNhNDk0NWFhNjM5ZDIxOGJmZTFiZjE4ZDU4MGI1OTc2NjcyMzUiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ",
+      "order": "newest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 0,
+      "previous_cursor": null,
+      "revision": 1,
+      "total": 3
+    },
+    "etag": "\"3241104f5c226d7a9d3d7fdba6c24fa799ca7f5b4d162471fa678f466bb0fe0f\""
+  },
+  "oldest_previous": {
+    "request": {
+      "limit": 2,
+      "order": "oldest",
+      "cursor": "eyJkaXJlY3Rpb24iOiJiYWNrd2FyZCIsImlkIjoiY2F0YWxvZy1leGFtcGxlLTIiLCJpbmNsdXNpdmUiOmZhbHNlLCJpbmRleF92ZXJzaW9uIjozLCJwb3NpdGlvbiI6MCwicXVlcnkiOiJmNmRhMDcyZDY2MGViODc0ODZiMTc1OTI1Yjk0ZmM5NzQ0MDhlZWY2NGFmYTA1ODliNDk0M2YzZGVhM2VhYTQ0IiwicmV2aXNpb24iOjEsInRpbWUiOjE3MDAwMDAwMDIuMCwidiI6MX0"
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 2,
+      "images": [
+        {
+          "created_at": 1700000000.0,
+          "detail_url": "/api/images/library/record/catalog-example-0",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-0.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-0",
+          "image_id": "catalog-example-0",
+          "image_url": "/api/images/catalog-example-0/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-0.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        },
+        {
+          "created_at": 1700000001.0,
+          "detail_url": "/api/images/library/record/catalog-example-1",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-1.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-1",
+          "image_id": "catalog-example-1",
+          "image_url": "/api/images/catalog-example-1/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-1.png?variant=thumbnail",
+          "title": "Ceramic vessel 1"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY2ZGEwNzJkNjYwZWI4NzQ4NmIxNzU5MjViOTRmYzk3NDQwOGVlZjY0YWZhMDU4OWI0OTQzZjNkZWEzZWFhNDQiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ",
+      "order": "oldest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 0,
+      "previous_cursor": null,
+      "revision": 1,
+      "total": 3
+    },
+    "etag": "\"272fb66b97141b1dab4339487591fee9323ce0be917631a7ba876f2c0870bb52\""
+  },
+  "changed_revision": {
+    "request": {
+      "limit": 2,
+      "cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY1NzM4OTc1MzZiZDIxMDA1M2UzOTE1MWVjZWNhNDk0NWFhNjM5ZDIxOGJmZTFiZjE4ZDU4MGI1OTc2NjcyMzUiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ"
+    },
+    "response": {
+      "anchor_index": null,
+      "count": 1,
+      "images": [
+        {
+          "created_at": 1700000000.0,
+          "detail_url": "/api/images/library/record/catalog-example-0",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-0.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-0",
+          "image_id": "catalog-example-0",
+          "image_url": "/api/images/catalog-example-0/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-0.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": null,
+      "order": "newest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": null,
+      "previous_cursor": "eyJkaXJlY3Rpb24iOiJiYWNrd2FyZCIsImlkIjoiY2F0YWxvZy1leGFtcGxlLTAiLCJpbmNsdXNpdmUiOmZhbHNlLCJpbmRleF92ZXJzaW9uIjozLCJwb3NpdGlvbiI6bnVsbCwicXVlcnkiOiJmNTczODk3NTM2YmQyMTAwNTNlMzkxNTFlY2VjYTQ5NDVhYTYzOWQyMThiZmUxYmYxOGQ1ODBiNTk3NjY3MjM1IiwicmV2aXNpb24iOjIsInRpbWUiOjE3MDAwMDAwMDAuMCwidiI6MX0",
+      "revision": 2,
+      "total": 3
+    },
+    "etag": "\"4a76083c264c4b2ddb4c418fdad1cd904beadfcd6bfff51371a4dae74f86c1f7\""
+  },
+  "projection_changed": {
+    "status": 409,
+    "response": {
+      "detail": "Library projection changed; refresh this query from its first page"
+    }
+  },
+  "around": {
+    "request": {
+      "limit": 2,
+      "around": "catalog-example-1"
+    },
+    "status": 200,
+    "response": {
+      "anchor_index": 1,
+      "count": 2,
+      "images": [
+        {
+          "created_at": 1700000002.0,
+          "detail_url": "/api/images/library/record/catalog-example-2",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-2.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-2",
+          "image_id": "catalog-example-2",
+          "image_url": "/api/images/catalog-example-2/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-2.png?variant=thumbnail",
+          "title": "Ceramic vessel 2"
+        },
+        {
+          "created_at": 1700000001.0,
+          "detail_url": "/api/images/library/record/catalog-example-1",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-1.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-1",
+          "image_id": "catalog-example-1",
+          "image_url": "/api/images/catalog-example-1/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-1.png?variant=thumbnail",
+          "title": "Ceramic vessel 1"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": "eyJkaXJlY3Rpb24iOiJmb3J3YXJkIiwiaWQiOiJjYXRhbG9nLWV4YW1wbGUtMSIsImluY2x1c2l2ZSI6ZmFsc2UsImluZGV4X3ZlcnNpb24iOjMsInBvc2l0aW9uIjoyLCJxdWVyeSI6ImY1NzM4OTc1MzZiZDIxMDA1M2UzOTE1MWVjZWNhNDk0NWFhNjM5ZDIxOGJmZTFiZjE4ZDU4MGI1OTc2NjcyMzUiLCJyZXZpc2lvbiI6MSwidGltZSI6MTcwMDAwMDAwMS4wLCJ2IjoxfQ",
+      "order": "newest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 0,
+      "previous_cursor": null,
+      "revision": 1,
+      "total": 3,
+      "watermark_backfill": null
+    },
+    "etag": "\"fdbb0fca58a43f4844e477b3636a71918dcfbb317366aca627a2c9ba68227c63\""
+  },
+  "last": {
+    "request": {
+      "limit": 2,
+      "edge": "last"
+    },
+    "status": 200,
+    "response": {
+      "anchor_index": null,
+      "count": 2,
+      "images": [
+        {
+          "created_at": 1700000001.0,
+          "detail_url": "/api/images/library/record/catalog-example-1",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-1.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-1",
+          "image_id": "catalog-example-1",
+          "image_url": "/api/images/catalog-example-1/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-1.png?variant=thumbnail",
+          "title": "Ceramic vessel 1"
+        },
+        {
+          "created_at": 1700000000.0,
+          "detail_url": "/api/images/library/record/catalog-example-0",
+          "dimensions": {
+            "height": 200,
+            "width": 300
+          },
+          "display_prompt": "A blue paper circle",
+          "event_id": "exhibit",
+          "filename": "catalog-example-0.png",
+          "generation_mode": "standard",
+          "has_prepared_record": false,
+          "has_watermark_analysis": false,
+          "id": "catalog-example-0",
+          "image_id": "catalog-example-0",
+          "image_url": "/api/images/catalog-example-0/content",
+          "orientation": "landscape",
+          "sha256": null,
+          "storage_id": "local-0",
+          "thumbnail_url": "/api/images/library/file/local-0/catalog-example-0.png?variant=thumbnail",
+          "title": "Ceramic vessel 0"
+        }
+      ],
+      "listing_kind": "summary-page",
+      "next_cursor": null,
+      "order": "newest",
+      "orientation_counts": {
+        "landscape": 3,
+        "portrait": 0,
+        "square": 0,
+        "unknown": 0
+      },
+      "position": 1,
+      "previous_cursor": "eyJkaXJlY3Rpb24iOiJiYWNrd2FyZCIsImlkIjoiY2F0YWxvZy1leGFtcGxlLTEiLCJpbmNsdXNpdmUiOmZhbHNlLCJpbmRleF92ZXJzaW9uIjozLCJwb3NpdGlvbiI6MCwicXVlcnkiOiJmNTczODk3NTM2YmQyMTAwNTNlMzkxNTFlY2VjYTQ5NDVhYTYzOWQyMThiZmUxYmYxOGQ1ODBiNTk3NjY3MjM1IiwicmV2aXNpb24iOjEsInRpbWUiOjE3MDAwMDAwMDEuMCwidiI6MX0",
+      "revision": 1,
+      "total": 3,
+      "watermark_backfill": null
+    },
+    "etag": "\"faaf3507f9d33903afe8c01b30bc9f3ffb833799980f53b7ceacfb0f8e4e3849\""
+  },
+  "watermark_status": {
+    "status": 200,
+    "response": {
+      "watermark_backfill": null
+    },
+    "etag": "\"1455a6800ae742f79de85b373c27fdbbcd54066da24bce66fc4e7a619aaf180b\""
+  }
+}

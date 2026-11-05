@@ -1,0 +1,64 @@
+/* Resize handle: the strip is the 44px target; it takes space only while shown. */
+.viewport-grip {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--duration-base) var(--ease),
+    opacity var(--duration-base) var(--ease),
+    visibility var(--duration-base);
+}
+.viewport-grip[data-visible='true'] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+}
+.viewport-grip-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.viewport-grip-inner .tip {
+  display: block;
+}
+.viewport-handle {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  border-radius: 8px;
+  cursor: ns-resize;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.viewport-handle::before {
+  content: '';
+  width: 2.5rem;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--muted);
+  opacity: 0.55;
+  transition:
+    background var(--duration-quick) var(--ease),
+    opacity var(--duration-quick) var(--ease),
+    width var(--duration-base) var(--ease);
+}
+.viewport-handle:hover::before,
+.viewport-handle:focus-visible::before,
+.viewport-handle[data-dragging='true']::before {
+  width: 3.5rem;
+  background: var(--accent);
+  opacity: 1;
+}
+.viewport-handle:focus-visible {
+  outline-offset: -3px;
+}
+.viewport-handle[data-dragging='true'] {
+  cursor: grabbing;
+}
+@media (prefers-reduced-motion: reduce) {
+  .viewport-grip,
+  .viewport-handle::before {
+    transition: none;
+  }
+}

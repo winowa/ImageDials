@@ -1,0 +1,51 @@
+{
+  "fixture_kind": "Independent region selection and row-major mask vector.",
+  "capability": {
+    "enabled": true,
+    "protocol": "region-selection-v1",
+    "method": "generated-image-composite",
+    "native_mask": false,
+    "tools": ["rectangle", "brush"],
+    "coordinates": "oriented-base-pixels",
+    "output_geometry": "oriented-base",
+    "provider_fit": "cover-center",
+    "outside_selection": "exact-rgba8",
+    "max_shapes": 64,
+    "max_points": 4096,
+    "max_radius": 2048,
+    "max_feather": 32,
+    "max_edge": 32768,
+    "max_pixels": 32000000
+  },
+  "selection": {
+    "version": 1,
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "width": 16,
+    "height": 12,
+    "shapes": [
+      {
+        "kind": "rectangle",
+        "x": 3,
+        "y": 4,
+        "width": 6,
+        "height": 4
+      }
+    ],
+    "feather": 0
+  },
+  "expected_mask": {
+    "encoding": "row-major-l8",
+    "width": 16,
+    "height": 12,
+    "selected_pixels": 24,
+    "sha256": "f8d5900d95f43e3f02a7f3fdeac1df7300fadca5ba49a372d2e223c722ab9963",
+    "bounds": {
+      "x": 3,
+      "y": 4,
+      "width": 6,
+      "height": 4
+    }
+  },
+  "rectangle_edges": "exclusive-right-bottom",
+  "feather": "inward-only"
+}

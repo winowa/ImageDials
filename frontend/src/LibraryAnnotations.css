@@ -1,0 +1,143 @@
+.library-filter-trigger {
+  min-height: 44px;
+  max-width: min(19rem, 42vw);
+  padding-inline: 0.75rem;
+}
+
+.collection-manager .dialog-bar {
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.collection-manager .dialog-bar h2 {
+  margin: 0;
+  font: var(--type-heading);
+}
+
+.library-filter-trigger > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.membership-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin: -0.25rem 0 0.75rem;
+  color: var(--muted);
+  font: var(--type-caption);
+}
+
+.membership-status .link-btn {
+  margin-inline-start: 0.5rem;
+  min-height: 44px;
+}
+
+.annotation-actions {
+  display: grid;
+  justify-items: start;
+  gap: 0.25rem;
+}
+
+.annotation-action-status {
+  color: var(--muted);
+  font: var(--type-caption);
+}
+
+.detail-annotation-actions {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.detail-annotation-actions .mini {
+  margin: 0 0 0.5rem;
+}
+
+.collection-create,
+.collection-rename {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.collection-create .grow {
+  flex: 1 1 14rem;
+}
+
+.collection-list {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  list-style: none;
+}
+
+.collection-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.collection-row-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.collection-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.collection-remove-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.collection-remove-confirm p {
+  flex: 1 1 14rem;
+  margin: 0;
+}
+
+.collection-limit-note {
+  margin: 0.75rem 0;
+}
+
+.collection-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.collection-create button,
+.collection-row button,
+.collection-rename button,
+.collection-remove-confirm button,
+.collection-footer button {
+  min-height: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collection-row {
+    scroll-behavior: auto;
+  }
+}

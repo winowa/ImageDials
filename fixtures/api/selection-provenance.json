@@ -1,0 +1,333 @@
+{
+  "fixture_kind": "Fictional per-control selection_provenance contract. Server stores it losslessly with selected_controls and never forwards it to prompt composition.",
+  "contract": {
+    "field": "selection_provenance",
+    "placement": "optional property of one wire control (sibling of value, apply_to_generation)",
+    "version": 1,
+    "source": ["suggested", "explicit", "fallback-random"],
+    "anchor": "optional, 1-64 characters from [A-Za-z0-9._:-]; equals dynamic_controls_metadata.suggestion_anchor for suggested/explicit-over-suggestion controls; omit for fallback-random",
+    "effect": "optional, only with source=suggested: 'value' (suggestion applied a value) or 'model-decides' (suggested null; control has apply_to_generation=false and keeps its value)",
+    "extra_keys": "allowed and preserved; versions other than 1 are preserved opaque",
+    "absent": "older records and controls simply lack the field"
+  },
+  "valid": [
+    {
+      "name": "suggested-value",
+      "provenance": {
+        "version": 1,
+        "source": "suggested",
+        "anchor": "3f9a1c0e5b7d2a46",
+        "effect": "value"
+      }
+    },
+    {
+      "name": "suggested-model-decides",
+      "provenance": {
+        "version": 1,
+        "source": "suggested",
+        "anchor": "3f9a1c0e5b7d2a46",
+        "effect": "model-decides"
+      }
+    },
+    {
+      "name": "explicit-minimal",
+      "provenance": {
+        "version": 1,
+        "source": "explicit"
+      }
+    },
+    {
+      "name": "explicit-over-suggestion",
+      "provenance": {
+        "version": 1,
+        "source": "explicit",
+        "anchor": "3f9a1c0e5b7d2a46"
+      }
+    },
+    {
+      "name": "fallback-random",
+      "provenance": {
+        "version": 1,
+        "source": "fallback-random"
+      }
+    },
+    {
+      "name": "extra-keys-preserved",
+      "provenance": {
+        "version": 1,
+        "source": "explicit",
+        "note": 0
+      }
+    },
+    {
+      "name": "future-version-is-opaque",
+      "provenance": {
+        "version": 2,
+        "source": "anything"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "not-an-object",
+      "provenance": "suggested"
+    },
+    {
+      "name": "list",
+      "provenance": []
+    },
+    {
+      "name": "null",
+      "provenance": null
+    },
+    {
+      "name": "missing-version",
+      "provenance": {
+        "source": "explicit"
+      }
+    },
+    {
+      "name": "boolean-version",
+      "provenance": {
+        "version": true,
+        "source": "explicit"
+      }
+    },
+    {
+      "name": "zero-version",
+      "provenance": {
+        "version": 0,
+        "source": "explicit"
+      }
+    },
+    {
+      "name": "unknown-source",
+      "provenance": {
+        "version": 1,
+        "source": "model"
+      }
+    },
+    {
+      "name": "missing-source",
+      "provenance": {
+        "version": 1
+      }
+    },
+    {
+      "name": "anchor-too-long",
+      "provenance": {
+        "version": 1,
+        "source": "suggested",
+        "anchor": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    {
+      "name": "anchor-bad-characters",
+      "provenance": {
+        "version": 1,
+        "source": "suggested",
+        "anchor": "not valid!"
+      }
+    },
+    {
+      "name": "anchor-not-string",
+      "provenance": {
+        "version": 1,
+        "source": "suggested",
+        "anchor": 12
+      }
+    },
+    {
+      "name": "effect-unknown",
+      "provenance": {
+        "version": 1,
+        "source": "suggested",
+        "effect": "hide"
+      }
+    },
+    {
+      "name": "effect-on-non-suggestion",
+      "provenance": {
+        "version": 1,
+        "source": "explicit",
+        "effect": "value"
+      }
+    }
+  ],
+  "generate_request": {
+    "prompt": "A barn owl on a fence post at dusk",
+    "dimensions": "768x1152",
+    "generation_mode": "standard",
+    "controls": [
+      {
+        "id": "style",
+        "kind": "multi-select",
+        "label": "Style",
+        "value": ["photography"],
+        "origin": "fixed",
+        "options": {
+          "photography": "Photography",
+          "watercolor": "Watercolor",
+          "pastel": "Pastel"
+        },
+        "selection_provenance": {
+          "version": 1,
+          "source": "suggested",
+          "anchor": "3f9a1c0e5b7d2a46",
+          "effect": "value"
+        }
+      },
+      {
+        "id": "color",
+        "kind": "multi-select",
+        "label": "Color",
+        "value": ["cool"],
+        "origin": "fixed",
+        "options": {
+          "warm": "Warm",
+          "cool": "Cool",
+          "natural": "Natural"
+        },
+        "selection_provenance": {
+          "version": 1,
+          "source": "explicit",
+          "anchor": "3f9a1c0e5b7d2a46"
+        }
+      },
+      {
+        "id": "lighting",
+        "kind": "multi-select",
+        "label": "Lighting",
+        "value": ["studio"],
+        "origin": "fixed",
+        "options": {
+          "studio": "Studio",
+          "golden-hour": "Golden hour"
+        },
+        "selection_provenance": {
+          "version": 1,
+          "source": "fallback-random"
+        }
+      },
+      {
+        "id": "camera-angle",
+        "kind": "single-select",
+        "label": "Camera angle",
+        "value": "eye-level",
+        "origin": "fixed",
+        "options": {
+          "eye-level": "Eye level",
+          "low-angle": "Low angle"
+        },
+        "apply_to_generation": false,
+        "selection_provenance": {
+          "version": 1,
+          "source": "suggested",
+          "anchor": "3f9a1c0e5b7d2a46",
+          "effect": "model-decides"
+        }
+      },
+      {
+        "id": "mood",
+        "kind": "multi-select",
+        "label": "Mood",
+        "value": [],
+        "origin": "fixed",
+        "options": {
+          "calm": "Calm",
+          "tense": "Tense"
+        },
+        "selection_provenance": {
+          "version": 1,
+          "source": "suggested",
+          "anchor": "3f9a1c0e5b7d2a46",
+          "effect": "value"
+        }
+      },
+      {
+        "id": "texture",
+        "kind": "multi-select",
+        "label": "Texture",
+        "value": ["rough"],
+        "origin": "fixed",
+        "options": {
+          "rough": "Rough",
+          "smooth": "Smooth"
+        },
+        "selection_provenance": {
+          "version": 2,
+          "source": "future-source",
+          "opaque": {
+            "zero": 0,
+            "off": false
+          }
+        }
+      },
+      {
+        "id": "background",
+        "kind": "single-select",
+        "label": "Background",
+        "value": "plain",
+        "origin": "fixed",
+        "options": {
+          "plain": "Plain",
+          "studio": "Studio"
+        },
+        "x_future_field": {
+          "zero": 0,
+          "off": false,
+          "nested": [null]
+        }
+      },
+      {
+        "id": "wing-span",
+        "kind": "slider",
+        "label": "Wing span",
+        "value": 6,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "origin": "generated",
+        "minLabel": "Folded",
+        "maxLabel": "Fully spread"
+      }
+    ],
+    "dynamic_controls_metadata": {
+      "provider": "mock",
+      "response": [],
+      "raw_response": "",
+      "suggestion_anchor": "3f9a1c0e5b7d2a46",
+      "suggestion_validation": {
+        "status": "valid",
+        "accepted": {
+          "style": "value",
+          "camera-angle": "model-decides",
+          "mood": "empty"
+        },
+        "rejected": []
+      }
+    }
+  },
+  "legacy_generate_request": {
+    "prompt": "A barn owl on a fence post at dusk",
+    "dimensions": "768x1152",
+    "generation_mode": "standard",
+    "controls": [
+      {
+        "id": "style",
+        "kind": "multi-select",
+        "label": "Style",
+        "value": ["photography"],
+        "origin": "fixed",
+        "options": {
+          "photography": "Photography"
+        }
+      },
+      {
+        "kind": "binary",
+        "label": "Mid flight",
+        "value": false
+      }
+    ]
+  }
+}

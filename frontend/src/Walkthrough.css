@@ -1,0 +1,104 @@
+.walkthrough-launch {
+  margin-inline-start: auto;
+}
+
+.walkthrough-target {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: max(0.5rem, var(--radius-control, 0.5rem));
+}
+
+.walkthrough-shade {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--spot-x) var(--spot-y),
+    transparent 0,
+    transparent var(--spot-radius),
+    oklch(0.08 0 0 / 0.58) calc(var(--spot-radius) + 1px)
+  );
+}
+
+.walkthrough-card {
+  position: fixed;
+  z-index: 1201;
+  width: min(26rem, calc(100vw - 1.5rem));
+  max-height: calc(100dvh - 1.5rem);
+  overflow: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  color: var(--foreground);
+  background: var(--surface);
+  box-shadow: 0 1rem 3rem oklch(0 0 0 / 0.32);
+  animation: walkthrough-arrive 180ms ease-out both;
+}
+
+.walkthrough-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.walkthrough-count {
+  margin: 0;
+  color: var(--muted);
+  font: var(--type-label);
+}
+
+.walkthrough-card h2 {
+  margin: 0 0 0.6rem;
+  font: var(--type-heading);
+}
+
+.walkthrough-card > p:last-of-type {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.walkthrough-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.walkthrough-actions > span {
+  flex: 1 1 auto;
+}
+
+@keyframes walkthrough-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 30rem) {
+  .walkthrough-card {
+    padding: 1rem;
+  }
+
+  .walkthrough-actions > span {
+    display: none;
+  }
+
+  .walkthrough-actions > button:first-child {
+    margin-inline-end: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .walkthrough-card {
+    animation: none;
+  }
+}

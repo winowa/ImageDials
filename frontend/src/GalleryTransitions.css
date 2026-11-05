@@ -1,0 +1,451 @@
+/* Gallery layers: the picture on screen, a hidden replacement, and the pair
+   that takes part in a running transition. */
+.stage-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.stage-layer[data-role='loading'],
+.stage-layer[data-role='idle'] {
+  visibility: hidden;
+  pointer-events: none;
+}
+.stage-layer[data-role='entering'] {
+  z-index: 2;
+}
+.stage-layer[data-role='exiting'] {
+  pointer-events: none;
+}
+
+/* One nested ring per effect. Every chosen effect animates its own ring at the
+   same moment, so a transform, opacity, filter or clip on one ring composes
+   with the others instead of replacing them. Rings of effects that are not
+   chosen stay still. */
+.fx-ring {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:is(.gallery-stage, .effect-preview) {
+  --dir: 1;
+}
+:is(.gallery-stage, .effect-preview)[data-direction='-1'] {
+  --dir: -1;
+}
+:is(.gallery-stage, .effect-preview)[data-effects]
+  > .stage-layer:is([data-role='entering'], [data-role='exiting'])
+  .fx-ring {
+  animation-duration: var(--fx-ms);
+  animation-timing-function: var(--ease);
+  animation-fill-mode: both;
+}
+:is(.gallery-stage, .effect-preview)[data-effects]
+  > .stage-layer:is([data-role='entering'], [data-role='exiting']) {
+  will-change: transform, opacity;
+}
+
+:is(.gallery-stage, .effect-preview)[data-effects~='reveal']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='reveal'] {
+  animation-name: gallery-reveal-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='reveal']
+  > .stage-layer[data-role='exiting']
+  .fx-ring[data-fx='reveal'] {
+  animation-name: gallery-fade-out;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='fade']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='fade'] {
+  animation-name: gallery-fade-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='fade']
+  > .stage-layer[data-role='exiting']
+  .fx-ring[data-fx='fade'] {
+  animation-name: gallery-fade-out-late;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='zoom']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='zoom'] {
+  animation-name: gallery-zoom-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='zoom']
+  > .stage-layer[data-role='exiting']
+  .fx-ring[data-fx='zoom'] {
+  animation-name: gallery-zoom-out;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='slide']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='slide'] {
+  animation-name: gallery-slide-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='slide']
+  > .stage-layer[data-role='exiting']
+  .fx-ring[data-fx='slide'] {
+  animation-name: gallery-slide-out;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='focus']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='focus'] {
+  animation-name: gallery-focus-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='focus']
+  > .stage-layer[data-role='exiting']
+  .fx-ring[data-fx='focus'] {
+  animation-name: gallery-focus-out;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='iris']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='iris'] {
+  animation-name: gallery-iris-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='wipe']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='wipe'] {
+  animation-name: gallery-wipe-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='flip']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='flip'] {
+  animation-timing-function: ease-in-out;
+  animation-name: gallery-flip-in;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='flip']
+  > .stage-layer[data-role='exiting']
+  .fx-ring[data-fx='flip'] {
+  animation-timing-function: ease-in-out;
+  animation-name: gallery-flip-out;
+}
+:is(.gallery-stage, .effect-preview)[data-effects~='glitch']
+  > .stage-layer[data-role='entering']
+  .fx-ring[data-fx='glitch'] {
+  animation-name: gallery-glitch-in;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes gallery-reveal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+@keyframes gallery-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes gallery-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes gallery-fade-out-late {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes gallery-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(1.22);
+  }
+}
+@keyframes gallery-zoom-out {
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@keyframes gallery-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(calc(14% * var(--dir)));
+  }
+}
+@keyframes gallery-slide-out {
+  to {
+    opacity: 0;
+    transform: translateX(calc(-14% * var(--dir)));
+  }
+}
+@keyframes gallery-focus-in {
+  from {
+    opacity: 0;
+    filter: blur(22px);
+    transform: scale(1.04);
+  }
+}
+@keyframes gallery-focus-out {
+  to {
+    opacity: 0;
+    filter: blur(14px);
+  }
+}
+@keyframes gallery-iris-in {
+  from {
+    clip-path: circle(0% at 50% 50%);
+  }
+  to {
+    clip-path: circle(75% at 50% 50%);
+  }
+}
+@keyframes gallery-wipe-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+/* The perspective travels with the ring, so a flip keeps its depth whatever
+   rings surround it. */
+@keyframes gallery-flip-in {
+  0%,
+  49.9% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(80deg);
+  }
+  50% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(80deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0);
+  }
+}
+@keyframes gallery-flip-out {
+  0% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0);
+  }
+  49.9% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(-80deg);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-80deg);
+  }
+}
+/* Five held frames of horizontal bands, each shifted and tinted. */
+@keyframes gallery-glitch-in {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+  18% {
+    clip-path: inset(8% 0 72% 0);
+    transform: translateX(-3%);
+    filter: hue-rotate(70deg) saturate(1.8);
+  }
+  38% {
+    clip-path: inset(38% 0 34% 0);
+    transform: translateX(2.5%);
+    filter: hue-rotate(-60deg) saturate(1.8);
+  }
+  58% {
+    clip-path: inset(0 0 28% 0);
+    transform: translateX(-1.5%);
+    filter: hue-rotate(35deg);
+  }
+  78% {
+    clip-path: inset(0);
+    transform: translateX(1%);
+    filter: hue-rotate(-20deg);
+  }
+  100% {
+    clip-path: inset(0);
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Transition chooser and its previews. */
+.effect-picker {
+  display: block;
+}
+.effect-trigger {
+  width: 100%;
+  justify-content: space-between;
+  padding-block: 0.5rem;
+}
+.effect-trigger-text {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  min-width: 0;
+  text-align: start;
+}
+.effect-trigger-label {
+  color: var(--muted);
+}
+.effect-trigger svg {
+  flex: none;
+  transition: transform var(--duration-base) var(--ease);
+}
+.effect-trigger[data-open='true'] svg {
+  transform: rotate(90deg);
+}
+.popover.effect-panel {
+  width: min(25rem, calc(100vw - 16px));
+  padding: 0.75rem;
+}
+.effect-note {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+.effect-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+.effect-option {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.375rem;
+  padding-inline-end: 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+  font: var(--type-label);
+  text-align: start;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-quick) var(--ease),
+    background var(--duration-quick) var(--ease);
+}
+.effect-option:hover,
+.effect-option[aria-checked='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+/* Instant is exclusive: a full-width row above the combinable animations,
+   with a round mark where they have square checkboxes. */
+.effect-option[data-exclusive] {
+  grid-column: 1 / -1;
+}
+.effect-option[data-exclusive][aria-checked='true'] {
+  border-color: var(--muted);
+  background: var(--surface-2);
+}
+.effect-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  margin-block: 0.125rem;
+  background: var(--border);
+}
+.effect-mark {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-inline-start: auto;
+  border: 1.5px solid var(--muted);
+  border-radius: 5px;
+  color: var(--accent-ink);
+  transition:
+    background var(--duration-quick) var(--ease),
+    border-color var(--duration-quick) var(--ease);
+}
+.effect-mark svg {
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--duration-quick) var(--ease),
+    transform var(--duration-quick) var(--ease);
+}
+.effect-option[aria-checked='true'] .effect-mark[data-shape='square'] {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.effect-option[aria-checked='true'] .effect-mark svg {
+  opacity: 1;
+  transform: none;
+}
+.effect-mark[data-shape='round'] {
+  border-radius: 50%;
+}
+.effect-mark[data-shape='round']::after {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--foreground);
+  transform: scale(0);
+  transition: transform var(--duration-quick) var(--ease);
+}
+.effect-option[aria-checked='true'] .effect-mark[data-shape='round'] {
+  border-color: var(--foreground);
+}
+.effect-option[aria-checked='true'] .effect-mark[data-shape='round']::after {
+  transform: scale(1);
+}
+.effect-preview {
+  position: relative;
+  flex: none;
+  width: 4rem;
+  height: 2.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.effect-preview .fx-ring {
+  display: block;
+}
+.effect-preview-img,
+.effect-swatch {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.effect-swatch[data-tone='a'] {
+  background: linear-gradient(135deg, var(--accent), var(--surface-2));
+}
+.effect-swatch[data-tone='b'] {
+  background: linear-gradient(315deg, var(--accent), var(--surface-2));
+  filter: hue-rotate(160deg);
+}
+.effect-option-label {
+  display: grid;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.effect-option-hint {
+  color: var(--muted);
+  font: var(--type-caption);
+}
+/* Instant's preview cuts hard between the pictures; a hairline on its leading
+   edge marks the cut where the animations have motion. */
+.effect-option[data-exclusive] .effect-preview::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: 3;
+  width: 2px;
+  background: var(--foreground);
+  opacity: 0.55;
+}
+@media (prefers-reduced-motion: reduce) {
+  .effect-trigger svg,
+  .effect-option,
+  .effect-mark,
+  .effect-mark svg,
+  .effect-mark[data-shape='round']::after {
+    transition: none;
+  }
+}

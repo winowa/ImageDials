@@ -1,0 +1,51 @@
+{
+  "prompt": "An amber glass bird on a small wooden stand",
+  "controls": [
+    {
+      "id": "surface",
+      "kind": "single-select",
+      "label": "Surface",
+      "options": {
+        "smooth": { "value": "smooth glass", "description": "Even surface" }
+      },
+      "value": "smooth",
+      "extension": { "retained": true }
+    },
+    {
+      "id": "angle",
+      "kind": "slider",
+      "label": "Head angle",
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "value": 0
+    },
+    {
+      "id": "pattern",
+      "kind": "binary",
+      "label": "Etched pattern",
+      "value": false
+    },
+    {
+      "id": "notes",
+      "kind": "text-input",
+      "label": "Stand details",
+      "value": "Rounded edges"
+    },
+    {
+      "id": "future",
+      "kind": "future-control",
+      "label": "Future detail",
+      "value": { "nested": 0 },
+      "vendor": "independent-fixture"
+    }
+  ],
+  "dimensions": "768x1152",
+  "must_have_terms": ["amber"],
+  "dynamic_controls_metadata": {
+    "prompt": "Independent fixture request",
+    "response": { "extension": [false, 0] },
+    "raw_response": "{}"
+  },
+  "generation_mode": "standard"
+}

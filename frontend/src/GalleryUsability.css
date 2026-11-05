@@ -1,0 +1,37 @@
+.gallery .gallery-meta {
+  justify-items: start;
+  text-align: start;
+}
+.gallery .gallery-meta .badge {
+  justify-self: start;
+}
+.gallery .gallery-meta .meta-line {
+  justify-content: start;
+}
+.gallery .gallery-panel > .popover-anchor {
+  justify-self: start;
+}
+.gallery-shortcut-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+.gallery-shortcut-list > div {
+  display: grid;
+  gap: 0.25rem;
+}
+.gallery-shortcut-list dd {
+  margin: 0;
+}
+
+/* Controls hidden: the stage fills the viewport and takes focus, so its ring
+   sits inside the edge where nothing clips it. */
+.gallery[data-chrome='hidden'] .gallery-stage:focus-visible {
+  outline-offset: -3px;
+}
+
+/* An immersive hidden Gallery: a stray swipe must not navigate back or
+   refresh the page. */
+html:has(.gallery[data-chrome='hidden']) {
+  overscroll-behavior: none;
+}
