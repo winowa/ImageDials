@@ -2,21 +2,23 @@
 
 ImageDials turns an image idea into adjustable controls, then uses your selections to generate or edit an image.
 
+<img src="docs/assets/create-screenshot.png" alt="Create page showing a Qwen-generated amber glass bird and its original prompt controls" width="640">
+
 Inspired by [Microsoft Research’s Promptions](https://github.com/microsoft/Promptions): dynamically generated controls help refine a prompt without having to write every detail. The Promptions approach can steer any type of model, not just image models; prompts can extensively customize both the kinds of controls and their categories, choices and starting values. ImageDials applies that approach to image generation and editing.
 
 Here, the initial generated options deliberately include one of each of the eight supported control types: slider, single-select chips, multi-select chips, dropdown, radio buttons, checkboxes, text input and toggle. Their content is tailored to the idea, alongside reusable Standard controls.
 
 ## Pages and modes
 
-- **Create:** write a prompt, refine generated and Standard controls, and generate images. Includes prompt ideas, reference images, undo/redo, control presets, variations and source/result comparison.
-- **Gallery:** play a slideshow of saved images, filter by shape, combine transitions and hide the controls for viewing.
-- **Library:** search saved images, organize favorites and collections, reopen generation settings, download, watermark and print.
+- <img src="docs/assets/icons/create.svg" width="18" height="18" alt=""> **Create:** write a prompt, refine generated and Standard controls, and generate images. Includes prompt ideas, reference images, undo/redo, control presets, variations and source/result comparison.
+- <img src="docs/assets/icons/gallery.svg" width="18" height="18" alt=""> **Gallery:** play a slideshow of saved images, filter by shape, combine transitions and hide the controls for viewing.
+- <img src="docs/assets/icons/library.svg" width="18" height="18" alt=""> **Library:** search saved images, organize favorites and collections, reopen generation settings, download, watermark and print.
 
 Create has three modes:
 
-- **Text to image:** generate from a prompt. Load an image to recover embedded settings or get a description to use as a prompt.
-- **Image edit:** attach ordered reference images and describe changes, using an editing-capable model. Model-specific guidance explains how to refer to each image.
-- **3D asset image:** generate a single isolated object against a contrasting plain background, ready to use as input to an image-to-3D model. ImageDials generates the input image, not the 3D asset itself.
+- <img src="docs/assets/icons/create.svg" width="18" height="18" alt=""> **Text to image:** generate from a prompt. Load an image to recover embedded settings or get a description to use as a prompt.
+- <img src="docs/assets/icons/edit.svg" width="18" height="18" alt=""> **Image edit:** attach ordered reference images and describe changes, using an editing-capable model. Model-specific guidance explains how to refer to each image.
+- <img src="docs/assets/icons/asset.svg" width="18" height="18" alt=""> **3D asset image:** generate a single isolated object against a contrasting plain background, ready to use as input to an image-to-3D model. ImageDials generates the input image, not the 3D asset itself.
 
 Primarily tested with **Qwen3.5-9B** for controls and prompt composition, and **Qwen-Image-Edit-2.1** for image generation and editing, with the **P-Q-Image-2.1 turbo LoRA** to speed up generation. Providers are configurable; editing requires model and adapter support. See [Image editing](docs/IMAGE-EDITING.md) and [Generation options](docs/GENERATION-OPTIONS.md) for contracts and limits.
 

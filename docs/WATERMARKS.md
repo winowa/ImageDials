@@ -1,4 +1,8 @@
-# Browser-only watermark analysis
+# Watermarks
+
+Configure watermark text or SVG in Settings. The Library can analyze placements, regenerate a mark, download a watermarked PNG and open the browser print dialog. Originals remain unchanged.
+
+## Transient analysis API
 
 `POST /api/watermark/analyze-image` accepts one multipart `image` or `file`
 containing PNG, JPEG or WebP bytes. This additive endpoint runs the same
@@ -54,14 +58,7 @@ changes cancel observation. Failed rows display a retry action and do not loop.
 No catalog-wide batch is started by visibility, and historical completed batches
 are not evidence of current page readiness. Counts use current placements.
 
-Explicit Regenerate compares the previous corner and colors separately. Eligible
-corners lie within 0.045 of the best measured score; a stable ring selects another
-eligible corner when possible. Tonal alternatives move OKLCH lightness by 0.04
-within the existing image hue, gamut and material contrast limits. A unique
-quiet-corner margin or consistent palette hue with measured local contrast can
-justify retention. Reasons and lack of alternatives appear in regeneration
-provenance behind the per-image details disclosure, without an invented confidence
-percentage. This is pixel analysis, not semantic object detection.
+Explicit Regenerate reconsiders the corner and colors separately, using the previous analysis for the same source. It can retain a placement or color when no suitable alternative exists; the per-image details explain the decision. Placement is pixel analysis, not semantic object detection or a guarantee that important subjects are avoided.
 
 The browser sends its original bytes to the transient endpoint,
 checks the returned display dimensions, and draws a source-size PNG with the same
@@ -120,64 +117,10 @@ larger tested capacity. A concurrent batch returns 409, disabled shared storage
 403, an unavailable worker 503, and oversized JSON requests 413 (8192 bytes).
 Capabilities expose `watermark.backfill.async_preparation_enabled` and
 `max_candidate_records`. All workers must run the same application version and
-configuration. The additive mode must be connected and verified in the UI before
-claiming full bulk-analysis acceptance. Shared fixtures are in
+configuration. Shared fixtures are in
 `fixtures/api/watermark-batches.json`.
 
-## Chromatic analysis policy
-
-The current analysis version is `pixel-analysis-v5`, paired with renderer
-`edge-tonal-watermark-v4`. Analysis uses a working image bounded to 1024 pixels
-and a global palette sample bounded to 256 pixels. It scores the actual mark
-square plus 4% sampling padding, the corner-side text band, and an inward
-neighborhood 1.6 times the square side. Their weights are 30%, 45% and 25%.
-Each region combines edge activity (60%), tonal spread (20%) and quantized
-color entropy (20%). A measured shortfall below the practical 2.1:1 contrast floor adds a placement
-penalty; the aspirational 4.5:1 target does not override a quieter corner.
-corners within 0.01 resolve bottom-left, bottom-right, top-left, top-right.
-This is a pixel heuristic with no semantic subject or face detection.
-
-Colors come from the image's sixteen-color palette and an eight-color local
-neighborhood palette. Chromatic single-hue images retain that hue. Gray images
-receive a restrained neutral tint. OKLCH chroma is capped at 0.12, endpoint hue
-drift at 28 degrees; gamut fitting reduces chroma instead of changing hue.
-Lightness moves toward a 4.5:1 local contrast target. The second endpoint changes
-tone, with a related palette hue when available. The target is not guaranteed.
-Provenance records actual minimum contrast against material local palette
-colors (at least 10% prevalence), weighted contrast and the share of sampled
-footprint pixels at target, separately for each endpoint. These measurements
-exclude the halo and do not certify contrast at every glyph pixel.
-
-Placement now measures the inset from the image's true edges on both axes,
-using 3.5% of the image's short side. The former centered print-safe rectangle
-still controls mark sizing through reference aspect ratios, but no longer
-creates horizontal gutters on square or panoramic images. Text and its rules
-anchor toward the selected corner inside the square. Analysis scores that same
-corner band; taller text and SVG artwork also participate through the full
-square score. The band is a content-independent estimate, not an exact glyph
-mask, because analysis is reusable across browser-local content settings.
-
-Rules are 0.036 of the square side, down from 0.044: at mark sizes 160, 200,
-240 and 256 pixels the rounded thickness changes from 7/9/11/11 to 6/7/9/9.
-The glyph-to-rule gap stays 0.064, rounded independently. A 0.03 inner padding
-keeps the restrained halo inside the square. Text fitting includes accents and
-descenders. Preview and source-size preparation use one renderer, including
-the corner anchor and diagonal gradient with a 20% start-color hold. Explicit
-legacy policies retain their previous geometry and v1 text layout.
-
-Printing uses the complete prepared image with `object-fit: contain`; it does
-not crop to a reference rectangle. The closer edge placement is therefore
-preserved by the application print path. External crop-to-fill or borderless
-printer trimming can remove an edge mark; the new policy does not claim the
-old centered crop-safe placement. Originals are never rewritten.
-
-Analysis version and geometry fingerprint changes invalidate old placement and
-colors. Current compact summaries carry their analysis version through repeated
-projection. Stale or unversioned summaries are unavailable until analysis runs
-again. The full rendering policy participates in derivative keys, so renderer
-changes invalidate prepared copies even when pixel analysis remains reusable.
-Browser-local content and settings race protections remain independent of the
-pixel algorithm. Baked derivatives never receive another overlay.
+## Prepared PNG metadata
 
 `POST /api/watermark/embed-metadata` accepts a separately rendered PNG in `file`
 and derivative JSON in `metadata`. Required fields are `source_image`,

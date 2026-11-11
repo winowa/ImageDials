@@ -5,7 +5,7 @@ description: Implement the ImageDials prompt-to-controls-to-image workflow, incl
 
 # ImageDials implementation
 
-Implement ImageDials with a React/Vite frontend and FastAPI backend. Use this skill for the project's image-prompt workflow, not deployment or general agent configuration. Read the relevant task within the applicable dated plan directory under `docs/plans/` when local planning notes are available; this skill remains usable without those ignored notes.
+Implement ImageDials with a React/Vite frontend and FastAPI backend. Use this skill for the project's image-prompt workflow, not deployment or general agent configuration.
 
 ## Prompt pipeline
 

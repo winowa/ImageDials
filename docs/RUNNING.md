@@ -255,7 +255,7 @@ metadata-bearing prepared PNG for reuse; settings or rendering-policy changes
 invalidate it. Download and Print use those same bytes. A prepared file that
 cannot be stored remains available for the current action with a storage notice.
 Printing opens the browser dialog; the app cannot verify physical output. See
-[watermark analysis](WATERMARK-ANALYSIS.md).
+[watermark documentation](WATERMARKS.md).
 
 `API_SHUTDOWN_GRACE_SECONDS` bounds HTTP connection draining during API shutdown
 (default 10 seconds). Long-lived event streams are disconnected when the deadline

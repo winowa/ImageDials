@@ -39,6 +39,7 @@ class PrivacyTests(unittest.TestCase):
             "AGENTS.local.md",
             ".local/evidence.json",
             "docs/plans/example.md",
+            "docs/local/task-notes.md",
         ):
             self.assertTrue(privacy.private_path(name), name)
         self.assertFalse(privacy.private_path(".env.example"))

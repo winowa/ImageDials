@@ -13,6 +13,7 @@
 .agents/skills/imagedials/*
 !.agents/skills/imagedials/SKILL.md
 docs/plans/
+docs/local/
 AGENTS.local.md
 .env
 .env.*

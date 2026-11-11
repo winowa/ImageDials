@@ -54,7 +54,7 @@ def private_path(name):
     ):
         return True
     normalized = "/".join(parts)
-    return normalized.startswith(("docs/plans/", "deploy/generated/"))
+    return normalized.startswith(("docs/plans/", "docs/local/", "deploy/generated/"))
 
 
 def load_rules(path):
