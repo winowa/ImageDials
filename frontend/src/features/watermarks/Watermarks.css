@@ -1,0 +1,186 @@
+/* The mark is drawn by the shared renderer over a displayed image. */
+.wm-mark {
+  position: absolute;
+  pointer-events: none;
+  animation: fade var(--duration-base) var(--ease);
+}
+
+.wm-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wm-counts {
+  padding-inline: 0.25rem;
+}
+.wm-batch {
+  flex-basis: 100%;
+}
+.wm-errors {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  font: var(--type-caption);
+}
+
+/* Per-image actions under the image in the detail dialog. */
+.wm-panel {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.wm-panel .check-row {
+  justify-self: start;
+}
+.wm-status {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  font: var(--type-caption);
+}
+.wm-status dt {
+  color: var(--muted);
+}
+.wm-status dd {
+  margin: 0;
+}
+.wm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.wm-progress {
+  margin: 0;
+  font: var(--type-caption);
+  color: var(--muted);
+}
+.wm-actions .btn[aria-busy='true'] .icon {
+  animation: wm-pulse 1s var(--ease) infinite alternate;
+}
+@keyframes wm-pulse {
+  to {
+    opacity: 0.35;
+  }
+}
+
+/* Settings editor: form beside a preview grid, stacked when narrow. */
+.wm-dialog {
+  width: min(68rem, 100%);
+  padding: 0;
+}
+.wm-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 52rem) {
+  .wm-editor {
+    grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
+  }
+}
+.wm-form {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+.wm-form-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.wm-form-head .wm-scope {
+  margin-right: auto;
+  color: var(--muted);
+  font: var(--type-caption);
+}
+.wm-form .segmented-track {
+  display: flex;
+}
+.wm-form .segment {
+  flex: 1;
+}
+.wm-form .segment span {
+  justify-content: center;
+  width: 100%;
+}
+.wm-field {
+  display: grid;
+  gap: 0.375rem;
+  min-width: 0;
+}
+.wm-field > .field-label {
+  margin-bottom: 0;
+}
+.wm-text {
+  resize: vertical;
+  font: var(--type-code);
+  font-size: var(--text-base);
+}
+.wm-hint {
+  font: var(--type-caption);
+  color: var(--muted);
+}
+.wm-svg-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wm-message {
+  min-height: 1.4em;
+  margin: 0;
+  font: var(--type-caption);
+  color: var(--danger);
+}
+.wm-form-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.wm-form-actions .btn {
+  min-width: 6rem;
+}
+.wm-form-actions .btn.primary {
+  flex: 1;
+}
+.wm-previews {
+  min-width: 0;
+  padding: 1.25rem;
+  border-block-start: 1px solid var(--border);
+}
+@media (min-width: 52rem) {
+  .wm-previews {
+    border-block-start: 0;
+    border-inline-start: 1px solid var(--border);
+  }
+}
+.wm-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wm-preview-grid li {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  align-content: start;
+}
+.wm-preview-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+.wm-preview-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.wm-preview-note {
+  font: var(--type-caption);
+  color: var(--muted);
+}

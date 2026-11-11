@@ -1,0 +1,98 @@
+/* Library grid */
+.cards[aria-busy='true'] {
+  transition: opacity 160ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cards[aria-busy] {
+    transition: none;
+  }
+}
+.cards {
+  --card-gap: 1rem;
+  display: grid;
+  gap: var(--card-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* Up to --density columns, fewer when cards would drop below 9rem. */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      max(
+        9rem,
+        calc(
+          (100% - (var(--density, 6) - 1) * var(--card-gap)) / var(--density, 6)
+        )
+      ),
+      1fr
+    )
+  );
+}
+.cards li {
+  min-width: 0;
+}
+.cards {
+  align-items: start;
+  /* Anchors the exit copy of a deleted card; the grid ignores it. */
+  position: relative;
+}
+.cards > li {
+  /* Moves and entrances are transform/opacity only; images keep their size. */
+  will-change: auto;
+}
+.card {
+  display: grid;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    border-color 0.15s var(--ease),
+    transform 0.15s var(--ease);
+}
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+/* Natural proportions: the tile follows the image, nothing is cropped. */
+.card-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+.card-media img,
+.card-media canvas,
+.card-media .img-missing {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.card-media .img-missing {
+  min-height: 6rem;
+}
+.card-title {
+  font: var(--type-label);
+  font-weight: var(--weight-semibold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-meta {
+  font: var(--type-caption);
+  color: var(--muted);
+}
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

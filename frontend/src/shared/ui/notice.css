@@ -1,0 +1,26 @@
+/* Notices */
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.875rem;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  background: var(--accent-soft);
+  animation: rise var(--duration-base) var(--ease);
+}
+.notice[data-tone='error'] {
+  border-color: var(--danger);
+  background: transparent;
+}
+.notice > span {
+  flex: 1 1 14rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.notice .disclosure {
+  flex-basis: 100%;
+}

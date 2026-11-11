@@ -1,0 +1,44 @@
+/* Disclosure */
+.disclosure {
+  border-top: 1px solid var(--border);
+}
+.disclosure-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: var(--type-label);
+  font-weight: var(--weight-semibold);
+  text-align: start;
+  cursor: pointer;
+}
+.disclosure-head .icon {
+  transition: transform 0.2s var(--ease);
+}
+.disclosure[data-open='true'] > .disclosure-head .icon {
+  transform: rotate(90deg);
+}
+.disclosure-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.25s var(--ease),
+    visibility 0.25s;
+}
+.disclosure[data-open='true'] > .disclosure-body {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+.disclosure-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.disclosure[data-open='true'] .disclosure-inner {
+  padding-bottom: 0.75rem;
+}

@@ -1,0 +1,278 @@
+/* Header */
+.app-header {
+  /* Brand, model slot and controls share a line while they fit; the controls
+     drop to their own line first, so no width breakpoint decides the layout. */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.25rem;
+  padding: 0.5rem clamp(1rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--border);
+}
+.app-brand {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.app-header h1 {
+  margin: 0;
+  font: var(--type-title);
+  /* 1.75 times the base title size. */
+  font-size: calc(var(--text-xl) * 1.75);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-display);
+}
+.app-repository {
+  color: var(--muted);
+  text-decoration: none;
+}
+.app-repository:hover,
+.app-repository:focus-visible {
+  color: var(--accent);
+}
+/* Centered under the title text itself; header actions sit alongside it. */
+.app-credit {
+  grid-column: 1;
+  margin: 0;
+  text-align: center;
+  font: var(--type-caption);
+  font-size: var(--text-xs);
+  line-height: 1.2;
+}
+.app-credit a {
+  position: relative;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.app-credit a:hover,
+.app-credit a:focus-visible {
+  color: var(--foreground);
+}
+.app-accent,
+.app-credit a:hover .app-accent,
+.app-credit a:focus-visible .app-accent {
+  color: var(--accent);
+}
+.app-credit a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* Keeps a 44px target without growing the compact header. The extension mostly
+   reaches up (the title is not interactive) so a line below can sit close. */
+.app-credit a::after {
+  content: '';
+  position: absolute;
+  inset: -1.2rem -0.5rem -0.5rem;
+}
+.model-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Wrapped rows keep the 14px the interactive pills' hit areas need. */
+  gap: 14px 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pill {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2rem;
+  padding: 0.125rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font: var(--type-label);
+  font-size: var(--text-xs);
+}
+.pill.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.pill-role {
+  color: var(--muted);
+}
+.app-header .pill,
+.app-header .model-pill-count {
+  padding-block: 0;
+}
+.app-header .pill.model-pill,
+.app-header .pill.model-pill-trigger {
+  min-height: 32px;
+}
+/* Keep the visible model capsule compact while retaining a 44px touch area. */
+.app-header .model-pill-trigger {
+  position: relative;
+  overflow: visible;
+}
+.app-header .model-pill-trigger::after {
+  position: absolute;
+  inset: -7px 0;
+  content: '';
+}
+.app-controls {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Right-aligned when the controls sit alone on a line. */
+  margin-inline-start: auto;
+}
+.app-nav {
+  display: flex;
+  gap: 0.125rem;
+  padding: 0.125rem 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.app-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font: var(--type-label);
+  text-decoration: none;
+  transition:
+    background var(--duration-quick) var(--ease),
+    color var(--duration-quick) var(--ease);
+}
+.app-nav a:hover {
+  background: var(--surface-2);
+  color: var(--foreground);
+}
+.app-nav a[aria-current='page'] {
+  background: var(--accent-soft);
+  color: var(--foreground);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: inherit;
+  background: var(--surface);
+  cursor: pointer;
+  transition:
+    background var(--duration-quick) var(--ease),
+    transform var(--duration-base) var(--ease);
+}
+.theme-toggle:hover {
+  background: var(--accent-soft);
+}
+.theme-toggle:active {
+  transform: rotate(18deg);
+}
+.app-main {
+  padding: 1.25rem clamp(1rem, 3vw, 2rem) 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.app-main:has(> .studio) {
+  padding-block-start: 1rem;
+}
+@media (min-width: 84.001rem) {
+  .app-header .pill.model-pill,
+  .app-header .pill.model-pill-trigger {
+    min-height: 36px;
+  }
+  .app-header .model-pill-trigger::after {
+    inset-block: -5px;
+  }
+  .app-header .app-nav a {
+    min-height: 52px;
+  }
+  .app-header .theme-toggle {
+    min-width: 52px;
+    min-height: 52px;
+  }
+}
+/* The full navigation labels yield before the brand, a Models capsule and
+   six 44px navigation/actions can no longer share a line. */
+@media (max-width: 70rem) {
+  .nav-label {
+    display: none;
+  }
+  .app-nav a {
+    padding-inline: 0;
+  }
+}
+@media (max-width: 40rem) {
+  .app-header h1 {
+    font-size: calc(var(--text-xl) * 1.6);
+  }
+}
+@media (max-width: 30rem) {
+  /* Brand and models share the first line; the controls take the second. */
+  .app-header {
+    column-gap: 0.5rem;
+  }
+  .app-controls {
+    flex: 1 1 100%;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 23rem) {
+  .app-header h1 {
+    font-size: calc(var(--text-xl) * 1.4);
+  }
+  .app-brand {
+    column-gap: 0.25rem;
+  }
+}
+
+/* Skip link: hidden above the page until it takes keyboard focus. */
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--foreground);
+  font: var(--type-label);
+  text-decoration: none;
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.35);
+  opacity: 0;
+  transform: translateY(calc(-100% - 1rem));
+  transition:
+    transform var(--duration-base) var(--ease),
+    opacity var(--duration-quick) var(--ease);
+}
+.skip-link:focus {
+  opacity: 1;
+  transform: none;
+}
+/* Skip targets take focus from the link, not from a Tab press. */
+.app-main:focus {
+  outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}

@@ -1,0 +1,48 @@
+/* Popovers */
+.popover-anchor {
+  display: inline-flex;
+}
+.popover {
+  position: fixed;
+  z-index: 80;
+  width: min(23rem, calc(100vw - 16px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface-2);
+  color: var(--foreground);
+  font: var(--type-body);
+  font-size: var(--text-sm);
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.35);
+  animation: popover-in var(--duration-base) var(--ease);
+}
+.popover > :first-child {
+  margin-top: 0;
+}
+.popover > :last-child {
+  margin-bottom: 0;
+}
+.popover p {
+  margin: 0.75rem 0;
+}
+.popover .popover-lead {
+  font-size: var(--text-base);
+}
+.popover strong {
+  font-weight: var(--weight-bold);
+}
+.popover ul {
+  margin: 0.75rem 0;
+  padding-inline-start: 1.25rem;
+}
+.popover li {
+  padding-inline-start: 0.25rem;
+}
+.popover li + li {
+  margin-top: 0.5rem;
+}
+.popover li::marker {
+  color: var(--accent);
+}

@@ -1,0 +1,457 @@
+/* Control panels */
+.control-panel {
+  /* Controls are separated by a tinted header band and hairlines, not by
+     vertical gaps; the 44px option targets supply the row rhythm. */
+  --control-pad-x: 0.625rem;
+  /* The neutral header surface is included in the accent contrast guard. */
+  --control-pad-y: 0.125rem;
+  --control-band: var(--surface);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-2);
+  transition: opacity var(--duration-base) var(--ease);
+}
+.control-panel[data-loading='true'],
+.control-panel[data-stale='true'] {
+  opacity: 0.6;
+}
+.options-card,
+.standard-card {
+  padding: 0.625rem;
+}
+.options-card .panel-head,
+.standard-card .panel-head {
+  margin-bottom: 0.25rem;
+}
+/* Bottom action of the generated list; it enters after the controls above it. */
+.more-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  padding: 0.375rem 0.5rem 0.125rem;
+  animation: rise var(--duration-base) var(--ease) both;
+}
+.more-controls .pill-btn[aria-busy='true'] {
+  cursor: progress;
+}
+.more-controls .pill-btn:disabled:not([aria-busy='true']) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.more-controls .pill-btn[aria-busy='true'] .icon {
+  animation: more-controls-busy 1s ease-in-out infinite alternate;
+}
+@keyframes more-controls-busy {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+.more-controls .control-status {
+  flex: 1 1 12rem;
+  padding: 0;
+}
+.empty-panel {
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+  color: var(--muted);
+}
+.empty-panel p {
+  margin: 0 0 0.5rem;
+}
+.empty-panel p:last-child {
+  margin: 0;
+}
+.control {
+  display: grid;
+  grid-template-rows: 1fr;
+  container-type: inline-size;
+  transition:
+    grid-template-rows var(--duration-base) var(--ease),
+    opacity var(--duration-base) var(--ease);
+  animation: control-in var(--duration-reveal) var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+.control[data-leaving] {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.control-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+/* Every control is a header band (title, value, description and the
+   reset/remove targets) followed by its body on the plain surface, so bands
+   never merge. Padding of --control-pad-y top and bottom keeps each category
+   from touching its neighbours' hairlines. */
+.control-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.5rem;
+  min-height: 2.25rem;
+  padding-block: var(--control-pad-y);
+  padding-inline: var(--control-pad-x) 0.125rem;
+  border-block: 1px solid var(--border);
+  background: var(--control-band);
+}
+.control:first-child .control-head {
+  border-top-color: transparent;
+}
+.control-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  min-width: 0;
+}
+.control-label {
+  margin: 0;
+  color: var(--accent);
+  font: var(--type-label);
+  font-weight: var(--weight-semibold);
+  overflow-wrap: anywhere;
+}
+.control-value {
+  min-width: 0;
+  color: var(--muted);
+  font: var(--type-code);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+/* Sized to its text: beside the label when the whole line fits, otherwise on
+   its own full-width line, never a narrow column of wrapped words. */
+.control-desc {
+  flex: 1 1 max-content;
+  min-width: 0;
+  margin: 0;
+  font: var(--type-caption);
+  color: var(--muted);
+}
+.control-actions {
+  display: flex;
+}
+.control-body {
+  min-width: 0;
+  padding-block: var(--control-pad-y);
+  padding-inline: var(--control-pad-x);
+}
+.dropdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.dropdown-row > .field {
+  flex: 1 1 12rem;
+  width: auto;
+  margin-block: 0.125rem;
+}
+.control-unsupported {
+  margin: 0;
+  padding-block: 0.5rem;
+  color: var(--muted);
+  font: var(--type-caption);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  /* The visible pill is inset 3px inside its 44px target: pull the group out
+     so pills line up with the title text. */
+  margin-inline: -3px;
+}
+.chips > .chip {
+  max-width: 100%;
+}
+/* Custom and More options travel as one unit: both share the last option row
+   when both fit, otherwise the pair wraps together. */
+.option-tail {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  margin-inline-start: auto;
+}
+/* Chip and Custom/More buttons are 44px-tall touch targets that stack with no
+   overlap; the visible pill is inset so neighbours keep a clear gap. */
+.chip,
+.control .pill-btn {
+  --pill-inset: 3px;
+  position: relative;
+  isolation: isolate;
+}
+.chip::before,
+.control .pill-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: var(--pill-inset);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  transition:
+    background var(--duration-quick) var(--ease),
+    border-color var(--duration-quick) var(--ease),
+    transform var(--duration-quick) var(--ease);
+}
+.control .pill-btn {
+  border-color: transparent;
+  background: transparent;
+  padding: 0 calc(var(--pill-inset) + 0.75rem);
+}
+.control .pill-btn::before {
+  background: var(--surface-2);
+}
+.control .pill-btn.dashed::before {
+  border-style: dashed;
+  background: transparent;
+}
+.control .pill-btn:hover:not(:disabled) {
+  border-color: transparent;
+  background: transparent;
+}
+.control .pill-btn:hover:not(:disabled)::before {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 44px;
+  padding: 0.125rem calc(var(--pill-inset) + 0.625rem);
+  text-align: start;
+  overflow-wrap: anywhere;
+  border: 0;
+  background: none;
+  font: var(--type-label);
+  cursor: pointer;
+  transition:
+    background var(--duration-quick) var(--ease),
+    border-color var(--duration-quick) var(--ease);
+}
+.chip:hover::before {
+  border-color: var(--muted);
+}
+/* Press feedback moves only the visible pill; the 44px hit box never shrinks. */
+.chip:active::before {
+  transform: scale(0.98);
+}
+.chip[data-checked='true']::before {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.chip-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.chip:has(.chip-input:focus-visible)::before {
+  outline: 3px solid var(--focus);
+  outline-offset: 0;
+}
+.chip-mark {
+  display: grid;
+  place-items: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--muted);
+  border-radius: 50%;
+  color: var(--accent-ink);
+  transition:
+    background var(--duration-quick) var(--ease),
+    border-color var(--duration-quick) var(--ease),
+    box-shadow var(--duration-quick) var(--ease);
+}
+.chip:has(input[type='checkbox']) .chip-mark {
+  border-radius: 5px;
+}
+/* Keep this selector's specificity below the checked rule that follows it. */
+.chip-mark .icon {
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--duration-quick) var(--ease),
+    transform var(--duration-base) var(--ease);
+}
+.chip[data-checked='true'] .chip-mark {
+  border-color: var(--accent);
+}
+.chip[data-checked='true']:has(input[type='radio']) .chip-mark {
+  background: var(--accent);
+  box-shadow: inset 0 0 0 3px var(--surface);
+}
+.chip[data-checked='true']:has(input[type='checkbox']) .chip-mark {
+  background: var(--accent);
+}
+.chip[data-checked='true'] .chip-mark .icon {
+  opacity: 1;
+  transform: none;
+}
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -2px;
+}
+/* Radio and checkbox lists: bordered rows in the chip family. Rows grow only
+   up to a readable width so a short list never spreads across a wide panel. */
+.choice {
+  display: flex;
+  flex: 1 1 14rem;
+  align-items: center;
+  gap: 0.625rem;
+  min-width: 0;
+  max-width: 24rem;
+  min-height: 44px;
+  margin: 1px 2px;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  transition:
+    background var(--duration-quick) var(--ease),
+    border-color var(--duration-quick) var(--ease);
+}
+.choice:hover {
+  border-color: var(--muted);
+}
+.choice:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.choice:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 0;
+}
+.choice input {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--accent);
+}
+.choice-desc {
+  display: block;
+  color: var(--muted);
+  font: var(--type-caption);
+}
+.slider {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  accent-color: var(--accent);
+}
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.switch {
+  position: relative;
+  flex: none;
+  width: 3.5rem;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.switch::before {
+  content: '';
+  position: absolute;
+  inset: 0.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  transition:
+    background var(--duration-base) var(--ease),
+    border-color var(--duration-base) var(--ease);
+}
+.switch-thumb {
+  position: absolute;
+  top: 0.625rem;
+  inset-inline-start: 0.1875rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--muted);
+  transition:
+    transform var(--duration-base) var(--ease),
+    background var(--duration-base) var(--ease);
+}
+.switch[aria-checked='true']::before {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.switch[aria-checked='true'] .switch-thumb {
+  transform: translateX(1.5rem);
+  background: var(--accent);
+}
+.switch-text {
+  font: var(--type-label);
+}
+/* Stands where the Custom button was, inside the trailing group: one compact
+   row that wraps (with its sibling) only when the line has no room for it. */
+.add-custom {
+  display: flex;
+  align-items: center;
+  flex: 1 1 14rem;
+  min-width: min(100%, 11rem);
+  max-width: 100%;
+  animation: rise var(--duration-base) var(--ease);
+}
+.add-custom .field {
+  flex: 1 1 5rem;
+  min-width: 0;
+  min-height: 44px;
+}
+.add-custom .icon-btn {
+  flex: none;
+}
+
+.skeleton {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+}
+.skeleton span {
+  display: block;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    100deg,
+    var(--surface-2) 30%,
+    var(--accent-soft) 50%,
+    var(--surface-2) 70%
+  );
+  background-size: 250% 100%;
+  animation: sheen 1.6s linear infinite;
+  animation-delay: calc(var(--i, 0) * 120ms);
+}
+.generate-status {
+  margin-block-start: 0.5rem;
+}
+.generate-status:empty {
+  display: none;
+}
+/* Focused controls stop clear below the docked Generate (set while docked). */
+.studio-main .panel :is(button, input, select, textarea, [tabindex], .control) {
+  scroll-margin-top: calc(
+    var(--generate-dock-block, 0px) + var(--generate-dock-safe, 0px)
+  );
+}

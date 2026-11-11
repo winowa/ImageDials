@@ -1,0 +1,18 @@
+/* Shown only while the saved-image strip is out of sight. */
+.history-shortcut {
+  position: fixed;
+  z-index: 40;
+  inset-block-end: max(1rem, env(safe-area-inset-bottom));
+  inset-inline-end: max(1rem, env(safe-area-inset-right));
+  animation: fade var(--duration-base) var(--ease);
+}
+.history-shortcut .icon-btn {
+  width: 44px;
+  height: 44px;
+  border-color: var(--accent);
+  background: var(--surface-2);
+  color: var(--accent);
+  box-shadow: 0 6px 20px oklch(0 0 0 / 0.3);
+}
+
+/* --- M4: shared watermark ------------------------------------------------- */

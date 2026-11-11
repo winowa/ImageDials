@@ -1,0 +1,203 @@
+/* Buttons and fields */
+.btn,
+.icon-btn,
+.chip,
+.link-btn {
+  font: var(--type-button);
+  cursor: pointer;
+  transition:
+    background 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    transform 0.1s var(--ease);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.btn:active:not(:disabled),
+.icon-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.btn.primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+  background: var(--accent);
+}
+.btn.danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.btn:disabled,
+.icon-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+}
+.icon-btn.quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+}
+.icon-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--foreground);
+}
+.link-btn {
+  min-height: 44px;
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+}
+.field {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+  transition: border-color 0.15s var(--ease);
+}
+.field:hover {
+  border-color: var(--muted);
+}
+.field:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.field-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font: var(--type-label);
+}
+/* Status and alerts */
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.status-line {
+  min-height: 1.4em;
+  margin-top: 0.75rem;
+  font: var(--type-caption);
+  color: var(--muted);
+}
+.status-line:empty {
+  display: none;
+}
+.error-text {
+  color: var(--danger);
+}
+.alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 0 0 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  background: var(--surface);
+  animation: rise var(--duration-base) var(--ease);
+}
+.alert .disclosure {
+  flex-basis: 100%;
+}
+
+/* Segmented radios */
+.segmented {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.segmented legend {
+  padding: 0;
+  margin-bottom: 0.375rem;
+  font: var(--type-label);
+  color: var(--muted);
+}
+.segmented-track {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.segment {
+  position: relative;
+  display: block;
+}
+.segment input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.segment span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.875rem;
+  border-radius: 8px;
+  font: var(--type-label);
+  transition:
+    background 0.15s var(--ease),
+    color 0.15s var(--ease);
+}
+.segment input:checked + span {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.segment input:not(:checked):hover + span {
+  background: var(--surface-2);
+}
+.segment input:focus-visible + span {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.segmented:disabled {
+  opacity: 0.5;
+}
+.glyph {
+  display: block;
+  height: 14px;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+}

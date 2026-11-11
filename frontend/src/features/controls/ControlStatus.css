@@ -1,0 +1,16 @@
+.control-status {
+  flex-basis: 100%;
+  margin: 0;
+  padding: 0.25rem 0;
+  font: var(--type-caption);
+}
+.control-status:not(.error-text) {
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .idea-list,
+  .idea {
+    transition: none;
+  }
+}

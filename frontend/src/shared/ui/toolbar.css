@@ -1,0 +1,89 @@
+/* Gallery and library */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.transport {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.inline-field {
+  display: grid;
+  gap: 0.25rem;
+  font: var(--type-label);
+  color: var(--muted);
+}
+.inline-field.grow {
+  flex: 1 1 14rem;
+}
+.search-field {
+  display: flex;
+  flex: 1 1 18rem;
+  align-items: end;
+  gap: 0.25rem;
+  min-width: 0;
+}
+.search-box {
+  position: relative;
+  display: block;
+}
+.search-box .icon {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0.75rem;
+  margin-block: auto;
+  pointer-events: none;
+}
+.search-box .field {
+  padding-inline-start: 2.5rem;
+}
+.density {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 10rem;
+  min-height: 44px;
+}
+.density output,
+.speed output {
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+.count {
+  font: var(--type-caption);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.toolbar > .count {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-inline-start: auto;
+}
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+.empty p {
+  margin: 0;
+}
+kbd {
+  padding: 0 0.375rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: var(--text-xs);
+  color: var(--muted);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

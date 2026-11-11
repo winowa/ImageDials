@@ -1,0 +1,80 @@
+/* Hide UI: the global header, side panels and strip collapse together and the
+   stage takes the whole viewport. Everything is reversible by the same state. */
+.app-header-wrap {
+  display: grid;
+  /* A fixed-width track: header content must never widen the page. */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows var(--duration-reveal) var(--ease),
+    opacity var(--duration-base) var(--ease),
+    overflow var(--duration-reveal) allow-discrete;
+}
+.app-header-wrap > .app-header {
+  min-height: 0;
+}
+.app-header-wrap[data-hidden] {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition:
+    grid-template-rows var(--duration-reveal) var(--ease),
+    opacity var(--duration-base) var(--ease),
+    overflow var(--duration-reveal) allow-discrete,
+    visibility 0s var(--duration-reveal);
+}
+.app-header-wrap[data-hidden] > .app-header {
+  border-bottom-width: 0;
+  padding-block: 0;
+}
+.gallery > .strip {
+  max-height: 8rem;
+  transition:
+    max-height var(--duration-reveal) var(--ease),
+    opacity var(--duration-base) var(--ease),
+    padding var(--duration-reveal) var(--ease);
+}
+.gallery[data-chrome='hidden'] > .strip {
+  max-height: 0;
+  padding-block: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition:
+    max-height var(--duration-reveal) var(--ease),
+    opacity var(--duration-base) var(--ease),
+    padding var(--duration-reveal) var(--ease),
+    visibility 0s var(--duration-reveal);
+}
+#root:has(.gallery[data-chrome='hidden']) {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+.app-main:has(> .gallery[data-chrome='hidden']) {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  padding: 0;
+}
+.app-main:has(> .gallery[data-chrome='hidden']) > :not(.gallery) {
+  display: none;
+}
+.app-main > .gallery[data-chrome='hidden'] {
+  flex: 1 1 0;
+  min-height: 0;
+  gap: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: stretch;
+}
+.gallery[data-chrome='hidden'] .gallery-stage {
+  height: auto;
+  min-height: 0;
+  border-color: transparent;
+  border-radius: 0;
+}

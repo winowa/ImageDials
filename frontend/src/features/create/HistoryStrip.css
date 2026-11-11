@@ -1,0 +1,62 @@
+/* Carousel and thumbs */
+.carousel ul,
+.strip {
+  display: flex;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  overscroll-behavior-x: contain;
+}
+.carousel li,
+.strip li {
+  flex: none;
+  scroll-snap-align: start;
+}
+.thumb {
+  display: block;
+  height: 5rem;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface-2);
+  cursor: pointer;
+  transition:
+    border-color 0.15s var(--ease),
+    transform 0.15s var(--ease);
+}
+.thumb:hover {
+  transform: translateY(-2px);
+}
+.thumb[aria-current='true'] {
+  border-color: var(--accent);
+}
+.thumb img,
+.thumb .img-missing {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-pending {
+  visibility: hidden;
+}
+
+.img-missing {
+  display: grid;
+  place-items: center;
+  min-height: 3rem;
+  padding: 0.5rem;
+  background: var(--surface-2);
+  color: var(--muted);
+  font: var(--type-caption);
+  text-align: center;
+}
+
+.carousel.panel {
+  padding: 0.75rem;
+}

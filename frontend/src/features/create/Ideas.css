@@ -1,0 +1,73 @@
+/* --- Ideas, import and option expansion ---------------------------------- */
+
+.ideas-anchor {
+  display: inline-flex;
+}
+.ideas-popover {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: min(26rem, calc(100vw - 16px));
+  padding: 0.5rem 0.75rem 0.75rem 1rem;
+  overflow: hidden;
+}
+.ideas-head {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: none;
+}
+.ideas-intro {
+  flex: 1;
+  margin: 0;
+  font: var(--type-label);
+}
+.ideas-body {
+  display: grid;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  padding-inline-end: 0.25rem;
+}
+.ideas-skeleton {
+  padding: 0.5rem;
+}
+.ideas-popover .idea-list {
+  display: grid;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: opacity var(--duration-base) var(--ease);
+}
+.ideas-popover .idea-list li {
+  padding: 0;
+}
+.ideas-popover .idea-list li + li {
+  margin-top: 0;
+}
+.idea-list[data-loading='true'] {
+  opacity: 0.6;
+}
+.idea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--foreground);
+  font: var(--type-caption);
+  text-align: start;
+  cursor: pointer;
+  transition:
+    background var(--duration-quick) var(--ease),
+    border-color var(--duration-quick) var(--ease);
+}
+.idea:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}

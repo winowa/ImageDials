@@ -14,16 +14,16 @@ import {
   STORE,
   upgradeSchema,
   VARIANT_USE_INDEX,
-} from '../src/cacheDb.js';
-import { planVolatileSlot } from '../src/cachePolicy.js';
+} from '../src/data/storage/cacheDb.js';
+import { planVolatileSlot } from '../src/data/storage/cachePolicy.js';
+import { createCacheStore } from '../src/data/storage/cacheStore.js';
 import {
-  createCacheStore,
   PRIVATE_REMOVAL_FENCE_KEY,
   PRIVATE_SEQ_KEY,
   PRIVATE_TOMBSTONE_LIMIT,
   PRIVATE_TOMBSTONE_MAX_BYTES,
-} from '../src/cacheStore.js';
-import { DEFAULT_CLIENT_POLICY } from '../src/clientPolicy.js';
+} from '../src/data/storage/cachePrivate.js';
+import { DEFAULT_CLIENT_POLICY } from '../src/data/api/clientPolicy.js';
 
 const MIB = 1024 * 1024;
 const KIB = 1024;

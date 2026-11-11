@@ -1,0 +1,59 @@
+/* Form controls do not inherit type by default. */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+/* Technical values: ids, seeds, parameters, JSON, logs. */
+code,
+kbd,
+samp,
+pre {
+  font: var(--type-code);
+  font-variant-ligatures: none;
+  font-variant-numeric: slashed-zero tabular-nums;
+  letter-spacing: 0;
+  tab-size: 2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+h2 {
+  font: var(--type-heading);
+  letter-spacing: var(--tracking-display);
+}
+.mini {
+  font: var(--type-label);
+  color: var(--muted);
+  margin: 0.75rem 0 0.25rem;
+}

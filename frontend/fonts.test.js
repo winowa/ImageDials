@@ -4,8 +4,10 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { expect, test } from 'vitest';
 
+import { readStylesheet } from './tests/helpers/styles.js';
+
 const root = fileURLToPath(new URL('.', import.meta.url));
-const css = readFileSync(join(root, 'src/index.css'), 'utf8');
+const css = readStylesheet();
 const html = readFileSync(join(root, 'index.html'), 'utf8');
 const fontDirectory = join(root, 'public/fonts');
 
